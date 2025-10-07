@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
         <>
           <Hero/>
 
-          <div className="max-w-md p-4 mx-auto text-center bg-white text-gray-800 mt-4">
+          <div className="max-w-7xl p-8 px-16 mx-auto text-center bg-white text-gray-800 mt-4">
           <h2 className="text-xl">
             About Us
           </h2>
@@ -22,7 +22,7 @@ At Maria Construction and Interiors, project management is the cornerstone of ou
           </p>
           </div>
 
-          <div className="max-w-md p-6 mx-auto text-left bg-white text-gray-800 mt-4">
+          <div className="max-w-7xl p-6 mx-auto text-left bg-white text-gray-800 mt-4">
           <div className="p-4">
 
                     <h2 className="text-xl">
@@ -51,7 +51,7 @@ At Maria Construction and Interiors, project management is the cornerstone of ou
 
           </div>
 
-          <div className="mt-6 rounded flex flex-col gap-4 md-flex-row justify-between bg-gray-900 text-white items-center">
+          <div className="mt-6 p-8 rounded flex flex-col gap-4 md:flex-row justify-between bg-gray-900 text-white items-center">
             <div  className="text-xl">
               Get a free quote 
             </div>
@@ -68,14 +68,14 @@ At Maria Construction and Interiors, project management is the cornerstone of ou
                   <div className="text-center mt-6">
               <h2 className="text-xl">Appreciations for Construction & Interior Projects</h2>
 
-              <div className="flex flex-wrap flex-row gap-2">
+              <div className="flex flex-wrap flex-row justify-center items-center gap-2">
 
-                    <Image className="basis-1/2 md-basis-1/4" src="/1-3.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md-basis-1/4" src="/2_2-1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md-basis-1/4" src="/3_1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md-basis-1/4" src="/4_1-1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md-basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md-basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/4" src="/1-3.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/4" src="/2_2-1.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/4" src="/3_1.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/4" src="/4_1-1.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={400} height={200} />
              
         </div>
             </div>

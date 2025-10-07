@@ -56,7 +56,7 @@ export default function MyApp({ Component, pageProps }) {
         <>
           <Hero title={'Contact Us'}/>
 
-          <div className="max-w-md p-6 mx-auto text-left bg-white text-gray-800 mt-4">
+          <div className="max-w-7xl p-6 mx-auto text-left bg-white text-gray-800 mt-4">
 
     <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-white">
       <h2 className="text-2xl font-semibold mb-4 text-center">Contact us</h2>

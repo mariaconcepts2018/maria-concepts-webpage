@@ -7,7 +7,7 @@ export default function MyApp({ Component, pageProps }) {
         <>
           <Hero title={'About Us'}/>
 
-          <div className="max-w-md p-6 mx-auto bg-white text-gray-800 mt-4">
+          <div className="max-w-7xl p-6 mx-auto bg-white text-gray-800 mt-4">
           <h2 className="text-xl text-center">
             About Us
           </h2>
@@ -87,7 +87,7 @@ Managing Director <br />
  <br/>
  <br/>
 
- <div className="flex flex-col md-flex-row justify-center">
+ <div className="flex flex-col md:flex-row justify-center">
     <div className="p-4 text-center">
       <h3>
         VISION

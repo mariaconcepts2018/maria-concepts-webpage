@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <section className="relative overflow-hidden text-center">
-        <div className="flex flex-col md-flex-row justify-around">
+        <div className="flex flex-col md:flex-row justify-center px-8">
 
 
         <div className="basis-1/3 p-4">
