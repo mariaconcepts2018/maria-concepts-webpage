@@ -10,25 +10,28 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-black">
-            Maria Concepts
+          <Link href="/" className="text-2xl font-bold text-gray-800 text-center flex flex-col">
+            <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
+            <small className="text-sm text-center logo-2">
+            &nbsp; CONCEPTS
+            </small>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">
+            <Link href="/" className="text-gray-700 hover:text-blue-600 uppercase">
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">
+            <Link href="/about" className="text-gray-700 hover:text-blue-600 uppercase">
               About
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-blue-600">
+            <Link href="/services" className="text-gray-700 hover:text-blue-600 uppercase">
               Services
             </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-blue-600">
+            <Link href="/projects" className="text-gray-700 hover:text-blue-600 uppercase">
               Projects
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600">
+            <Link href="/contact" className="text-gray-700 hover:text-blue-600 uppercase">
               Contact
             </Link>
           </div>

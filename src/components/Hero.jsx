@@ -59,16 +59,16 @@ export default function Hero({title}) {
             Design That Speaks Quietly but Beautifully.
           </p>
 
-                    <div className="mt-8 flex justify-center space-x-4">
+                    <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 lg-flex-row">
             <Link
-              href="/get-started"
-              className="px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition"
+              href="/contact"
+              className="px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
             >
               Book Your Consultation
             </Link>
             <Link
-              href="/learn-more"
-              className="px-6 py-3 border border-white text-white font-medium rounded-full hover:bg-white hover:text-blue-600 transition"
+              href="/services"
+              className="px-6 py-3 border border-white text-white font-medium rounded hover:bg-white hover:text-blue-600 transition"
             >
               Learn More
             </Link>
@@ -85,7 +85,7 @@ export default function Hero({title}) {
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-3 h-3 rounded ${
                 current === index ? "bg-white" : "bg-gray-400"
               }`}
             />

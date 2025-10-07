@@ -58,15 +58,15 @@ export default function MyApp() {
 
   return (
     <>
-      <main className="bg-white text-black">
+      <main className="bg-white text-gray-800">
         <>
           <Hero title={'Our Services'}/>
 
-          <div className="w-1/2 p-6 mx-auto text-left bg-white text-black mt-4 flex flex-col gap-4">
+          <div className="max-w-md p-6 mx-auto text-left bg-white text-gray-800 mt-4 flex flex-col gap-4">
 
           {data && data.map((item, index) => (
             
-                <div key={item.id} className="flex flex-row">
+                <div key={item.id} className="flex flex-col md-flex-row">
                     <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
                     <div className="p-8">
                         <div>

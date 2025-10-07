@@ -52,17 +52,17 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <main className="bg-white text-black">
+      <main className="bg-white text-gray-800">
         <>
           <Hero title={'Contact Us'}/>
 
-          <div className="w-1/2 p-6 mx-auto text-center bg-white text-black mt-4">
+          <div className="max-w-md p-6 mx-auto text-left bg-white text-gray-800 mt-4">
 
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-white rounded-2xl shadow-sm">
-      <h2 className="text-2xl font-semibold mb-4">Contact us</h2>
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-white">
+      <h2 className="text-2xl font-semibold mb-4 text-center">Contact us</h2>
 
       <label className="block mb-3">
-        <span className="text-sm font-medium">Name</span>
+        <span className="text-sm font-bold">Name</span>
         <input
           type="text"
           name="name"
@@ -78,7 +78,7 @@ export default function MyApp({ Component, pageProps }) {
       </label>
 
             <label className="block mb-3">
-        <span className="text-sm font-medium">Phone Number</span>
+        <span className="text-sm font-bold">Phone Number</span>
         <input
           type="phone"
           name="phone"
@@ -94,7 +94,7 @@ export default function MyApp({ Component, pageProps }) {
       </label>
 
       <label className="block mb-3">
-        <span className="text-sm font-medium">Email</span>
+        <span className="text-sm font-bold">Email</span>
         <input
           type="email"
           name="email"
@@ -111,7 +111,7 @@ export default function MyApp({ Component, pageProps }) {
       </label>
     
     <label className="block mb-3">
-        <span className="text-sm font-medium">Project Budget</span>
+        <span className="text-sm font-bold">Project Budget</span>
         <input
           type="budget"
           name="budget"
@@ -127,7 +127,7 @@ export default function MyApp({ Component, pageProps }) {
       </label>
 
       <label className="block mb-4">
-        <span className="text-sm font-medium">Message</span>
+        <span className="text-sm font-bold">Message</span>
         <textarea
           name="message"
           value={form.message}

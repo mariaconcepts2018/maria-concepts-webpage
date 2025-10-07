@@ -42,21 +42,19 @@ export default function MyApp() {
 
   return (
     <>
-      <main className="bg-white text-black">
+      <main className="bg-white text-gray-800">
         <>
           <Hero title={'Projects'}/>
 
-          <div className="w-1/2 p-6 mx-auto bg-white text-black mt-4 flex flex-col gap-4">
+          <div className="w-1/2 p-6 mx-auto bg-white text-gray-800 mt-4 flex flex-col gap-4">
 
           {projects.map((project, index) => (
             
                 <div key={index}>
                     <h1 className="text-xl">{project}</h1>
                     <div className="flex flex-row gap-8 flex-wrap">
-                        {data && data.filter((i) => i.project === project).map((item) => (
-                            <>
-                            <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
-                            </>
+                        {data && data.filter((i, index) => i.project === project).map((item, i) => (
+                            <Image key={i} width={400} height={300} src={item.imgUrl} alt={item.title}/>
                         ))}
                     </div>
                 </div>
