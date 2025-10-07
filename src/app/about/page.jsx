@@ -8,10 +8,9 @@ import Link from "next/link";
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
       <main className="bg-white text-black">
         <>
-          <Hero/>
+          <Hero title={'About Us'}/>
 
           <div className="w-1/2 p-6 mx-auto text-center bg-white text-black mt-4">
           <h2 className="text-xl">

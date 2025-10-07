@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function Hero() {
+export default function Hero({title}) {
   const images = [
     "https://plus.unsplash.com/premium_photo-1680382578857-c331ead9ed51?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1672137233327-37b0c1049e77?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -44,14 +44,22 @@ export default function Hero() {
 
         {/* Hero content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
+          {title?
+          <>
           <h1 className="text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-            Best in Interior <br />
-            <span className="text-blue-400"> Designs.</span>
+            {title}
+          </h1>
+          
+          </>:
+          <>
+
+          <h1 className="text-4xl font-extrabold sm:text-5xl lg:text-6xl"> Best in Interior <br /> <span className="text-blue-400"> Designs.</span>
           </h1>
           <p className="mt-6 text-lg max-w-2xl mx-auto">
             Design That Speaks Quietly but Beautifully.
           </p>
-          <div className="mt-8 flex justify-center space-x-4">
+
+                    <div className="mt-8 flex justify-center space-x-4">
             <Link
               href="/get-started"
               className="px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition"
@@ -65,6 +73,10 @@ export default function Hero() {
               Learn More
             </Link>
           </div>
+          
+          </>}
+
+
         </div>
 
         {/* Carousel dots */}

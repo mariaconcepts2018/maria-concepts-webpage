@@ -1,0 +1,75 @@
+'use client'
+import "@/app/globals.css";
+import Hero from "@/components/Hero";
+import Image from "next/image";
+
+const projects = ["Residential", "Schools & colleges", "Churchs"]
+
+const data = [
+    {
+        id:"1",
+        title:"Project Management",
+        project:"Residential",
+        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/project-management.jpg",
+    },
+        {
+        id:"2",
+        title:"Building Construction",
+        project:"Schools & colleges",
+        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Building.jpg",
+    },
+        {
+        id:"3",
+        title:"Interiors",
+        project:"Churchs",
+        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Interior-1.jpg",
+    },
+        {
+        id:"4",
+        title:"Renovation",
+        project:"Residential",
+        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Renovation.jpg",
+    },
+        {
+        id:"5",
+        title:"Built-in Furniture",
+        project:"Residential",
+        imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Built-In-Furniture.jpg",
+    }
+]
+
+export default function MyApp() {
+
+  return (
+    <>
+      <main className="bg-white text-black">
+        <>
+          <Hero title={'Projects'}/>
+
+          <div className="w-1/2 p-6 mx-auto bg-white text-black mt-4 flex flex-col gap-4">
+
+          {projects.map((project, index) => (
+            
+                <div key={index}>
+                    <h1 className="text-xl">{project}</h1>
+                    <div className="flex flex-row gap-8 flex-wrap">
+                        {data && data.filter((i) => i.project === project).map((item) => (
+                            <>
+                            <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
+                            </>
+                        ))}
+                    </div>
+                </div>
+          ))}
+
+            <div>
+
+            </div>
+          
+          </div>
+
+        </>
+      </main>
+    </>
+  );
+}
