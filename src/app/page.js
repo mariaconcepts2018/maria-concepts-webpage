@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function MyApp({ Component, pageProps }) {
@@ -63,7 +64,18 @@ At Maria Construction and Interiors, project management is the cornerstone of ou
           </div>
                   <div className="text-center mt-6">
               <h2 className="text-xl">Appreciations for Construction & Interior Projects</h2>
+
+              <div className="flex flex-wrap flex-row">
+
+
+                    <Image className="basis-1/4 p-4" src="/1-3.png" alt="Appreciation Photos" width={800} height={400} />
+                    <Image className="basis-1/4 p-4" src="/2_2-1.png" alt="Appreciation Photos" width={800} height={400} />
+                    <Image className="basis-1/4 p-4" src="/3_1.png" alt="Appreciation Photos" width={800} height={400} />
+                    <Image className="basis-1/4 p-4" src="/4_1-1.png" alt="Appreciation Photos" width={800} height={400} />
+                    <Image className="basis-1/4 p-4" src="/7_1-1.png" alt="Appreciation Photos" width={800} height={400} />
+                    <Image className="basis-1/4 p-4" src="/7_1-1.png" alt="Appreciation Photos" width={800} height={400} />
              
+        </div>
             </div>
 
           </div>
