@@ -1,4 +1,3 @@
-'use client'
 import "@/app/globals.css";
 import Hero from "@/components/Hero";
 import Image from "next/image";
@@ -37,6 +36,10 @@ const data = [
         imgUrl:"https://mariaconstructions.in/wp-content/uploads/2024/02/Built-In-Furniture.jpg",
     }
 ]
+
+export const metadata = {
+  title: "Our Projects | Maria Concepts",
+};
 
 export default function MyApp() {
 

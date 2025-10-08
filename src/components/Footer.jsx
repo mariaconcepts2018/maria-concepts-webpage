@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import GoogleMap from "./GoogleMap";
 
 export default function Footer() {
 
   return (
     <section className="relative overflow-hidden text-center bg-secondary-600 text-gray-100">
-        <div className="flex flex-col md:flex-row justify-center pt-4 px-2 md:px-4">
+        <div className="flex flex-col md:flex-row justify-evenly pt-4 px-2 md:px-4">
 
 
         <div className="basis-1/3 p-4">
@@ -67,13 +68,9 @@ export default function Footer() {
         </div>
         </div>
       {/* Footer container */}
-
-      <div className="basis-1/3 p-4">
-
-      {/* Photos here */} 
-
-      </div>
-
+<div className="basis-1/3 p-4">
+<GoogleMap />
+</div>
 <div className="basis-1/3 text-left p-4">
 
 

@@ -3,11 +3,15 @@ import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Home | Maria Concepts",
+};
+
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero/>
-      <main className="bg-white text-gray-800 px-2 md:px-0 py-12">
+      <main className="bg-white text-gray-800 px-2 xl:px-0 py-12">
         <>
 
           <div className="max-w-7xl p-4 px-8 mx-auto text-center bg-white text-gray-800 border border-primary">
