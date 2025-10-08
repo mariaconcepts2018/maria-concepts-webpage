@@ -70,7 +70,7 @@ export default function MyApp() {
                     <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
                     <div className="p-8">
                         <div>
-                            <h1  className="text-xl">
+                            <h1  className="text-2xl text-primary-600">
                                 {item.title}
                             </h1>
                             <p>

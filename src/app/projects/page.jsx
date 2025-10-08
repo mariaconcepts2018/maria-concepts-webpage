@@ -51,12 +51,13 @@ export default function MyApp() {
           {projects.map((project, index) => (
             
                 <div key={index}>
-                    <h1 className="text-xl">{project}</h1>
+                    <h1 className="text-2xl text-primary-600">{project}</h1>
                     <div className="flex flex-row gap-8 flex-wrap">
                         {data && data.filter((i, index) => i.project === project).map((item, i) => (
-                            <Image key={i} width={400} height={300} src={item.imgUrl} alt={item.title}/>
+                          <Image key={i} width={400} height={300} src={item.imgUrl} alt={item.title}/>
                         ))}
                     </div>
+                    <br/>
                 </div>
           ))}
 

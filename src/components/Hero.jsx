@@ -53,7 +53,7 @@ export default function Hero({title}) {
           </>:
           <>
 
-          <h1 className="text-4xl font-extrabold sm:text-5xl lg:text-6xl"> Best in Interior <br /> <span className="text-blue-400"> Designs.</span>
+          <h1 className="text-4xl text-white font-extrabold sm:text-5xl lg:text-6xl"> Best in Interior <br /> <span className="text-white"> Designs.</span>
           </h1>
           <p className="mt-6 text-lg max-w-2xl mx-auto">
             Design That Speaks Quietly but Beautifully.
@@ -62,13 +62,13 @@ export default function Hero({title}) {
                     <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 lg-flex-row">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
+              className="px-6 py-3 bg-primary-500 text-gray-100 uppercase font-medium rounded hover:bg-primary-400 transition"
             >
               Book Your Consultation
             </Link>
             <Link
               href="/services"
-              className="px-6 py-3 border border-white text-white font-medium rounded hover:bg-white hover:text-blue-600 transition"
+              className="px-6 py-3 border border-white text-white uppercase font-medium rounded hover:bg-white hover:text-secondary-600 transition"
             >
               Learn More
             </Link>

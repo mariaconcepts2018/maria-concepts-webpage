@@ -1,44 +1,47 @@
 'use client'
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white shadow-md sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-16 items-center ">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-gray-800 text-center flex flex-col">
             <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
             <small className="text-sm text-center logo-2">
-            &nbsp; CONCEPTS
+            CONCEPTS
             </small>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 uppercase">
+          <div className="static md:relative hidden md:flex space-x-8">
+            <Link href="/" className={`text-secondary-700 ${(pathname === '/') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600 uppercase">
+            <Link href="/about" className={`text-secondary-700 ${(pathname === '/about') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               About
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-blue-600 uppercase">
+            <Link href="/services" className={`text-secondary-700 ${(pathname === '/services') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               Services
             </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-blue-600 uppercase">
+            <Link href="/projects" className={`text-secondary-700 ${(pathname === '/projects') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               Projects
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600 uppercase">
+            <Link href="/contact" className={`text-secondary-700 ${(pathname === '/contact') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               Contact
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none"
+            className="md:hidden text-gray-700 hover:text-primary-600 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -70,18 +73,18 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div className="absolute w-full md:hidden bg-white border-t border-gray-200">
           <div className="flex flex-col space-y-2 p-4">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">
+            <Link href="/" className="text-gray-700 hover:text-primary-600 font-semibold">
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">
+            <Link href="/about" className="text-gray-700 hover:text-primary-600 font-semibold">
               About
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-blue-600">
+            <Link href="/services" className="text-gray-700 hover:text-primary-600 font-semibold">
               Services
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600">
+            <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-semibold">
               Contact
             </Link>
           </div>
