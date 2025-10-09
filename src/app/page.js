@@ -86,12 +86,12 @@ At Maria Construction and Interiors, project management is the cornerstone of ou
 
               <div className="flex flex-wrap flex-row justify-center items-center max-w-xl mx-auto">
 
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/1-3.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/2_2-1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/3_1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/4_1-1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/7_1-1.png" alt="Appreciation Photos" width={400} height={200} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/7_1-1.png" alt="Appreciation Photos" width={400} height={200} />
+                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/1-3.png" alt="Appreciation Photos" width={200} height={100} />
+                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/2_2-1.png" alt="Appreciation Photos" width={200} height={100} />
+                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/3_1.png" alt="Appreciation Photos" width={200} height={100} />
+                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/4_1-1.png" alt="Appreciation Photos" width={200} height={100} />
+                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
+                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
              
         </div>
             </div>

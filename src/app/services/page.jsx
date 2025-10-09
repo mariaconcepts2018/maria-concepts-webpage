@@ -69,7 +69,7 @@ export default function MyApp() {
 
           {data && data.map((item, index) => (
             
-                <div key={item.id} className="flex flex-col md:flex-row">
+                <div key={item.id} className="flex flex-col md:flex-row border-b border-primary-600 py-8">
                     <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
                     <div className="p-8">
                         <div>

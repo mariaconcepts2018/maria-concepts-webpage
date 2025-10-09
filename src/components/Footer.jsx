@@ -8,12 +8,12 @@ export default function Footer() {
 
   return (
     <section className="relative overflow-hidden text-center bg-secondary-600 text-gray-100">
-        <div className="flex flex-col md:flex-row justify-evenly pt-4 px-2 md:px-4">
+        <div className="flex flex-col md:flex-row justify-evenly  gap-8 pt-4 px-2 md:px-4">
 
 
-        <div className="basis-1/3 p-4">
+        <div className="p-4 text-center">
 
-        <div  className="bg-white text-gray-800 rounded p-8 max-w-sm">
+        <div  className="bg-white text-gray-800 rounded p-8 w-full">
 
            <h1 className="text-2xl font-bold text-gray-800 text-center flex flex-col">
             <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
@@ -68,10 +68,10 @@ export default function Footer() {
         </div>
         </div>
       {/* Footer container */}
-<div className="basis-1/3 p-4">
+<div className="p-4 text-center">
 <GoogleMap />
 </div>
-<div className="basis-1/3 text-left p-4">
+<div className="text-left p-4 text-center">
 
 
       <h3 className="text-2xl">Get in touch</h3>
@@ -117,7 +117,7 @@ Office Address
       </div>
 
                     </div>
-      <p>&copy; Maria Concepts - 2025</p>
+      <p className="text-center">&copy; Maria Concepts - 2025</p>
 
     </section>
   );

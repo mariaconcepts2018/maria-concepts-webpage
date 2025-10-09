@@ -106,7 +106,7 @@ export default function ContactForm({ Component, pageProps }) {
         {errors.email && <p id="email-error" className="mt-1 text-xs text-red-600">{errors.email}</p>}
       </label>
     
-    <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
+    {/* <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
         <span className="text-sm">Project Budget</span>
         <input
           type="budget"
@@ -120,7 +120,26 @@ export default function ContactForm({ Component, pageProps }) {
           aria-describedby={errors.budget ? "budget-error" : undefined}
           />
         {errors.budget && <p id="budget-error" className="mt-1 text-xs text-red-600">{errors.budget}</p>}
-      </label>
+      </label> */}
+
+      <label htmlFor="service" className="block mb-3 w-full basis-full md:basis-1/2 p-2">
+        <span className="text-sm">Select Project Budget</span>
+
+      <select
+        id="service"
+        name="service"
+        defaultValue={""}
+        className={`mt-1 block w-full rounded border px-3 py-2.5 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+            errors.budget ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
+          }`}
+        >
+        <option value="" hidden={true} disabled={true} className="buton cursor-not-allowed">Choose an option</option>
+        <option value="1">upto 10 Lakhs</option>
+        <option value="2">10 - 25 Lakhs</option>
+        <option value="3">25 - 50 Lakhs</option>
+        <option value="4">More than 50 Lakhs</option>
+      </select>
+        </label>
 
       <label className="block mb-4 basis-full p-2">
         <span className="text-sm">Message</span>
