@@ -1,6 +1,8 @@
 import "@/app/globals.css";
 import Hero from "@/components/Hero";
+import ImageView from "@/components/FullScreenButton";
 import Image from "next/image";
+import FullScreenButton from "@/components/FullScreenButton";
 
 const projects = ["Residential", "Schools & colleges", "Churchs"]
 
@@ -52,12 +54,16 @@ export default function MyApp() {
           <div className="w-1/2 p-6 mx-auto bg-white text-gray-800 mt-4 flex flex-col gap-4">
 
           {projects.map((project, index) => (
+
             
-                <div key={index}>
+            
+            <div key={index}>
                     <h1 className="text-2xl text-primary-600">{project}</h1>
                     <div className="flex flex-row gap-8 flex-wrap">
                         {data && data.filter((i, index) => i.project === project).map((item, i) => (
-                          <Image key={i} width={400} height={300} src={item.imgUrl} alt={item.title}/>
+                        <FullScreenButton key={i} src={item.imgUrl} alt={item.title} >
+                          <Image  width={400} height={300} src={item.imgUrl} alt={item.title}/>
+                        </FullScreenButton>
                         ))}
                     </div>
                     <br/>
@@ -72,6 +78,8 @@ export default function MyApp() {
 
         </>
       </main>
+
+      <ImageView />
     </>
   );
 }

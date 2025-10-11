@@ -13,59 +13,73 @@ export default function MyApp({ Component, pageProps }) {
           <Hero/>
       <main className="bg-white text-gray-800 px-2 xl:px-0 py-12">
         <>
-
-          <div className="max-w-7xl p-4 px-8 mx-auto text-center bg-white text-gray-800 border border-primary">
-          <h2 className="text-2xl text-primary-600">
-            About Us
-          </h2>
-          
-          <p>
-            Maria Construction and Interiors is a distinguished firm specialising in a wide range of services tailored to meet the diverse needs of our clients. With a steadfast commitment to excellence and innovation, we offer comprehensive solutions that elevate spaces and exceed expectations. ,<br/>
-At Maria Construction and Interiors, project management is the cornerstone of our operations. Our experienced project managers oversee every aspect of construction projects, ensuring seamless execution and timely delivery. From inception to completion, we maintain a keen focus on meeting client requirements while adhering to the highest standards of quality and efficiency.
-          </p>
-          </div>
-
-          <div className="max-w-7xl px-2 mx-auto text-left bg-white text-gray-800 mt-12">
-          <div className="flex flex-col md:flex-row justify-evenly gap-4">
-
-            <div className="basis-1/3">
-              <Image className="h-full w-auto object-cover" alt="our-services" src="https://media.istockphoto.com/id/2167541386/photo/interior-design-3d-elegant-ceiling-render-furniture-living-room.jpg?s=2048x2048&w=is&k=20&c=NKz13fJGg8jpItWSdPDzkY6Vx-DDV6YBsjhrvw938So="
-              
-              width ={400} height ={300}
-              />
-
-            </div>
-
-            <div>
-              <br/>
+          <div className="max-w-7xl mx-auto text-left bg-white text-gray-800 md:mt-12">
                     <h2 className="text-2xl text-primary-600 text-center md:text-left">
             Our Services
           </h2>
-          <p>We are a firm that specializes in the services related to.</p><br/>
-          <ul className="list-disc ml-6 arrow">
-            <li>Project Management</li>
-            <li>Building Construction</li>
-            <li>Interiors</li>
-            <li>Renovation</li>
-            <li>Built-In Furniture</li>
-            <li>Institutional And Church Work</li>
-            <li>Residentials</li>
-            <li>Office Spaces</li>
-          </ul>
+          <div className="flex flex-col md:flex-row justify-evenly gap-4 pt-8 pb-4">
 
-          <div className="text-center md:text-left lg-text-center mt-4 py-4">
-                      <Link
+            <div className="border border-primary p-8">
+              <Image className="mb-4 text-primary-500" src="/project.svg" height={36} width={36} alt="svg-icon prject management"/>
+              <h2 className="text-xl">Project Management </h2>
+              <p className="text-sm">
+                Our experienced project managers ensure that projects are delivered on time, within budget, and according to the highest quality standards.
+              </p>
+            </div>
+            <div className="border border-primary p-8">
+              <Image className="mb-4 text-primary-500" src="/interiors.svg" height={36} width={36} alt="svg-icon prject management"/>
+              <h2 className="text-xl">Interior Design </h2>
+              <p className="text-sm">
+                Our construction team is skilled in executing structural designs with precision, ensuring durability, safety, and aesthetic appeal.
+              </p>
+            </div>
+            <div className="border border-primary p-8">
+              <Image className="mb-4 text-primary-500" src="/construction.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Constructions </h2>
+              <p className="text-sm">Our interior design experts work closely with clients to create customised interiors that reflect their preferences and meet their needs.
+
+</p>
+            </div>
+                        <div className="border border-primary p-8">
+              <Image className="mb-4 text-primary-500" src="/renovation.svg" height={36} width={36} alt="svg-icon prject management"/>
+
+              <h2 className="text-xl">Renovation </h2>
+              <p className="text-sm">
+                Whether it’s a home renovation, office refurbishment, or institutional upgrade, we provide comprehensive solutions tailored to our clients’ requirements.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-2 py-4">
+            <Link
               href="/services"
               className="px-6 py-3 bg-primary-500 text-white uppercase font-medium rounded hover:bg-primary-400 transition"
-            >
-              Read More
+              >
+              View Services
             </Link>
-
-          </div>
             </div>
 
+                      <div className="w-full mx-auto text-left bg-white text-gray-800 mt-12">
+                    <h2 className="text-2xl text-primary-600 text-center md:text-left">
+            Our Portfolio
+          </h2>
+
+          <div className="flex flex-wrap py-8 items-center text-center justify-center">
+            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
+            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
+            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
+            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
+          </div>
 
           </div>
+
+                      <Link
+              href="/projects"
+              className="px-6 py-3 bg-primary-500 text-white uppercase font-medium rounded hover:bg-primary-400 transition"
+              >
+              View More
+            </Link>
 
           <div className="mt-6 p-4 md:py-4 rounded flex flex-col gap-4 md:flex-row md:justify-between justify-between bg-secondary-600 text-white items-start md:items-center mt-12">
             <h3  className="text-xl px-4">
@@ -82,18 +96,19 @@ At Maria Construction and Interiors, project management is the cornerstone of ou
             </div>
           </div>
                   <div className="text-center mt-12">
-              <h2 className="text-xl">Appreciations for Construction & Interior Projects</h2>
+                    <h2 className="text-xl">Appreciations for Construction & Interior Projects</h2>
+                      <div className="flex flex-wrap flex-row justify-center items-center max-w-4xl mx-auto">
 
-              <div className="flex flex-wrap flex-row justify-center items-center max-w-xl mx-auto">
-
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/1-3.png" alt="Appreciation Photos" width={200} height={100} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/2_2-1.png" alt="Appreciation Photos" width={200} height={100} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/3_1.png" alt="Appreciation Photos" width={200} height={100} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/4_1-1.png" alt="Appreciation Photos" width={200} height={100} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
-                    <Image className="basis-1/2 md:basis-1/3 p-2" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
-             
-        </div>
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/1-3.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/2_2-1.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/2_2-1.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/3_1.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/3_1.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/4_1-1.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
+                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
+                    
+                      </div>
             </div>
 
           </div>

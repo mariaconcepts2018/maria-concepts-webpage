@@ -5,42 +5,43 @@ import Link from "next/link";
 
 export default function Hero({title}) {
   const images = [
-    "/kitchen-16_9.jpg",
+    // "/kitchen-16_9.jpg",
     "/livingroom-tv-16_9.png",
-    "/wallpanel-16_9.png",
+    // "/wallpanel-16_9.png",
   ];
 
   const [current, setCurrent] = useState(0);
 
   // Auto-slide every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [images.length]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrent((prev) => (prev + 1) % images.length);
+  //   }, 5000);
+  //   return () => clearInterval(timer);
+  // }, [images.length]);
 
   return (
     <section className="relative overflow-hidden">
       {/* Carousel container */}
       <div className="relative h-[80vh] w-full overflow-hidden">
         {/* Images */}
-        {images.map((src, index) => (
+        {/* {images.map((src, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
-          >
+          > */}
             <img
-              src={src}
-              alt={`Slide ${index + 1}`}
+              // src={src}
+              src={'/livingroom-tv-16_9.png'}
+              alt={`Slide ${ 1}`}
               className="w-full h-full object-cover"
             />
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black  opacity-60"></div>
-          </div>
-        ))}
+            <div className="absolute inset-0 bg-black  opacity-40"></div>
+          {/* </div> */}
+        {/* ))} */}
 
         {/* Hero content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
@@ -59,7 +60,7 @@ export default function Hero({title}) {
             Design That Speaks Quietly but Beautifully.
           </p>
 
-                    <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 lg-flex-row">
+                    <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 md:flex-row">
             <Link
               href="/contact"
               className="px-6 py-3 bg-primary-500 text-gray-100 uppercase font-medium rounded hover:bg-primary-400 transition"
@@ -80,7 +81,7 @@ export default function Hero({title}) {
         </div>
 
         {/* Carousel dots */}
-        <div className="absolute bottom-6 w-full flex justify-center space-x-3">
+        {/* <div className="absolute bottom-6 w-full flex justify-center space-x-3">
           {images.map((_, index) => (
             <button
               key={index}
@@ -90,7 +91,7 @@ export default function Hero({title}) {
               }`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-evenly  gap-8 pt-4 px-2 md:px-4">
 
 
-        <div className="p-4 text-center">
+        <div className="p-2 md:p-6 text-center">
 
         <div  className="bg-white text-gray-800 rounded p-8 w-full">
 
@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
         </div>
       {/* Footer container */}
-<div className="p-4 text-center">
+<div className="p-2 md:p-6 text-center">
 <GoogleMap />
 </div>
 <div className="text-left p-4 text-center">
@@ -80,13 +80,13 @@ export default function Footer() {
       <div className="flex flex-col justify-evenly items-left gap-4">
 
         <div>
-                <p>
+                <p className="text-xl">
 
              
         Phone Number
                 </p>
 
-       <p>
+       <p >
 
 
 +91 90 36 36 86 88
@@ -95,7 +95,7 @@ export default function Footer() {
 
         <div>
 
-<p>
+<p className="text-xl">
 Email Address
 </p>
 
@@ -106,11 +106,13 @@ contact@mariaconcepts.com
 
         <div>
 
-
+<p className="text-xl">
 Office Address
-        <br/>
+</p>
+<p>
 
 # 4, Opp. Podar International School, <br/> Basavanapura, Gottigere Post, <br/>Bengaluru - 560 083.
+</p>
         </div>
 
 </div>
