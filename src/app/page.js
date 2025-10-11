@@ -13,11 +13,34 @@ export default function MyApp({ Component, pageProps }) {
           <Hero/>
       <main className="bg-white text-gray-800 px-2 xl:px-0 py-12">
         <>
-          <div className="max-w-7xl mx-auto text-left bg-white text-gray-800 md:mt-12">
-                    <h2 className="text-2xl text-primary-600 text-center md:text-left">
+          <div className="max-w-7xl mx-auto text-left bg-white text-gray-800 md:mt-4">
+            <div className="flex flex-col md:flex-row">
+
+            <div className="md:basis-1/2 py-4 px-8">
+                      <h2 className="text-2xl text-primary-600 text-center md:text-left">
+            About Us
+          </h2>
+        <p className="pb-4">
+          Maria Concepts is a distinguished firm specialising in a wide range of services tailored to meet the diverse needs of our clients. With a steadfast commitment to excellence and innovation, we offer comprehensive solutions that elevate spaces and exceed expectations.
+        </p>
+        <p className="pb-8">
+          At Maria Concepts, project management is the cornerstone of our operations. Our experienced project managers oversee every aspect of construction projects, ensuring seamless execution and timely delivery. From inception to completion, we maintain a keen focus on meeting client requirements while adhering to the highest standards of quality and efficiency.
+        </p>
+
+              </div>
+            <div className="md:basis-1/2">
+              <Image src={'https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?_gl=1*z0avf*_ga*MTU0Mjk2NDQ5LjE3NTk1NTU0Njc.*_ga_8JE65Q40S6*czE3NjAxNzIyNjQkbzMkZzEkdDE3NjAxNzIyNzUkajQ5JGwwJGgw'}
+              height={300}
+              width={400}
+              className="w-full h-auto pr-4 py-8"
+              alt="About-us"
+              />  
+            </div>
+            </div>
+          <h2 className="text-2xl text-primary-600 text-center md:text-left">
             Our Services
           </h2>
-          <div className="flex flex-col md:flex-row justify-evenly gap-4 pt-8 pb-4">
+          <div className="flex flex-col md:flex-row justify-evenly gap-4 pt-4 pb-4">
 
             <div className="border border-primary p-8">
               <Image className="mb-4 text-primary-500" src="/project.svg" height={36} width={36} alt="svg-icon prject management"/>
@@ -97,17 +120,13 @@ export default function MyApp({ Component, pageProps }) {
           </div>
                   <div className="text-center mt-12">
                     <h2 className="text-xl">Appreciations for Construction & Interior Projects</h2>
-                      <div className="flex flex-wrap flex-row justify-center items-center max-w-4xl mx-auto">
-
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/1-3.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/2_2-1.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/2_2-1.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/3_1.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/3_1.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/4_1-1.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
-                            <Image className="p-2 basis-1/2 lg:basis-1/4" src="/7_1-1.png" alt="Appreciation Photos" width={200} height={100} />
-                    
+                      <div className="flex flex-wrap flex-row">
+                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/1-3.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/2_2-1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/3_1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/4_1-1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/7_1-1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/7_1-1.png" alt="Appreciation Photos" width={100} height={50} />                  
                       </div>
             </div>
 
