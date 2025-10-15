@@ -4,77 +4,68 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Home | Maria Concepts",
+  title: "Best Interiors and Constructions in Bangalore | Maria Concepts",
 };
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero/>
-      <main className="bg-white text-gray-800 px-2 xl:px-0 py-12">
-        <>
-          <div className="max-w-7xl mx-auto text-left bg-white text-gray-800 md:mt-4">
-            <div className="flex flex-col md:flex-row">
+      <main className="bg-white text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left bg-white text-gray-800">
+            <div>
 
-            <div className="md:basis-1/2 py-4 px-8">
-                      <h2 className="text-2xl text-primary-600 text-center md:text-left">
+                      <h2 className="text-2xl text-primary-600 text-center">
             About Us
           </h2>
-        <p className="pb-4">
-          Maria Concepts is a distinguished firm specialising in a wide range of services tailored to meet the diverse needs of our clients. With a steadfast commitment to excellence and innovation, we offer comprehensive solutions that elevate spaces and exceed expectations.
-        </p>
-        <p className="pb-8">
-          At Maria Concepts, project management is the cornerstone of our operations. Our experienced project managers oversee every aspect of construction projects, ensuring seamless execution and timely delivery. From inception to completion, we maintain a keen focus on meeting client requirements while adhering to the highest standards of quality and efficiency.
-        </p>
+          <p className="py-4 text-center md:text-left">
 
-              </div>
-            <div className="md:basis-1/2">
-              <Image src={'https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?_gl=1*z0avf*_ga*MTU0Mjk2NDQ5LjE3NTk1NTU0Njc.*_ga_8JE65Q40S6*czE3NjAxNzIyNjQkbzMkZzEkdDE3NjAxNzIyNzUkajQ5JGwwJGgw'}
-              height={300}
-              width={400}
-              className="w-full h-auto pr-4 py-8"
-              alt="About-us"
-              />  
+Maria Concepts is a leading interior design firm in Bangalore, offering a complete range of services designed to transform residential and commercial spaces. With a strong focus on innovation, quality, and attention to detail, we create interiors that blend functionality with aesthetic excellence.
+          </p>
+<p className="py-4 text-center md:text-left">
+At Maria Concepts, expert project management lies at the heart of every project. Our experienced team ensures smooth coordination from concept to completion — delivering every project on time and within budget. We take pride in meeting client expectations through transparent communication, superior craftsmanship, and unwavering commitment to quality.
+</p>
+              
             </div>
-            </div>
-          <h2 className="text-2xl text-primary-600 text-center md:text-left">
+          <h2 className="text-2xl text-primary-600 text-center mt-8">
             Our Services
           </h2>
           <div className="flex flex-col md:flex-row justify-evenly gap-4 pt-4 pb-4">
 
-            <div className="border border-primary p-8">
+            <div className="border border-primary p-4 md:p-8">
               <Image className="mb-4 text-primary-500" src="/project.svg" height={36} width={36} alt="svg-icon prject management"/>
-              <h2 className="text-xl">Project Management </h2>
-              <p className="text-sm">
-                Our experienced project managers ensure that projects are delivered on time, within budget, and according to the highest quality standards.
-              </p>
+                <h2 className="text-xl">Project Management</h2>
+                <p className="text-sm pt-2 md:pt-4">
+                  Our skilled project managers oversee every detail to ensure interiors are completed on time, within budget, and to the highest quality standards.
+                </p>
+
             </div>
-            <div className="border border-primary p-8">
+            <div className="border border-primary p-4 md:p-8">
               <Image className="mb-4 text-primary-500" src="/interiors.svg" height={36} width={36} alt="svg-icon prject management"/>
-              <h2 className="text-xl">Interior Design </h2>
-              <p className="text-sm">
-                Our construction team is skilled in executing structural designs with precision, ensuring durability, safety, and aesthetic appeal.
-              </p>
+                <h2 className="text-xl">Interior Design</h2>
+                <p className="text-sm pt-2 md:pt-4">
+                  Our interior design team in Bangalore creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.
+                </p>
             </div>
-            <div className="border border-primary p-8">
+            <div className="border border-primary p-4 md:p-8">
               <Image className="mb-4 text-primary-500" src="/construction.svg" height={36} width={36} alt="svg-icon prject management"/>
 
-              <h2 className="text-xl">Constructions </h2>
-              <p className="text-sm">Our interior design experts work closely with clients to create customised interiors that reflect their preferences and meet their needs.
-
+<h2 className="text-xl">Constructions</h2>
+<p className="text-sm pt-2 md:pt-4">
+  Our construction team delivers high-quality structures built with precision, combining strength, functionality, and modern design excellence.
 </p>
+
             </div>
-                        <div className="border border-primary p-8">
+                        <div className="border border-primary p-4 md:p-8">
               <Image className="mb-4 text-primary-500" src="/renovation.svg" height={36} width={36} alt="svg-icon prject management"/>
 
-              <h2 className="text-xl">Renovation </h2>
-              <p className="text-sm">
-                Whether it’s a home renovation, office refurbishment, or institutional upgrade, we provide comprehensive solutions tailored to our clients’ requirements.
+              <h2 className="text-xl">Renovation</h2>
+              <p className="text-sm pt-2 md:pt-4">
+                We provide expert renovation services, transforming homes, offices, and commercial spaces with modern designs and personalized interior solutions tailored to each client’s vision.
               </p>
             </div>
           </div>
 
-          <div className="mt-2 py-4">
+          <div className="mt-2 py-4 text-center">
             <Link
               href="/services"
               className="px-6 py-3 bg-primary-500 text-white uppercase font-medium rounded hover:bg-primary-400 transition"
@@ -83,18 +74,28 @@ export default function MyApp({ Component, pageProps }) {
             </Link>
             </div>
 
-                      <div className="w-full mx-auto text-left bg-white text-gray-800 mt-12">
-                    <h2 className="text-2xl text-primary-600 text-center md:text-left">
+          
+
+                      <div className="w-full mx-auto bg-white text-gray-800 text-center mt-12 py-8">
+          <h2 className="text-2xl text-primary-600 text-center">
             Our Portfolio
           </h2>
 
-          <div className="flex flex-wrap py-8 items-center text-center justify-center">
-            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
-            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
-            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
-            <div className="p-4 w-60 h-45 border mx-auto basis-1/2 md:basis-1/4"></div>
-          </div>
+          <div className="flex flex-wrap items-center justify-center mb-8">
+            <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/island-kitchen-edited.jpg" width={400} height={300} alt="island kitchen" />
+            </div>
+            <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/building.jpg" width={400} height={300} alt="building" />
+            </div>
+                        <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/kitchen-16_9.jpg" width={400} height={300} alt="building" />
+            </div>
+                        <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
+            <Image src="/office.jpg" width={400} height={300} alt="building" />
+            </div>
 
+            
           </div>
 
                       <Link
@@ -103,6 +104,22 @@ export default function MyApp({ Component, pageProps }) {
               >
               View More
             </Link>
+          </div>
+          <br/>
+          <br/>
+          <div className="w-full mx-auto text-left bg-white text-gray-800 mt-6">
+          <h2 className="text-2xl text-primary-600 text-center">
+            Why Choose Us?
+          </h2>
+
+          <div className="flex flex-wrap flex-col md:flex-row py-8 items-center text-center justify-evenly gap-8">
+            <div className="p-2 w-full md:p-4 md:basis-1/4 border mx-auto">Structural Warranty*</div>
+            <div className="p-2 w-full md:p-4 md:basis-1/4 border mx-auto">EMI Options</div>
+            <div className="p-2 w-full md:p-4 md:basis-1/4 border mx-auto">Trusted Quality</div>
+          </div>
+
+          </div>
+
 
           <div className="mt-6 p-4 md:py-4 rounded flex flex-col gap-4 md:flex-row md:justify-between justify-between bg-secondary-600 text-white items-start md:items-center mt-12">
             <h3  className="text-xl px-4">
@@ -120,18 +137,16 @@ export default function MyApp({ Component, pageProps }) {
           </div>
                   <div className="text-center mt-12">
                     <h2 className="text-xl">Appreciations for Construction & Interior Projects</h2>
-                      <div className="flex flex-wrap flex-row">
-                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/1-3.png" alt="Appreciation Photos" width={100} height={50} />
-                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/2_2-1.png" alt="Appreciation Photos" width={100} height={50} />
-                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/3_1.png" alt="Appreciation Photos" width={100} height={50} />
-                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/4_1-1.png" alt="Appreciation Photos" width={100} height={50} />
-                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/7_1-1.png" alt="Appreciation Photos" width={100} height={50} />
-                            <Image className="p-2 basis-1/2 md:basis-1/6" src="/7_1-1.png" alt="Appreciation Photos" width={100} height={50} />                  
+                      <div className="flex flex-wrap flex-row md:w-3/4 md:mx-auto">
+                            <Image className="p-2 basis-1/3 md:basis-1/6" src="/2_2-1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/3 md:basis-1/6" src="/1-3.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/3 md:basis-1/6" src="/3_1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/3 md:basis-1/6" src="/4_1-1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/3 md:basis-1/6" src="/7_1-1.png" alt="Appreciation Photos" width={100} height={50} />
+                            <Image className="p-2 basis-1/3 md:basis-1/6" src="/7_1-1.png" alt="Appreciation Photos" width={100} height={50} />                  
                       </div>
             </div>
 
-          </div>
-        </>
       </main>
     </>
   );

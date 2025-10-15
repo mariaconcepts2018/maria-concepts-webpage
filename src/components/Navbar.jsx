@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import Image from "next/image";
 
 
 export default function Navbar() {
@@ -11,13 +12,15 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center ">
+        <div className="flex justify-between h-24 items-center ">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-gray-800 text-center flex flex-col">
-            <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
+
+          <Image src="/logo.png" alt="logo" width={240} height={160} className="w-25 h-auto" />
+            {/* <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
             <small className="text-sm text-center logo-2">
             CONCEPTS
-            </small>
+            </small> */}
           </Link>
 
           {/* Desktop Menu */}
@@ -31,8 +34,8 @@ export default function Navbar() {
             <Link href="/services" className={`text-secondary-700 ${(pathname === '/services') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               Services
             </Link>
-            <Link href="/projects" className={`text-secondary-700 ${(pathname === '/projects') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
-              Projects
+            <Link href="/gallery" className={`text-secondary-700 ${(pathname === '/gallery') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
+              Gallery
             </Link>
             <Link href="/contact" className={`text-secondary-700 ${(pathname === '/contact') && 'border-b'} font-semibold hover:text-primary-500 hover:border-primary-500 uppercase transition`}>
               Contact

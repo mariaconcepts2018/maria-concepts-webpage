@@ -65,22 +65,15 @@ export default function MyApp() {
         <>
           <Hero title={'Our Services'}/>
 
-          <div className="max-w-7xl p-6 mx-auto text-left bg-white text-gray-800 mt-4 flex flex-col gap-4">
+          <div className="max-w-7xl p-6 mx-auto text-left bg-white text-gray-800 mt-4 flex flex-row flex-wrap gap-4">
 
           {data && data.map((item, index) => (
             
-                <div key={item.id} className={`flex flex-col ${index % 2 === 0? 'md:flex-row': 'md:flex-row-reverse'} border-b border-primary-600 py-8`}>
-                    <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
-                    <div className="p-8">
-                        <div>
-                            <h1  className="text-2xl text-primary-600">
+                <div key={item.id} className={` py-8`}>
+                            <h1  className="text-2xl text-primary-600 py-2">
                                 {item.title}
                             </h1>
-                            <p>
-                                {item.content}
-                            </p>
-                        </div>
-                    </div>
+                    <Image width={400} height={300} src={item.imgUrl} alt={item.title}/>
                 </div>
           ))}
 
