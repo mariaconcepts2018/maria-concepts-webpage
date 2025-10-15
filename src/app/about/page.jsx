@@ -9,25 +9,25 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero title={'About Us'}/>
-      <main className="bg-gray-100 text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left text-gray-800">
+      <main className="bg-secondary-100 text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left text-gray-800">
         <>
 
                                 <h2 className="text-3xl text-center mt-12 text-primary-500">
             About Us
           </h2>
 
-          <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row max-w-6xl mx-auto py-8 gap-8">
 
-            <div className="basis-1/2 p-4">
-              <Image src="https://media.istockphoto.com/id/2094337676/photo/diverse-team-working-together-in-modern-co-working-space.jpg?s=2048x2048&w=is&k=20&c=laH1UL7RxM9mqD9TSOYbAFbHBO3RokKTz3O1arUJ0_0="
+            <div className="basis-1/2">
+              <Image src="/team.jpg"
                 width={800}
                 height ={600}
                 alt="Our team"
-                className="w-full h-auto"
+                className="w-auto h-full object-cover object-center border border-secondary"
               />
             </div>
 
-            <div className="basis-1/2 p-4">
+            <div className="basis-1/2">
 
             <p className="py-2">
 
@@ -52,7 +52,7 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
 </div>
           
 
-          <div className="max-w-7xl p-6 mx-auto bg-white text-gray-800 mt-4">
+          <div className="max-w-7xl p-6 mx-auto text-gray-800 mt-4">
 
 
  <div className="flex flex-col md:flex-row justify-center gap-8">

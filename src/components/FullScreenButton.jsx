@@ -22,7 +22,7 @@ export default function FullScreenButton({src, alt, children }) {
           onClick={() => setIsOpen(false)}
         >
           {/* Modal Content */}
-          <Image className="z-100 h-full w-auto" width={800} height={600} src={src} alt={alt}/>
+          <Image className="z-100 h-full w-auto" width={1600} height={1200} src={src} alt={alt}/>
           
         </div>
       )}

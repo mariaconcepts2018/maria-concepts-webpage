@@ -34,17 +34,18 @@ export default function Hero({title}) {
           > */}
             <img
               // src={src}
-              src={'/livingroom-tv-16_9.png'}
+              src={'/hero.webp'}
               alt={`Slide ${ 1}`}
               className="w-full h-full object-cover"
             />
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black  opacity-40"></div>
+            <div className="absolute inset-0 bg-black opacity-60"></div>
           {/* </div> */}
         {/* ))} */}
 
         {/* Hero content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
+            
           {title?
           <>
           <h1 className="text-4xl font-extrabold sm:text-5xl lg:text-6xl">
@@ -64,13 +65,13 @@ export default function Hero({title}) {
             <Link
               href="/contact"
               className="px-6 py-3 bg-primary-500 text-gray-100 uppercase font-medium rounded hover:bg-primary-400 transition"
-            >
+              >
               Book Your Consultation
             </Link>
             <Link
               href="/services"
               className="px-6 py-3 border border-white text-white uppercase font-medium rounded hover:bg-white hover:text-secondary-600 transition"
-            >
+              >
               Learn More
             </Link>
           </div>
