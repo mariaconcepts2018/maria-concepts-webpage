@@ -8,9 +8,9 @@ export const metadata = {
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <main className="bg-white text-gray-800">
-        <>
           <Hero title={'About Us'}/>
+      <main className="bg-gray-100 text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left text-gray-800">
+        <>
 
                                 <h2 className="text-3xl text-center mt-12 text-primary-500">
             About Us

@@ -47,11 +47,11 @@ export default function MyApp() {
 
   return (
     <>
-      <main className="bg-white text-gray-800">
-        <>
           <Hero title={'Projects'}/>
+      <main className="bg-gray-100 text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left text-gray-800">
+        <>
 
-          <div className="w-1/2 p-6 mx-auto bg-white text-gray-800 mt-4 flex flex-col gap-4">
+          <div className="flex flex-col justify-center gap-4 mx-auto">
 
           {projects.map((project, index) => (
 

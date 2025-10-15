@@ -61,11 +61,10 @@ export default function MyApp() {
 
   return (
     <>
-      <main className="bg-white text-gray-800">
-        <>
           <Hero title={'Our Services'}/>
+      <main className="bg-gray-100 text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-gray-800">
 
-          <div className="max-w-7xl p-6 mx-auto text-left bg-white text-gray-800 mt-4 flex flex-row flex-wrap gap-4">
+          <div className="flex flex-row flex-wrap justify-center gap-4">
 
           {data && data.map((item, index) => (
             
@@ -83,7 +82,6 @@ export default function MyApp() {
           
           </div>
 
-        </>
       </main>
     </>
   );

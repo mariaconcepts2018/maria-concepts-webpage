@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero/>
-      <main className="bg-white text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left bg-white text-gray-800">
+      <main className="text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left bg-gray-100 text-gray-800">
             <div>
 
                       <h2 className="text-2xl text-primary-600 text-center">
@@ -26,6 +26,7 @@ At Maria Concepts, expert project management lies at the heart of every project.
 </p>
               
             </div>
+
           <h2 className="text-2xl text-primary-600 text-center mt-8">
             Our Services
           </h2>
@@ -83,16 +84,16 @@ At Maria Concepts, expert project management lies at the heart of every project.
 
           <div className="flex flex-wrap items-center justify-center mb-8">
             <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image src="/island-kitchen-edited.jpg" width={400} height={300} alt="island kitchen" />
+            <Image className="rounded border border-secondary-400 p-1" src="/island-kitchen-edited.jpg" width={400} height={300} alt="island kitchen" />
             </div>
             <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image src="/building.jpg" width={400} height={300} alt="building" />
+            <Image className="rounded border border-secondary-400 p-1" src="/building.jpg" width={400} height={300} alt="building" />
             </div>
                         <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image src="/kitchen-16_9.jpg" width={400} height={300} alt="building" />
+            <Image className="rounded border border-secondary-400 p-1" src="/kitchen-16_9.jpg" width={400} height={300} alt="building" />
             </div>
                         <div className="p-1 md:p-4 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image src="/office.jpg" width={400} height={300} alt="building" />
+            <Image className="rounded border border-secondary-400 p-1" src="/office.jpg" width={400} height={300} alt="building" />
             </div>
 
             
