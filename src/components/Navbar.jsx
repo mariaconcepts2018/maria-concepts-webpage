@@ -86,6 +86,9 @@ export default function Navbar() {
             </Link>
             <Link href="/services" className="text-gray-700 hover:text-primary-600 font-semibold">
               Services
+            </Link>            
+            <Link href="/gallery" className="text-gray-700 hover:text-primary-600 font-semibold">
+              Gallery
             </Link>
             <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-semibold">
               Contact
