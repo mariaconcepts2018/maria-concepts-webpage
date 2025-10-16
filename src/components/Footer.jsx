@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-evenly items-center  gap-8 pt-4 px-2 md:px-4">
 
 
-        <div className="p-2 md:p-6 text-center bg-gray-100 text-gray-900 h-full">
+        <div className="rounded p-10 text-center bg-secondary-100 text-gray-900 h-full">
 
 
           <Image src="/logo.png" alt="logo" width={240} height={160} className="w-25 h-auto mx-auto" />

@@ -10,7 +10,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-secondary-100 shadow-md sticky top-0 z-50 relative">
+    <nav className="bg-secondary-100 shadow-md sticky top-0 z-50 relative bg-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-24 items-center ">
           {/* Logo */}
@@ -76,7 +76,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute w-full md:hidden bg-white border-t border-gray-200">
+        <div className="absolute w-full md:hidden bg-secondary-100 border-t border-secondary-600">
           <div className="flex flex-col space-y-2 p-4">
             <Link href="/" className="text-gray-700 hover:text-primary-600 font-semibold">
               Home

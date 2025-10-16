@@ -2,11 +2,11 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function FullScreenButton({src, alt, children }) {
+export default function FullScreenButton({src, alt, className, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <div className={className}>
       {/* Open Modal Button */}
       <button
         onClick={() => setIsOpen(true)}

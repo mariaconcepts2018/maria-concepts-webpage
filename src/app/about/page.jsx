@@ -52,7 +52,6 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
 </div>
           
 
-          <div className="max-w-7xl p-6 mx-auto text-gray-800 mt-4">
 
 
  <div className="flex flex-col md:flex-row justify-center gap-8">
@@ -101,7 +100,6 @@ At Maria Concepts, our mission is to deliver comprehensive and tailored construc
  </div>
  <br/>
           
-          </div>
         </>
       </main>
     </>

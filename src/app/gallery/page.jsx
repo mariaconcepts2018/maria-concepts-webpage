@@ -116,11 +116,11 @@ export default function MyApp() {
 
             
             <div key={index}>
-                    <h1 className="text-2xl text-primary-600">{project}</h1>
-                    <div className="flex flex-row gap-4 flex-wrap">
+                    <h1 className="text-2xl text-primary-600 text-center py-8">{project}</h1>
+                    <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-evenly">
                         {data && data.filter((i, index) => i.project === project).map((item, i) => (
-                        <FullScreenButton key={i} src={item.imgUrl} alt={item.title} >
-                          <Image className="w-50 h-50 object-cover border border-secondary"  width={400} height={300} src={item.imgUrl} alt={item.title}/>
+                        <FullScreenButton className={'basis-1/2 md:basis-1/6'} key={i} src={item.imgUrl} alt={item.title} >
+                          <Image className="max-w-80 h-80 object-cover border border-secondary"  width={400} height={300} src={item.imgUrl} alt={item.title}/>
                         </FullScreenButton>
                         ))}
                     </div>

@@ -51,7 +51,7 @@ export default function ContactForm({ Component, pageProps }) {
   return (
     <>
 
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto md:p-6 bg-white">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto md:p-6">
       <h2 className="text-3xl font-semibold mb-4 text-center text-primary-500">Get In Touch</h2>
 
       <div className="flex flex-row flex-wrap justify-around">
@@ -64,7 +64,7 @@ export default function ContactForm({ Component, pageProps }) {
           name="name"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+          className={`mt-1 block w-full rounded border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.name ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
           aria-invalid={errors.name ? "true" : "false"}
@@ -80,7 +80,7 @@ export default function ContactForm({ Component, pageProps }) {
           name="phone"
           value={form.phone}
           onChange={(e) => setForm({ ...form, phone: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+          className={`mt-1 block w-full rounded border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.phone ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
           aria-invalid={errors.phone ? "true" : "false"}
@@ -96,7 +96,7 @@ export default function ContactForm({ Component, pageProps }) {
           name="email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+          className={`mt-1 block w-full rounded border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.email ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
           aria-invalid={errors.email ? "true" : "false"}
@@ -129,7 +129,7 @@ export default function ContactForm({ Component, pageProps }) {
         id="service"
         name="service"
         defaultValue={""}
-        className={`mt-1 block w-full rounded border px-3 py-2.5 bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+        className={`mt-1 block w-full rounded border px-3 py-2.5 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.budget ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
         >
@@ -148,7 +148,7 @@ export default function ContactForm({ Component, pageProps }) {
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
           rows="5"
-          className={`mt-1 block w-full rounded border px-3 py-2 bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+          className={`mt-1 block w-full rounded border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
             errors.message ? "border-red-500 focus:ring-red-200" : "border-none focus:ring-secondary-200"
           }`}
           aria-invalid={errors.message ? "true" : "false"}

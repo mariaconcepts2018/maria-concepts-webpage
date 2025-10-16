@@ -97,16 +97,16 @@ At Maria Concepts, expert project management lies at the heart of every project.
 
           <div className="flex flex-col md:flex-row md:flex-nowrap items-center justify-center mb-8 gap-8">
             <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded" src="/island-kitchen-edited.jpg" width={400} height={300} alt="island kitchen" />
+            <Image className="rounded" src="/kitchen.jpg" width={400} height={300} alt="island kitchen" />
             </div>
             <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded" src="/building.jpg" width={400} height={300} alt="building" />
+            <Image className="rounded" src="/library.jpg" width={400} height={300} alt="building" />
             </div>
                         <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded" src="/kitchen-16_9.jpg" width={400} height={300} alt="building" />
+            <Image className="rounded" src="/office.jpg" width={400} height={300} alt="building" />
             </div>
                         <div className="rounded border border-secondary-400 p-1 w-auto h-auto mx-auto basis-1/2 md:basis-1/4">
-            <Image className="rounded"  src="/office.jpg" width={400} height={300} alt="building" />
+            <Image className="rounded"  src="/lobby.jpg" width={400} height={300} alt="building" />
             </div>
 
             
