@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Fugaz_One } from 
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import WhatsApp from "@/components/WhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,11 +47,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${fugazOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
+        className={`relative ${geistSans.variable} ${geistMono.variable} ${fugazOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
       >
       <Navbar />
         {children}
       <Footer/>
+      <WhatsApp />
       </body>
     </html>
   );

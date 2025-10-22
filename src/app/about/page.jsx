@@ -1,3 +1,4 @@
+import GoogleMap from "@/components/GoogleMap";
 import Hero from "@/components/Hero";
 import Image from "next/image";
 
@@ -18,12 +19,12 @@ export default function MyApp({ Component, pageProps }) {
 
           <div className="flex flex-col md:flex-row max-w-6xl mx-auto py-8 gap-8">
 
-            <div className="basis-1/2">
+            <div className="basis-1/2 py-4">
               <Image src="/team.jpg"
                 width={800}
                 height ={600}
                 alt="Our team"
-                className="w-auto h-full object-cover object-center border border-secondary"
+                className="w-full h-auto object-cover object-center border border-secondary"
               />
             </div>
 
@@ -51,10 +52,15 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
             </div>
 </div>
           
+<div className="p-2 md:p-6 text-center md:w-1/2 mx-auto">
 
+                                <h2 className="text-3xl text-center mt-12 text-primary-500 my-8">
+            Locate Us
+          </h2>
+<GoogleMap />
+</div>
 
-
- <div className="flex flex-col md:flex-row justify-center gap-8">
+ <div className="flex flex-col md:flex-row justify-center gap-8 mt-16">
     <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
 
       <svg className="mx-auto text-xl text-secondary-500 m-4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 472 384">

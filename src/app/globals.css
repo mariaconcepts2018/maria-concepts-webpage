@@ -86,6 +86,15 @@ svg{
     width: 100%;
   height: auto;
   max-width: 2rem; /* optional */
+
+}
+
+svg.logo-xl{
+  max-width: 2.5rem; /* optional */
+}
+
+svg.logo-sm{
+  max-width: 1.5rem; /* optional */
 }
 
 ul.arrow{
