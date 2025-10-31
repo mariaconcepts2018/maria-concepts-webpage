@@ -1,9 +1,25 @@
-'use client'
+"use client"
 import { useState } from "react";
+
+const services = [
+    {
+    title: "Interiors",
+    imgurl: "/interiordesign.svg"
+  },
+    {
+    title: "Construction",
+    imgurl: "/construction.svg"
+  },
+    {
+    title: "Renovation",
+    imgurl: "/renovation.svg"
+  }
+]
+
 
 export default function ContactForm({ Component, pageProps }) {
     
-  const [form, setForm] = useState({ name: "", email: "", message: "", phone: "", budget:"" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", phone: "", service:"" });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 
@@ -12,7 +28,7 @@ export default function ContactForm({ Component, pageProps }) {
     if (!form.name.trim()) e.name = "Name is required.";
     if (!form.email.trim()) e.email = "Email is required.";
     if (!form.phone.trim()) e.phone = "Phone Number is required.";
-    if (!form.budget.trim()) e.budget = "Project Budget is required.";
+    if (!form.service.trim()) e.service = "Project type is required.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Enter a valid email.";
     return e;
@@ -105,7 +121,7 @@ export default function ContactForm({ Component, pageProps }) {
       </label>
 
       <label htmlFor="service" className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Select Project Budget</span>
+        <span className="text-sm">Project Budget &#40;optional&#41;</span>
 
       <select
         id="service"
@@ -122,6 +138,32 @@ export default function ContactForm({ Component, pageProps }) {
         <option value="4">More than 50 Lakhs</option>
       </select>
         </label>
+
+      <label className="block mb-4 basis-full p-2">
+        <span className="text-sm">Project Type</span>
+
+        <div className="flex flex-row gap-2">
+
+{services.map((item, index) => 
+
+<button type="button" key={index}
+          onClick={(e) => setForm({ ...form, service: item.title })}
+
+className={`border ${form.service === item.title? 'border-secondary-600 ': 'border-none'} cursor-pointer shadow-md flex flex-col justify-evenly bg-gray-100 border border-secondary-200 rounded w-full mt-2`}>
+    <img src={item.imgurl} className="md:w-8 w-6 pt-4 mx-auto" alt="card-image" />
+  <div className = "p-2">
+    <p className="mb-2 text-primary-600 text-sm md:text-lg text-center font-semibold">
+      {item.title}
+    </p>
+  </div>
+</button>  
+
+)}
+
+</div>
+        {errors.service && <p id="phone-error" className="mt-1 text-xs text-red-600">{errors.service}</p>}
+
+      </label>
 
       <label className="block mb-4 basis-full p-2">
         <span className="text-sm">Message &#40;optional&#41;</span>

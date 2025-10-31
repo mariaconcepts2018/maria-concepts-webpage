@@ -42,7 +42,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="p-2">
 
-          <Image src="/logo.png" alt="logo" width={120} height={180} className="w-24 md:w-32 h-auto md:py-2 drop-shadow-4xl" />
+          <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_200/v1761633929/logo_nkdofb.avif" 
+          alt="logo" width={137.7} height={104.1} className="w-25 md:w-30 md:py-2 h-full drop-shadow-4xl" />
             {/* <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
             <small className="text-sm text-center logo-2">
             CONCEPTS

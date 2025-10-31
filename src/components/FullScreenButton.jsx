@@ -22,7 +22,11 @@ export default function FullScreenButton({src, alt, className, children }) {
           onClick={() => setIsOpen(false)}
         >
           {/* Modal Content */}
-          <Image className="z-100 h-full w-auto" width={1600} height={1200} src={src} alt={alt}/>
+          <Image className="z-100 md:h-full md:w-auto w-full h-auto" width={1600} height={1200}
+
+          src={`https://res.cloudinary.com/dylffjde8/image/upload/c_fill,w_1080/${src}.avif`}
+          
+          alt={alt}/>
           
         </div>
       )}

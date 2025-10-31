@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero title={'About Us'}/>
-      <main className="bg-secondary-100 text-gray-800 px-4 xl:px-8 my-4 py-12 mx-auto max-w-7xl text-left text-gray-800">
+      <main className="bg-gray-100 text-gray-800 px-4 xl:px-8 py-12 mx-auto text-left text-gray-800">
         <>
 
                                 <h2 className="text-3xl text-center mt-12 text-primary-500">
@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
           <div className="flex flex-col md:flex-row max-w-6xl mx-auto py-8 gap-8">
 
             <div className="basis-1/2 py-4">
-              <Image src="/team.jpg"
+              <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761721468/team_nbrl8f.avif"
                 width={800}
                 height ={600}
                 alt="Our team"
@@ -43,7 +43,7 @@ Our expert team manages every project with precision — ensuring seamless execu
             </p>
 <p className="py-2">
 
-From building construction to interior design, renovation, and custom furniture, we create spaces that reflect our clients’ vision while maintaining the highest standards of durability and aesthetics.
+From building construction to interior design, renovation, and custom furniture, we create spaces that reflect our clients’ vision while maintaining the highest standards of durability and aesthetics. We have more that 10 years of experience in the industry and we have undertakken 300+ projeects.
 </p>
 <p className="py-2">
 
@@ -60,7 +60,7 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
 <GoogleMap />
 </div>
 
- <div className="flex flex-col md:flex-row justify-center gap-8 mt-16">
+ <div className="flex flex-col md:flex-row justify-center gap-8 mt-16 max-w-7xl mx-auto">
     <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
 
       <svg className="mx-auto text-xl text-secondary-500 m-4" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 472 384">

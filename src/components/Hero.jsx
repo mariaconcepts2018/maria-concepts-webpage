@@ -10,15 +10,11 @@ export default function Hero({title}) {
     // "/wallpanel-16_9.png",
   ];
 
-  const [current, setCurrent] = useState(0);
-
+  const [isMobile, setIsMobile] = useState(true);
   // Auto-slide every 5 seconds
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrent((prev) => (prev + 1) % images.length);
-  //   }, 5000);
-  //   return () => clearInterval(timer);
-  // }, [images.length]);
+  useEffect(() => {
+    setIsMobile(window.matchMedia("(max-width: 600px)").matches)
+  }, []);
 
   return (
     <section className="relative overflow-hidden">
@@ -34,9 +30,10 @@ export default function Hero({title}) {
           > */}
             <img
               // src={src}
-              src={'/hero.webp'}
+              src={`https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp`}
               alt={`Slide ${ 1}`}
               className="w-full h-full object-cover"
+              fetchPriority="high"
             />
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black opacity-60"></div>
