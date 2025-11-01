@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from "next/image";
 import { useEffect } from "react";
+import Logo from "./Logo";
 
 
 export default function Navbar() {
@@ -42,8 +43,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="p-2">
 
-          <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_200/v1761633929/logo_nkdofb.avif" 
-          alt="logo" width={137.7} height={104.1} className="w-25 md:w-30 md:py-2 h-full drop-shadow-4xl" />
+          <Logo className="w-25 md:w-30 h-auto drop-shadow-4xl" />
+
+          {/* <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_200/v1761633929/logo_nkdofb.avif" 
+          alt="logo" width={137.7} height={104.1} className="w-25 md:w-30 md:py-2 h-full drop-shadow-4xl" /> */}
             {/* <span className="logo text-2xl md-text-4xl text-center">MARIA</span>
             <small className="text-sm text-center logo-2">
             CONCEPTS
@@ -69,7 +72,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-100 hover:text-primary-600 focus:outline-none"
+            className="md:hidden text-neutral-100 hover:text-primary-600 focus:outline-none"
             onClick={() => {setIsOpen(!isOpen)
 
               setHidden(true)
@@ -116,35 +119,35 @@ setHidden(false)
               {
                 setIsOpen(false)
                 setHidden(false)
-                }} className={`${(pathname === '/') ? 'text-gray-400': 'text-gray-700'} text-center hover:text-primary-600 font-semibold`}>
+                }} className={`${(pathname === '/') ? 'text-neutral-400': 'text-neutral-700'} text-center hover:text-primary-600 font-semibold`}>
               Home
             </Link>
             <Link href="/about" onClick={() => 
               {
                 setIsOpen(false)
                 setHidden(false)
-                }} className={`${(pathname === '/about') ? 'text-gray-400': 'text-gray-700'} text-center hover:text-primary-600 font-semibold`}>
+                }} className={`${(pathname === '/about') ? 'text-neutral-400': 'text-neutral-700'} text-center hover:text-primary-600 font-semibold`}>
               About
             </Link>
             <Link href="/services" onClick={() => 
               {
                 setIsOpen(false)
                 setHidden(false)
-                }} className={`${(pathname === '/services') ? 'text-gray-400': 'text-gray-700'} text-center hover:text-primary-600 font-semibold`}>
+                }} className={`${(pathname === '/services') ? 'text-neutral-400': 'text-neutral-700'} text-center hover:text-primary-600 font-semibold`}>
               Services
             </Link>            
             <Link href="/gallery" onClick={() => 
               {
                 setIsOpen(false)
                 setHidden(false)
-                }} className={`${(pathname === '/gallery') ? 'text-gray-400': 'text-gray-700'} text-center hover:text-primary-600 font-semibold`}>
+                }} className={`${(pathname === '/gallery') ? 'text-neutral-400': 'text-neutral-700'} text-center hover:text-primary-600 font-semibold`}>
               Gallery
             </Link>
             <Link href="/contact" onClick={() => 
               {
                 setIsOpen(false)
                 setHidden(false)
-                }} className={`${(pathname === '/contact') ? 'text-gray-400': 'text-gray-700'} text-center hover:text-primary-600 font-semibold`}>
+                }} className={`${(pathname === '/contact') ? 'text-neutral-400': 'text-neutral-700'} text-center hover:text-primary-600 font-semibold`}>
               Contact
             </Link>
 

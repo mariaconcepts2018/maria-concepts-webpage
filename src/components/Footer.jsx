@@ -1,7 +1,7 @@
 "use client";
-
-import Image from "next/image";
 import Link from "next/link";
+import { Email, Location, Phone } from "./Icons";
+import Logo from "./Logo";
 
 export default function Footer() {
 
@@ -10,18 +10,17 @@ export default function Footer() {
   <div className="w-full px-8 mx-auto max-w-7xl">
     <div className="grid justify-between grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
         <div>
+          <Logo className="w-25 md:w-30 h-auto drop-shadow-4xl mx-auto md:mr-auto md:ml-0 py-6" />
 
-           <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_200/v1761633929/logo_nkdofb.avif" alt="logo" width={137.7} height={104.1} className="w-32 h-auto mx-auto md:mr-auto md:ml-0 py-6" />
 
         <div className="flex gap-4 items-start">
-            <svg className="logo-sm" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 20 20">
-                <path fill="currentColor" d="M20 18.35V19a1 1 0 0 1-1 1h-2A17 17 0 0 1 0 3V1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4c0 .56-.31 1.31-.7 1.7L3.16 8.84c1.52 3.6 4.4 6.48 8 8l2.12-2.12c.4-.4 1.15-.71 1.7-.71H19a1 1 0 0 1 .99 1v3.35z"/>
-            </svg>
+<Phone className="w-8 text-neutral"/>
             <p>+91 90 36 36 86 88</p>
         </div>
 <br/>
         <div className="flex gap-4 items-start">
-            <svg className="logo-sm"xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 1360 1000"><path fill="#000000" d="M105 5h1152q43 0 74 31t31 74v785q0 44-31 74.5t-74 30.5H105q-43 0-74-30.5T0 895V110q0-43 31-74t74-31zm69 157l507 423l507-423H174zm-17 681h1048V285L711 697h-61L157 285v558z"/></svg>
+<Email className="w-8 text-neutral"/>
+
             <p>
             contact@mariaconcepts.com
             </p>
@@ -29,9 +28,8 @@ export default function Footer() {
 <br/>
 
         <div className="flex gap-4 items-start">
-            <svg className="logo-sm" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M12 3a7 7 0 0 0-7 7c0 2.862 1.782 5.623 3.738 7.762A26.158 26.158 0 0 0 12 20.758a26.14 26.14 0 0 0 3.262-2.994C17.218 15.623 19 12.863 19 10a7 7 0 0 0-7-7Zm0 20.214l-.567-.39l-.003-.002l-.006-.005l-.02-.014l-.075-.053a25.34 25.34 0 0 1-1.214-.94a28.157 28.157 0 0 1-2.853-2.698C5.218 16.876 3 13.637 3 10a9 9 0 0 1 18 0c0 3.637-2.218 6.877-4.262 9.112a28.145 28.145 0 0 1-3.796 3.44a16.794 16.794 0 0 1-.345.251l-.021.014l-.006.005l-.002.001l-.568.39ZM12 8a2 2 0 1 0 0 4a2 2 0 0 0 0-4Zm-4 2a4 4 0 1 1 8 0a4 4 0 0 1-8 0Z"/>
-            </svg>
+<Location className="w-8 text-neutral"/>
+
             <p>
 
             # 4, Opp. Podar International School, <br/> Basavanapura, Gottigere Post, <br/>Off Bannerghatta Road, <br/>Bengaluru - 560 083.

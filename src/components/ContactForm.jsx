@@ -1,18 +1,19 @@
 "use client"
 import { useState } from "react";
+import { Building, Tools, Wardrobe01 } from "./Icons";
 
 const services = [
     {
     title: "Interiors",
-    imgurl: "/interiordesign.svg"
+    Icon: Wardrobe01
   },
     {
     title: "Construction",
-    imgurl: "/construction.svg"
+    Icon: Building
   },
     {
     title: "Renovation",
-    imgurl: "/renovation.svg"
+    Icon: Tools
   }
 ]
 
@@ -79,7 +80,7 @@ export default function ContactForm({ Component, pageProps }) {
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
           className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.name ? "border-red-500 focus:ring-red-200" : "border-gray-500 focus:ring-secondary-200"
+            errors.name ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
           }`}
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
@@ -95,7 +96,7 @@ export default function ContactForm({ Component, pageProps }) {
           value={form.phone}
           onChange={(e) => setForm({ ...form, phone: e.target.value })}
           className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.phone ? "border-red-500 focus:ring-red-200" : "border-gray-500 focus:ring-secondary-200"
+            errors.phone ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
           }`}
           aria-invalid={errors.phone ? "true" : "false"}
           aria-describedby={errors.phone ? "phone-error" : undefined}
@@ -111,7 +112,7 @@ export default function ContactForm({ Component, pageProps }) {
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
           className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.email ? "border-red-500 focus:ring-red-200" : "border-gray-500 focus:ring-secondary-200"
+            errors.email ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
           }`}
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
@@ -128,7 +129,7 @@ export default function ContactForm({ Component, pageProps }) {
         name="service"
         defaultValue={""}
         className={`mt-1 block w-full rounded border px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.budget ? "border-red-500 focus:ring-red-200" : "border-gray-500 focus:ring-secondary-200"
+            errors.budget ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
           }`}
         >
         <option value="" hidden={true} disabled={true} className="buton cursor-not-allowed">Choose an option</option>
@@ -149,8 +150,8 @@ export default function ContactForm({ Component, pageProps }) {
 <button type="button" key={index}
           onClick={(e) => setForm({ ...form, service: item.title })}
 
-className={`border ${form.service === item.title? 'border-secondary-600 ': 'border-none'} cursor-pointer shadow-md flex flex-col justify-evenly bg-gray-100 border border-secondary-200 rounded w-full mt-2`}>
-    <img src={item.imgurl} className="md:w-8 w-6 pt-4 mx-auto" alt="card-image" />
+className={`${form.service === item.title? 'ring ring-secondary-600 ': 'ring-none'} cursor-pointer shadow-md flex flex-col justify-evenly bg-neutral-200 rounded w-full mt-2 pt-4`}>
+    <item.Icon className="w-8 mx-auto text-secondary"/>
   <div className = "p-2">
     <p className="mb-2 text-primary-600 text-sm md:text-lg text-center font-semibold">
       {item.title}
@@ -172,7 +173,7 @@ className={`border ${form.service === item.title? 'border-secondary-600 ': 'bord
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
           rows="5"
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 "border-gray-500 focus:ring-secondary-200`}
+          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 "border-neutral-500 focus:ring-secondary-200`}
           />
       </label>
 

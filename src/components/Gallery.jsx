@@ -104,10 +104,10 @@ export default function Gallery() {
     <>
 <div className="max-w-4xl mx-auto">
   <div className="relative right-0">
-    <ul className="relative flex flex-wrap gap-4 px-1.5 py-1.5 list-none rounded-md bg-gray-100" data-tabs="tabs" role="list">
+    <ul className="relative flex flex-wrap gap-4 px-1.5 py-1.5 list-none rounded-md bg-neutral-100" data-tabs="tabs" role="list">
       {projects.map((item, index) => (
 
-      <li key={index} className={`z-30 flex-auto text-center rounded transition ${selected === item? 'bg-primary text-gray-100': 'bg-secondary-100 text-gray-800'} `}>
+      <li key={index} className={`z-30 flex-auto text-center rounded transition ${selected === item? 'bg-primary text-neutral-100': 'bg-secondary-100 text-neutral-800'} `}>
         <button className="z-30 flex items-center justify-center w-full shadow-md px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-md cursor-pointer bg-inherit"
         onClick={(e) => setSelected(item)}
         data-tab-target="" role="tab" aria-selected="true" aria-controls="dashboard">

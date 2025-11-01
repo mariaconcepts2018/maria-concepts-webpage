@@ -30,7 +30,7 @@ export default function Hero({title}) {
           > */}
             <img
               // src={src}
-              src={`https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp`}
+              src={`https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761220154/hero_gqdsnr.avif`}
               alt={`Slide ${ 1}`}
               className="w-full h-full object-cover"
               fetchPriority="high"
@@ -61,7 +61,7 @@ export default function Hero({title}) {
                     <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 md:flex-row">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-primary-500 text-gray-100 uppercase font-medium rounded hover:bg-primary-400 transition"
+              className="px-6 py-3 bg-primary-500 text-neutral-100 uppercase font-medium rounded hover:bg-primary-400 transition"
               >
               Book Your Consultation
             </Link>
@@ -85,7 +85,7 @@ export default function Hero({title}) {
               key={index}
               onClick={() => setCurrent(index)}
               className={`w-3 h-3 rounded ${
-                current === index ? "bg-white" : "bg-gray-400"
+                current === index ? "bg-white" : "bg-neutral-400"
               }`}
             />
           ))}

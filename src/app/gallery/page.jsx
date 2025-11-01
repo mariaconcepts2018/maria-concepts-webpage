@@ -14,7 +14,7 @@ export default function MyApp() {
   return (
     <>
           <Hero title={'Our Gallery'}/>
-      <main className="bg-gray-100 text-gray-800 px-4 xl:px-8 py-12 mx-auto text-left text-gray-800">
+      <main className="bg-neutral-100 text-neutral-800 px-4 xl:px-8 py-12 mx-auto text-left text-neutral-800">
         <>
 
         <Gallery />

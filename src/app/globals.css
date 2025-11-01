@@ -73,31 +73,9 @@ body {
   font-family: Sansation, Arial, Helvetica, sans-serif !important;
 }
 
-.logo {
-  font-family: "Quintessential", Arial, Helvetica, sans-serif;
-}
-
-.logo-2 {
-  font-family: "Sansation", Arial, Helvetica, sans-serif;
-}
 
 h1, h2, h3, h4, h5, h6{
   font-family: "Fugaz One", Arial, Helvetica, sans-serif !important;
-}
-
-svg{
-    width: 100%;
-  height: auto;
-  max-width: 2rem; /* optional */
-
-}
-
-svg.logo-xl{
-  max-width: 2.5rem; /* optional */
-}
-
-svg.logo-sm{
-  max-width: 1.5rem; /* optional */
 }
 
 ul.arrow{
