@@ -34,7 +34,7 @@ export default function MyApp({ Component, pageProps }) {
             <p className="py-2">
 
 
-              Maria Concepts is a leading construction and interior design firm in Bangalore, offering end-to-end solutions that blend innovation, quality, and craftsmanship.
+              Maria Concepts is a leading construction and interior design firm in Bengaluru, offering end-to-end solutions that blend innovation, quality, and craftsmanship.
             </p>
 
             <p className="py-2">
@@ -44,22 +44,15 @@ Our expert team manages every project with precision — ensuring seamless execu
             </p>
 <p className="py-2">
 
-From building construction to interior design, renovation, and custom furniture, we create spaces that reflect our clients’ vision while maintaining the highest standards of durability and aesthetics. We have more that 10 years of experience in the industry and we have undertakken 300+ projeects.
+From building construction to interior design, renovation, and custom furniture, we create spaces that reflect our clients’ vision while maintaining the highest standards of durability and aesthetics. We have more than 10 years of experience in the industry and we have undertaken 300+ projects.
 </p>
 <p className="py-2">
 
-At Maria Concepts, we’re committed to excellence, client satisfaction, and long-lasting relationships — redefining interiors in Bangalore with every project we deliver.
+At Maria Concepts, we’re committed to excellence, client satisfaction, and long-lasting relationships — redefining interiors in Bengaluru with every project we deliver.
 </p>
             </div>
 </div>
           
-<div className="p-2 md:p-6 text-center md:w-1/2 mx-auto">
-
-                                <h2 className="text-3xl text-center mt-12 text-primary-500 my-8">
-            Locate Us
-          </h2>
-<GoogleMap />
-</div>
 
  <div className="flex flex-col md:flex-row justify-center gap-8 mt-16 max-w-7xl mx-auto">
     <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
@@ -69,7 +62,7 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
       </h3>
 
       <p className="pt-2">
-        At Maria Concepts, our vision is to lead the construction and interiors industry in Bangalore through innovation, quality, and integrity. We uphold the highest engineering and construction standards while embracing advanced technologies to deliver projects that exceed client expectations in an ever-evolving world.
+        At Maria Concepts, our vision is to lead the construction and interiors industry in Bengaluru through innovation, quality, and integrity. We uphold the highest engineering and construction standards while embracing advanced technologies to deliver projects that exceed client expectations in an ever-evolving world.
       </p>
     </div>
 
@@ -80,7 +73,7 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
 EXPERIENCE
       </h3>
       <p className="pt-2">
-        At Maria Concepts, our foundation is built on trust, experience, and a commitment to excellence. Synonymous with reliability and expertise, we bring our clients' visions to life, consistently delivering exceptional interiors and construction projects in Bangalore.
+        At Maria Concepts, our foundation is built on trust, experience, and a commitment to excellence. Synonymous with reliability and expertise, we bring our clients' visions to life, consistently delivering exceptional interiors and construction projects in Bengaluru.
 
 
       </p>
@@ -94,7 +87,7 @@ EXPERIENCE
         MISSION
       </h3>
       <p className="pt-2">
-At Maria Concepts, our mission is to deliver comprehensive and tailored construction and interior solutions in Bangalore. Guided by integrity, quality, and timely delivery, we empower our team to create spaces that reflect excellence and exceed client expectations.
+At Maria Concepts, our mission is to deliver comprehensive and tailored construction and interior solutions in Bengaluru. Guided by integrity, quality, and timely delivery, we empower our team to create spaces that reflect excellence and exceed client expectations.
 
       </p>
     </div>

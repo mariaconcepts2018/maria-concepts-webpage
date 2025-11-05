@@ -1,8 +1,5 @@
 import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Fugaz_One } from "next/font/google";
-import "./globals.css";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import WhatsApp from "@/components/WhatsApp";
+import "./admin.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,10 +46,7 @@ export default function RootLayout({ children }) {
       <body
         className={`relative ${geistSans.variable} ${geistMono.variable} ${fugazOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
       >
-      <Navbar />
         {children}
-      <Footer/>
-      <WhatsApp />
       </body>
     </html>
   );

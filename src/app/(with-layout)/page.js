@@ -1,13 +1,13 @@
 import "@/app/globals.css";
 import Hero from "@/components/Hero";
-import { Calender, Phone, Star, TeamFill, Time, WarrantyBadgeHighlight } from "@/components/Icons";
+import { Calendar, Phone, Star, TeamFill, Time, Trophy, WarrantyBadgeHighlight } from "@/components/Icons";
 import Image from "next/image";
 import Link from "next/link";
 
 const services = [
     {
     title: "Interior Designs",
-    description: "Our interior design team in Bangalore creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.",
+    description: "Our interior design team in Bengaluru creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.",
     imgurl: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
   },
     {
@@ -28,13 +28,13 @@ const services = [
 ]
 
 export const metadata = {
-  title: "Best Interiors and Constructions in Bangalore | Maria Concepts",
+  title: "Best Interiors and Constructions in Bengaluru | Maria Concepts",
 
-  description: "Maria Concepts at Bangalore offers premium construction and renovation services tailored to your vision and lifestyle.",
+  description: "Maria Concepts at Bengaluru offers premium construction and renovation services tailored to your vision and lifestyle.",
   keywords: ["construction", "renovation", "architecture", "interior design", "home building"],
   authors: [{ name: "Maria Concepts" }],
   openGraph: {
-    title: "Maria Concepts – Best Interiors and Constructions in Bangalore",
+    title: "Maria Concepts – Best Interiors and Constructions in Bengaluru",
     description: "We offer premium construction and renovation services tailored to your vision and lifestyle.",
     url: "https://mariaconcepts.com",
     siteName: "Maria Concepts",
@@ -51,7 +51,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maria Concepts – Best Interiors and Constructions in Bangalore",
+    title: "Maria Concepts – Best Interiors and Constructions in Bengaluru",
     description: "We offer premium construction and renovation services tailored to your vision and lifestyle.",
     images: ["https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp"],
   },
@@ -65,91 +65,37 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero/>
-      <main className="text-neutral-800  p-0 mx-auto text-left text-neutral-800 bg-neutral-100 pt-6">
+      <main className="text-neutral-800  p-0 mx-auto text-left text-neutral-800 bg-white pt-6">
 
-              <div className="max-w-4xl mx-auto p-4 md:p-8 md:border md:border-primary-600">
+              <div className="max-w-4xl mx-auto p-4 md:p-8">
 
 
-                      <h2 className="text-2xl text-primary-600 text-center">
+                      <h2 className="text-2xl text-neutral-600 text-center">
             About Us
           </h2>
           <p className="p-2 text-center">
             At Maria Concept, we envision redefining modern spaces through creative design, sustainable construction, and timeless craftsmanship. Our goal is to create inspiring environments that blend beauty, comfort, and functionality — enriching the way people live and work.
 </p>
-<p className="p-2 text-center">
-Our mission is to deliver complete construction and interior solutions with integrity, innovation, and precision. Backed by a skilled in-house team, we focus on using sustainable materials and advanced design practices to ensure every project reflects quality, value, and lasting trust.
-
-          </p>
               </ div>
-
-          <div className="w-full mx-auto text-left text-neutral-800 mt-4 max-w-7xl p-4">
-          <h2 className="text-2xl text-primary-600 text-center">
-            Why Choose Us?
-          </h2>
-
-          <div className="flex flex-wrap flex-col md:flex-row justify-center flex-wrap py-8 gap-2 mx-auto">
-            <div className="flex justify-start w-full rounded md:basis-1/3 font-bold">
-            <Star className="w-8 text-primary-600" />
-            <p className="p-4 text-black">10+ years of experience in industry
-              </p>
-
-              </div>
-
-            <div className="flex justify-start w-full rounded md:basis-1/3 font-bold">
-            <WarrantyBadgeHighlight className="w-8 text-primary-600" />
-            <p className="p-4">Structural Warranty*
-              </p>
-
-              </div>
-
-            <div className="flex justify-start w-full rounded md:basis-1/3 font-bold">
-            <Calender className="w-8 text-primary-600" />
-<p className="p-4">
-            EMI Options </p></div>
-            <div className="flex justify-start w-full rounded md:basis-1/3 font-bold">
-            <TeamFill className="w-8 text-primary-600" />
-
-            <p className="p-4">In-House Design & Engineering Team</p></div>
-            <div className="flex justify-start w-full rounded md:basis-1/3 font-bold">
-            <Time className="w-8 text-primary-600" />
-            <p className="p-4">Trusted Quality</p></div>
-
-                        <div className="flex justify-start w-full rounded md:basis-1/3 font-bold">
-            <Time className="w-8 text-primary-600" />
-<p className="p-4">
-            On time delivery </p></div>
-          </div>
-
-          </div>
-
-
-
-          <div className="mt-2 py-4 text-center max-w-7xl mx-auto p-4">
-          <h2 className="text-2xl text-primary-600 text-center mt-8">
+          <div className="py-4 text-center max-w-7xl mx-auto p-4">
+          <h2 className="text-2xl text-neutral-600 text-center my-4">
             Our Services
           </h2>
 
-<div className="flex flex-col gap-4 md:flex-row">
+<div className="flex md:nowrap gap-4 flex-row overflow-x-auto md:overflow-x-hidden pb-12">
 {services.map((item, index) => 
 
-<div key={index} className="flex flex-col justify-evenly bg-neutral-100 shadow-sm border border-secondary-200 rounded w-full">
-  <div className="relative h-56 md:h-28 lg:h-40 m-2.5 overflow-hidden text-white rounded">
-    <img src={item.imgurl} alt="card-image" loading="lazy" />
+<div key={index} className="flex flex-col  shadow-lg rounded min-w-5/6 md:min-w-1/7 md:w-full pb-2 border border-neutral-200">
+  <div className="relative  md:w-full h-auto md:h-28 lg:h-40 overflow-hidden text-white rounded-t border-b-2 border-primary-600">
+    <img  src={item.imgurl} alt="card-image" loading="lazy" />
   </div>
   <div className = "p-4">
-    <h6 className="mb-2 text-primary-600 text-xl md:text-lg font-semibold">
+    <h6 className="mb-2 text-neutral-700 text-xl md:text-lg">
       {item.title}
     </h6>
-    <p className="text-secondary-600 leading-normal font-light text-xs">
+    <p className="text-secondary-600 leading-normal font-light text-xs pb-4 truncate">
       {item.description}
     </p>
-  </div>
-  <div className="px-4 pb-4 pt-0 mt-1">
-    <button 
-    className="rounded py-1 px-2 text-primary-600 border border-primary-600 text-center text-xs transition-all hover:text-white active:text-black focus:shadow-none hover:bg-primary active:bg-white active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" 
-    type="button">
-      Read more
-    </button>
   </div>
 </div>  
 
@@ -160,14 +106,67 @@ Our mission is to deliver complete construction and interior solutions with inte
 <br/>
             <Link
               href="/services"
-              className="px-6 py-3 bg-primary-500 text-white shadow-md uppercase font-medium rounded hover:bg-primary-400 transition"
+              className="px-6 py-3 bg-primary-500 text-neutral-900 shadow-md uppercase font-medium rounded hover:bg-primary-400 transition"
               >
               View More
             </Link>
             </div>
-                      <div className="w-full mx-auto text-neutral-800 text-center mt-12 py-8 max-w-7xl px-2">
 
-          <h2 className="text-2xl text-primary-600 text-center py-4">
+          <div className="w-full mx-auto text-left text-neutral-800 mt-6 max-w-7xl p-4">
+          <h2 className="text-2xl text-neutral-600 text-center">
+            Why Choose Us?
+          </h2>
+
+          <div className="flex flex-wrap flex-col md:flex-row justify-center flex-wrap py-4 gap-2 mx-auto">
+            <div className="flex justify-start items-center w-full rounded md:basis-1/3 font-bold">
+            <Star className="w-10 h-10 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <p className="p-4 text-black">10+ years of experience in industry
+              </p>
+
+              </div>
+
+            <div className="flex justify-start items-center w-full rounded md:basis-1/3 font-bold">
+            <WarrantyBadgeHighlight className="w-10 h-10 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <p className="p-4">Structural Warranty*
+              </p>
+
+              </div>
+
+            <div className="flex justify-start items-center w-full rounded md:basis-1/3 font-bold">
+            <Calendar className="w-10 h-10 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+<p className="p-4">
+            EMI Options </p></div>
+            <div className="flex justify-start items-center w-full rounded md:basis-1/3 font-bold">
+            <TeamFill className="w-10 h-10 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+
+            <p className="p-4">In-House Design & Engineering Team</p></div>
+            <div className="flex justify-start items-center w-full rounded md:basis-1/3 font-bold">
+            <Trophy className="w-10 h-10 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <p className="p-4">Trusted Quality</p></div>
+
+                        <div className="flex justify-start items-center w-full rounded md:basis-1/3 font-bold">
+            <Time className="w-10 h-10 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+<p className="p-4">
+            On time delivery </p></div>
+          </div>
+
+          </div>
+
+          <div className="max-w-4xl text-center mx-auto">
+            <h2 className=" text-2xl text-neutral-600">Mission</h2>
+            <p className="p-2 text-center">
+Our mission is to deliver complete construction and interior solutions with integrity, innovation, and precision. 
+<br/><br/>
+Backed by a skilled in-house team, we focus on using sustainable materials and advanced design practices to ensure every project reflects quality, value, and lasting trust.
+
+          </p>
+          </div>
+
+
+
+                      <div className="w-full mx-auto text-neutral-800 text-center my-6 py-8 max-w-7xl px-2">
+
+          <h2 className="text-2xl text-neutral-600 text-center pb-4">
             Our Portfolio
           </h2>
           <div className="flex flex-wrap mb-8">
@@ -191,7 +190,7 @@ Our mission is to deliver complete construction and interior solutions with inte
           </div>
             <Link
               href="/gallery"
-              className="px-6 py-3 bg-primary-500 text-white uppercase font-medium rounded hover:bg-primary-400 transition shadow-md"
+              className="px-6 py-3 bg-primary-500 text-neutral-900 uppercase font-medium rounded hover:bg-primary-400 transition shadow-md"
               >
               View More
             </Link>
@@ -205,11 +204,11 @@ Our mission is to deliver complete construction and interior solutions with inte
 
               <Link className='d-block' href={'tel:+919036368688'} target="_blank">
             <div className="flex flex-row items-center md:gap-4 gap-8 p-3">
-              <div className=" p-3 bg-neutral-100 rounded-full">
-                <Phone className="w-6 text-primary" />
+              <div className=" p-3 bg-white rounded-full">
+                <Phone className="w-6 text-neutral-700" />
               </div>
               <div>
-              <p className="text-left">+91 9036368688<small><br/>Call us now</small></p>
+              <p className="text-left"><small className="bg-primary py-1 px-2 rounded-full text-neutral-900">Call Us Now</small><br/><span className="text-lg block mt-2">+91 9036368688</span></p>
               </div>
             </div>
               </Link>

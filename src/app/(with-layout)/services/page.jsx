@@ -15,10 +15,6 @@ export default function MyApp() {
           <div className="flex flex-col md:flex-row md:flex-wrap justify-evenly pt-4 pb-4 gap-8">
 
             <div className="rounded shadow-sm p-4 md:basis-1/5 hover:shadow-lg cursor-pointer transition">
-            <Project16 className="py-6 text-primary-600 w-8" />
-                <p className="text-xl">Project Management</p>
-            </div>
-            <div className="rounded shadow-sm p-4 md:basis-1/5 hover:shadow-lg cursor-pointer transition">
             <Wardrobe01 className="py-6 text-primary-600 w-8" />
 
                 <p className="text-xl">Interior Design</p>
@@ -36,13 +32,13 @@ export default function MyApp() {
                         <div className="rounded shadow-sm p-4 md:basis-1/5 hover:shadow-lg cursor-pointer transition">
             <Furniture className="py-6 text-primary-600 w-8" />
 
-              <p className="text-xl">Built-in Furnitures</p>
+              <p className="text-xl">Institutional Archetecture</p>
             </div>
 
                                     <div className="rounded shadow-sm p-4 md:basis-1/5 hover:shadow-lg cursor-pointer transition">
             <Church className="py-6 text-primary-600 w-8" />
 
-              <p className="text-xl">Institution and Church Works</p>
+              <p className="text-xl">Church Works</p>
             </div>
 
                                     <div className="rounded shadow-sm p-4 md:basis-1/5 hover:shadow-lg cursor-pointer transition">
@@ -57,6 +53,10 @@ export default function MyApp() {
               <p className="text-xl">Office Spaces</p>
             </div>
 
+            <div className="rounded shadow-sm p-4 md:basis-1/5 hover:shadow-lg cursor-pointer transition">
+            <Project16 className="py-6 text-primary-600 w-8" />
+                <p className="text-xl">Project Management</p>
+            </div>
           </div>
 
 

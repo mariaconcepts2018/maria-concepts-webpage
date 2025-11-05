@@ -2,11 +2,12 @@
 import Link from "next/link";
 import { Email, Location, Phone } from "./Icons";
 import Logo from "./Logo";
+import GoogleMap from "./GoogleMap";
 
 export default function Footer() {
 
   return (
-<footer className="relative w-full pt-8">
+<footer className="relative w-full pt-8 bg-neutral-100 pb-18 md:pb-0">
   <div className="w-full px-8 mx-auto max-w-7xl">
     <div className="grid justify-between grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
         <div>
@@ -35,6 +36,8 @@ export default function Footer() {
             # 4, Opp. Podar International School, <br/> Basavanapura, Gottigere Post, <br/>Off Bannerghatta Road, <br/>Bengaluru - 560 083.
             </p>
         </div>
+
+
 
       </div>
       <div className="grid justify-between grid-cols-3 gap-4">
@@ -105,6 +108,8 @@ export default function Footer() {
         </ul>
       </div>
     </div>
+<GoogleMap className="my-6" />
+
     <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 md:flex-row md:justify-between">
       <p className="block mb-4 text-sm text-center text-secondary-500 md:mb-0">
         Copyright © 2025 

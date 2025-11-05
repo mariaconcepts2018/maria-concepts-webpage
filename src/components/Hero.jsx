@@ -55,15 +55,15 @@ export default function Hero({title}) {
           <h1 className="text-4xl text-white font-extrabold sm:text-5xl lg:text-6xl"> Best in Interior <br /> <span className="text-white"> Designs.</span>
           </h1>
           <p className="mt-6 text-lg max-w-2xl mx-auto">
-            Design That Speaks Quietly but Beautifully.
+            Design That Speaks Beautifully.
           </p>
 
-                    <div className="mt-8 flex flex-col items-center gap-4 justify-center space-x-4 md:flex-row">
+                    <div className="mt-8 flex flex-col items-center gap-4 justify-center md:space-x-4 md:flex-row">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-primary-500 text-neutral-100 uppercase font-medium rounded hover:bg-primary-400 transition"
+              className="px-6 py-3 bg-primary-500 text-neutral-900 uppercase font-medium rounded hover:bg-primary-400 transition"
               >
-              Book Your Consultation
+              Enquire Now
             </Link>
             <Link
               href="/services"

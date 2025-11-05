@@ -1,24 +1,7 @@
 "use client"
 import { useState } from "react";
-import { Building, Tools, Wardrobe01 } from "./Icons";
 
-const services = [
-    {
-    title: "Interiors",
-    Icon: Wardrobe01
-  },
-    {
-    title: "Construction",
-    Icon: Building
-  },
-    {
-    title: "Renovation",
-    Icon: Tools
-  }
-]
-
-
-export default function ContactForm({ Component, pageProps }) {
+export default function ContactForm({ isOpenContact , setIsOpenContact}) {
     
   const [form, setForm] = useState({ name: "", email: "", message: "", phone: "", service:"" });
   const [errors, setErrors] = useState({});
@@ -65,22 +48,25 @@ export default function ContactForm({ Component, pageProps }) {
 
   return (
     <>
+    <div className={`transition transition-duration-300 ${isOpenContact? 'block scale-100' : 'hidden scale-0'} fixed  top-0 h-screen w-screen md:w-screen bg-black/50 z-500 md:inset-x-auto`}>
+
+<div className="w-full  rounded shadow-lg md:w-1/4 bg-neutral-100 mx-auto my-auto mt-12 px-2 py-6">
 
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto md:p-6">
-      <h2 className="text-3xl font-semibold mb-4 text-center text-primary-500">Get In Touch</h2>
+      <h2 className="text-2xl ml-2 my-2 text-secondary-500">Get In Touch</h2>
 
-      <div className="flex flex-row flex-wrap justify-around">
+      <div className="flex flex-col flex-nowrap justify-around">
 
 
-      <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
+      <label className="block mb-1 w-full basis-full md:basis-1/2 p-2">
         <span className="text-sm">Name</span>
         <input
           type="text"
           name="name"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.name ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
+          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring focus:ring ${
+            errors.name ? "border-red-500 focus:ring-red-200" : "border-neutral-300 focus:ring-neutral-600"
           }`}
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
@@ -88,15 +74,15 @@ export default function ContactForm({ Component, pageProps }) {
         {errors.name && <p id="name-error" className="mt-1 text-xs text-red-600">{errors.name}</p>}
       </label>
 
-            <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
+            <label className="block mb-1 w-full basis-full md:basis-1/2 p-2">
         <span className="text-sm">Phone Number</span>
         <input
           type="phone"
           name="phone"
           value={form.phone}
           onChange={(e) => setForm({ ...form, phone: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.phone ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
+          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring focus:ring ${
+            errors.phone ? "border-red-500 focus:ring-red-200" : "border-neutral-300 focus:ring-neutral-600"
           }`}
           aria-invalid={errors.phone ? "true" : "false"}
           aria-describedby={errors.phone ? "phone-error" : undefined}
@@ -104,15 +90,15 @@ export default function ContactForm({ Component, pageProps }) {
         {errors.phone && <p id="phone-error" className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </label>
 
-      <label className="block mb-3 w-full basis-full md:basis-1/2 p-2">
+      <label className="block mb-1 w-full basis-full md:basis-1/2 p-2">
         <span className="text-sm">Email</span>
         <input
           type="email"
           name="email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.email ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
+          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring focus:ring ${
+            errors.email ? "border-red-500 focus:ring-red-200" : "border-neutral-300 focus:ring-neutral-600"
           }`}
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
@@ -121,76 +107,32 @@ export default function ContactForm({ Component, pageProps }) {
         {errors.email && <p id="email-error" className="mt-1 text-xs text-red-600">{errors.email}</p>}
       </label>
 
-      <label htmlFor="service" className="block mb-3 w-full basis-full md:basis-1/2 p-2">
-        <span className="text-sm">Project Budget &#40;optional&#41;</span>
-
-      <select
-        id="service"
-        name="service"
-        defaultValue={""}
-        className={`mt-1 block w-full rounded border px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-offset-1 ${
-            errors.budget ? "border-red-500 focus:ring-red-200" : "border-neutral-500 focus:ring-secondary-200"
-          }`}
-        >
-        <option value="" hidden={true} disabled={true} className="buton cursor-not-allowed">Choose an option</option>
-        <option value="1">upto 10 Lakhs</option>
-        <option value="2">10 - 25 Lakhs</option>
-        <option value="3">25 - 50 Lakhs</option>
-        <option value="4">More than 50 Lakhs</option>
-      </select>
-        </label>
-
-      <label className="block mb-4 basis-full p-2">
-        <span className="text-sm">Project Type</span>
-
-        <div className="flex flex-row gap-2">
-
-{services.map((item, index) => 
-
-<button type="button" key={index}
-          onClick={(e) => setForm({ ...form, service: item.title })}
-
-className={`${form.service === item.title? 'ring ring-secondary-600 ': 'ring-none'} cursor-pointer shadow-md flex flex-col justify-evenly bg-neutral-200 rounded w-full mt-2 pt-4`}>
-    <item.Icon className="w-8 mx-auto text-secondary"/>
-  <div className = "p-2">
-    <p className="mb-2 text-primary-600 text-sm md:text-lg text-center font-semibold">
-      {item.title}
-    </p>
-  </div>
-</button>  
-
-)}
-
-</div>
-        {errors.service && <p id="phone-error" className="mt-1 text-xs text-red-600">{errors.service}</p>}
-
-      </label>
-
-      <label className="block mb-4 basis-full p-2">
-        <span className="text-sm">Message &#40;optional&#41;</span>
-        <textarea
-          name="message"
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          rows="5"
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-offset-1 "border-neutral-500 focus:ring-secondary-200`}
-          />
-      </label>
 
           </div>
-      <div className="flex items-center gap-3 p-2">
+      <div className="flex items-center gap-3 p-2 mt-6">
         <button
           type="submit"
           disabled={status.loading}
-          className="inline-flex items-center justify-center rounded px-4 py-2 bg-primary-500 text-white uppercase font-medium shadow hover:bg-primary-400 disabled:opacity-60"
-        >
-          {status.loading ? "Submitting..." : "Submit"}
+          className="transition inline-flex items-center justify-center rounded px-4 py-2 bg-primary-500 text-secondary-800 uppercase font-medium shadow-md hover:bg-primary-400 disabled:opacity-60"
+          >
+          {status.loading ? "Submitting..." : "Get a free quote"}
         </button>
+
+                <button
+          type="button"
+          onClick={() => setIsOpenContact(false)}
+          className="cursor-pointer transition inline-flex items-center justify-center rounded px-4 py-2 border border-neutral-300 text-secondary-700 uppercase font-medium shadow-md hover:bg-secondary-100 hover:text-secondary-800 disabled:opacity-60"
+          >
+            Close
+        </button>
+
 
         {status.ok === true && <p className="text-sm text-green-700">{status.msg}</p>}
         {status.ok === false && <p className="text-sm text-red-600">{status.msg}</p>}
       </div>
     </form>
+          </div>
+            </div>
     </>
   );
 }
