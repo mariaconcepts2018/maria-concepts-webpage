@@ -32,8 +32,8 @@ export default function Navbar() {
 
   return (
     <>
-    <nav className={`absolute md:fixed z-100 w-full transition ${
-      hidden ? " md:bg-white md:text-neutral-700 md:shadow-lg" : "bg-none text-white"
+    <nav className={`absolute lg:fixed z-100 w-full transition ${
+      hidden ? " lg:bg-white lg:text-neutral-700 lg:shadow-lg" : "bg-none text-white"
     }`}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition`}>
         <div className="flex justify-between h-24 items-center ">
@@ -42,10 +42,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="p-2">
 
-          <Logo className="w-25 md:w-30 h-auto drop-shadow-4xl" />
+          <Logo className="w-25 xl:w-30 h-auto drop-shadow-4xl" />
 
           </Link>
-          <div className="fixed scroll-none md:relative hidden md:flex space-x-8 items-center">
+          <div className="w-full scroll-none xl:relative hidden lg:flex lg:justify-end space-x-8 items-center text-md ">
             <Link href="/" className={` ${(pathname === '/') && 'border-b'} font-semibold hover:text-primary-200 hover:border-primary-200 uppercase transition`}>
               Home
             </Link>
@@ -58,7 +58,7 @@ export default function Navbar() {
             <Link href="/gallery" className={` ${(pathname === '/gallery') && 'border-b'} font-semibold hover:text-primary-200 hover:border-primary-200 uppercase transition`}>
               Gallery
             </Link>
-            <button onClick={() => setIsOpenContact(true) } className={`bg-primary text-neutral-700 py-2 px-4 rounded-full ${(pathname === '/contact') && 'border-b'} font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}>
+            <button onClick={() => setIsOpenContact(true) } className={`bg-primary text-neutral-700 py-2 px-4 shadow-lg rounded-full ${(pathname === '/contact') && 'border-b'} font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}>
               GET A FREE QUOTE
             </button>
           </div>

@@ -10,7 +10,7 @@ export const metadata = {
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-          <Hero title={'About Us'}/>
+          <Hero title={'Get to know us'}/>
       <main className="bg-neutral-100 text-neutral-800 px-4 xl:px-8 py-12 mx-auto text-left text-neutral-800">
         <>
 
@@ -18,7 +18,7 @@ export default function MyApp({ Component, pageProps }) {
             About Us
           </h2>
 
-          <div className="flex flex-col md:flex-row max-w-6xl mx-auto py-8 gap-8">
+          <div className="flex flex-col xl:flex-row max-w-6xl mx-auto py-8 gap-8">
 
             <div className="basis-1/2 py-4">
               <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761721468/team_nbrl8f.avif"
@@ -54,7 +54,7 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
 </div>
           
 
- <div className="flex flex-col md:flex-row justify-center gap-8 mt-16 max-w-7xl mx-auto">
+ <div className="flex flex-col xl:flex-row justify-center gap-8 mt-16 max-w-7xl mx-auto">
     <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
     <Eye className="w-12 text-secondary mx-auto my-4" />
       <h3 className="text-primary-500">

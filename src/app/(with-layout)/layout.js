@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`relative ${geistSans.variable} ${geistMono.variable} ${fugazOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
+        className={`relative bg-white ${geistSans.variable} ${geistMono.variable} ${fugazOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
       >
       <PopupButtons />
       <Navbar />

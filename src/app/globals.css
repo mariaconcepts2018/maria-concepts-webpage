@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --background: #e5e5e6;
   --foreground: #171717;
   --primary: #F2C078;
   --secondary: #333337;
@@ -59,28 +58,28 @@
   --font-sans: var(--font-roboto-sans);
   --font-sans: var(--font-fugaz-one-sans);
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+section{
+  margin: 0;
 }
-
-
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Sansation, Arial, Helvetica, sans-serif !important;
+  font-family: 'Sansation', Arial, Helvetica, sans-serif !important;
+  font-display: swap;
 }
 
 
 h1, h2, h3, h4, h5, h6{
   font-family: "Fugaz One", Arial, Helvetica, sans-serif !important;
+
 }
 
 ul.arrow{
 list-style-image: url('/arrow.svg');
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}

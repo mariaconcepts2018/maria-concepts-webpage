@@ -107,7 +107,7 @@ export default function Gallery() {
     <ul className="relative flex flex-wrap gap-4 px-1.5 py-1.5 list-none rounded-md bg-neutral-100" data-tabs="tabs" role="list">
       {projects.map((item, index) => (
 
-      <li key={index} className={`z-30 flex-auto text-center rounded transition ${selected === item? 'bg-primary text-neutral-100': 'bg-secondary-100 text-neutral-800'} `}>
+      <li key={index} className={`z-30 flex-auto text-center rounded transition text-neutral-800 ${selected === item? 'bg-primary': 'bg-secondary-100'} `}>
         <button className="z-30 flex items-center justify-center w-full shadow-md px-0 py-2 text-sm mb-0 transition-all ease-in-out border-0 rounded-md cursor-pointer bg-inherit"
         onClick={(e) => setSelected(item)}
         data-tab-target="" role="tab" aria-selected="true" aria-controls="dashboard">
@@ -120,9 +120,9 @@ export default function Gallery() {
   </div>
 </div>
     
-                    <div className="flex flex-row gap-2 md:gap-4 flex-wrap justify-evenly max-w-7xl mx-auto mt-8">
+                    <div className="flex flex-row gap-2 xl:gap-4 flex-wrap justify-evenly max-w-7xl mx-auto mt-8">
                         {data && data.filter((i, index) => i.project === selected).map((item, i) => (
-                        <FullScreenButton className={'basis-1/2 md:basis-1/6'} key={i} src={item.imgUrl} alt={item.title} >
+                        <FullScreenButton className={'basis-1/2 xl:basis-1/6'} key={i} src={item.imgUrl} alt={item.title} >
                           <Image className="max-w-80 h-80 object-cover border border-secondary"  width={400} height={300} 
                           src={`https://res.cloudinary.com/dylffjde8/image/upload/c_fill,w_360,h_360/${item.imgUrl}.avif`} alt={item.title}/>
                         </FullScreenButton>

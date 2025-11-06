@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 
-const socket = io(process.env.BACKEND_URL); // backend URL
+const socket = io(process.env.NEXT_PUBLIC_BACKEND_URL); // backend URL
 
 export default function ChatBox({openModal, handleModal}) {
   const [messages, setMessages] = useState([]);
@@ -70,12 +70,12 @@ export default function ChatBox({openModal, handleModal}) {
 
   return (
     <div
-  className={`${openModal? 'block scale-100' : 'hidden scale-0'} fixed bottom-12  md:bottom-0 md:top-auto md:right-0 z-200 grid md:h-1/2 w-screen h-96 md:w-1/4 md:bg-none transition md:p-8`}
+  className={`z-200 transform ${openModal? ' translate-x-0' : ' translate-x-full'} transition fixed inset-0 flex flex-col justify-end p-2`}
 >
-    <div className="mx-auto w-full shadow-sm z-300 flex flex-col justify-between  bg-white shadow-xl rounded-sm md:ml-auto border-t border-neutral-200 ">
+    <div className={` mx-auto w-full xl:w-1/4 lg:w-1/2 lg:mr-0 h-screen md:h-1/2 max-h-screen shadow-sm z-300 flex flex-col justify-between  bg-white shadow-xl rounded-sm border-t border-neutral-200`}>
         <div className="flex justify-between items-start bg-white text-neutral-700 w-full shadow-md p-4">
           <div className="block">
-          <h1 className="text-lg font-semibold">Maria Concepts</h1>
+          <h1 className="text-lg">Maria Concepts</h1>
             <div className="text-sm opacity-80 flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-600 rounded-full"></div>
               <span>
@@ -89,32 +89,33 @@ export default function ChatBox({openModal, handleModal}) {
             <svg className="m-2" width="0.75em" height="0.75em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path fill="#000000" d="M6.5 8.05a.45.45 0 0 1 .45.45v4a.45.45 0 0 1-.9 0V9.584l-3.732 3.733a.45.45 0 1 1-.636-.636L5.413 8.95H2.5a.449.449 0 1 1 0-.9zm6.182-6.368a.45.45 0 0 1 .637.636L9.586 6.05H12.5a.45.45 0 0 1 0 .9h-4l-.09-.01a.45.45 0 0 1-.36-.44v-4a.45.45 0 0 1 .9 0v2.914z"/></svg>  
             </button>
         </div>
+        
+                <div ref={messagesRef} className="flex flex-col-reverse w-full h-full overflow-y-auto pb-4  gap-y-6 p-4">
+
           {messages.length === 0?
         <div className=" text-md text-left p-4 self-start">
-          <p className="my-6 px-6 py-2 w-full block bg-primary-300 text-neutral rounded-e-full rounded-es-full">How can we assist you?</p>
+          <p className="shadow-lg xl:py-3 py-2 px-4 text-left w-full block bg-amber-100 text-neutral-900 rounded-e-full rounded-es-full">How can we assist you?</p>
         </div> 
         :
-        
-                <div ref={messagesRef} className="flex flex-col-reverse w-full h-64 overflow-y-auto pb-4  gap-y-6 p-4">
-
-
+<>
           {messages.map((msg, i) => (
-<div key={i} className={`max-w-3/4 ${msg.isAdmin? 'text-left mr-auto' : 'text-right ml-auto' }`}>
-    <span className="text-xs font-normal text-neutral-400 mx-2">{new Date(msg.createdAt).toLocaleTimeString( 'en-IN',
-      { 
+            <div key={i} className={`max-w-3/4 ${msg.isAdmin? 'text-left mr-auto' : 'text-right ml-auto' }`}>
+<span className="text-xs font-normal text-neutral-400 mx-2">{new Date(msg.createdAt).toLocaleTimeString( 'en-IN',
+  { 
     hour: 'numeric', 
     minute: 'numeric', 
     hour12: true 
-}
-    )}</span>
-   <div className={`shadow-lg md:py-3 py-2 px-4 text-left ${msg.isAdmin? 'rounded-e-full rounded-es-full bg-amber-100 text-neutral-600' :'rounded-s-full rounded-se-full bg-amber-200 text-neutral-600'}`}>
-      {msg.text}
-   </div>
+  }
+)}</span>
+<div className={`shadow-lg xl:py-3 py-2 px-4 text-left ${msg.isAdmin? 'rounded-e-full rounded-es-full bg-amber-100 text-neutral-900' :'rounded-s-full rounded-se-full bg-amber-200 text-neutral-600'}`}>
+{msg.text}
 </div>
-            
-          ))}
+</div>
+
+))}
+</>
+}
         </div>
-        }
 
 
       <form onSubmit={sendMessage} className="block w-full flex justify-between p-4 bg-white">

@@ -9,7 +9,7 @@ const BottomNavbar = () => {
     return(
         <>
 <ContactForm isOpenContact={isOpenContact} setIsOpenContact={setIsOpenContact} />
-            <div className="md:hidden fixed z-100 w-full h-12 max-w-lg -translate-x-1/2 bg-neutral-100 border border-gray-200 bottom-0 left-1/2">
+            <div className="lg:hidden fixed z-100 w-full h-12 max-w-5xl -translate-x-1/2 bg-neutral-100 border border-gray-200 bottom-0 left-1/2">
                 <div className="flex h-full max-w-lg grid-cols-5 mx-auto justify-evenly">
                     <Link href={'/'} className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group">
                         <svg className="w-6 h-6 mb-1 text-gray-500 group-hover:text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -25,7 +25,7 @@ const BottomNavbar = () => {
 
 
                     <div className="flex items-center justify-center -translate-y-6">
-                        <button onClick={() => setIsOpenContact(true)} type="button" className="py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-600 shadow-md text-neutral-900 rounded-full group focus:ring focus:ring-neutral-500 focus:outline-none">
+                        <button onClick={() => setIsOpenContact(true)} type="button" className="py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-500 shadow-md text-neutral-900 rounded-full group focus:ring focus:ring-neutral-500 focus:outline-none">
                             GET A FREE <br/> QUOTE
                             <span className="sr-only">Get a free Quote</span>
                         </button>

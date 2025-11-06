@@ -7,23 +7,24 @@ import GoogleMap from "./GoogleMap";
 export default function Footer() {
 
   return (
-<footer className="relative w-full pt-8 bg-neutral-100 pb-18 md:pb-0">
-  <div className="w-full px-8 mx-auto max-w-7xl">
-    <div className="grid justify-between grid-cols-1 gap-8 md:gap-4 md:grid-cols-2">
+<footer className="relative w-full pt-8 bg-neutral-100 pb-18 lg:pb-0">
+  <div className="w-full px-4 lg:px-8 mx-auto max-w-7xl">
+    <div className="grid justify-between grid-cols-1 gap-8 xl:gap-4 xl:grid-cols-2">
         <div>
-          <Logo className="w-25 md:w-30 h-auto drop-shadow-4xl mx-auto md:mr-auto md:ml-0 py-6" />
+          <Logo className="w-25 xl:w-30 h-auto drop-shadow-4xl mx-auto xl:mr-auto xl:ml-0 py-6" />
 
+<div className="flex flex-col lg:flex-row justify-around lg:w-5xl lg:my-12 gap-y-3">
 
-        <div className="flex gap-4 items-start">
+        <div className="flex  gap-4 items-start">
 <Phone className="w-8 text-neutral"/>
-            <p>+91 90 36 36 86 88</p>
+            <p>(Replace with Toll free number)</p>
         </div>
 <br/>
         <div className="flex gap-4 items-start">
 <Email className="w-8 text-neutral"/>
 
             <p>
-            contact@mariaconcepts.com
+            (replace with email ID)
             </p>
         </div>
 <br/>
@@ -37,81 +38,15 @@ export default function Footer() {
             </p>
         </div>
 
+</div>
 
 
-      </div>
-      <div className="grid justify-between grid-cols-3 gap-4">
-        <ul>
-          <p className="block mb-1 text-base font-semibold  text-secondary-800">
-            Services
-          </p>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Home Interiors
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Construction
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Renovation
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Office Spaces
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <p className="block mb-1 text-base font-semibold text-secondary-800">
-            Links
-          </p>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              About us
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Gallery
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-700 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Blogs
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <p className="block mb-1 text-base font-semibold text-secondary-800">
-            Associates
-          </p>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Serah Constructions
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block text-secondary-600 py-1 hover:text-secondary-500 focus:text-secondary-500 text-sm">
-              Nilam
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
 <GoogleMap className="my-6" />
 
-    <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 md:flex-row md:justify-between">
-      <p className="block mb-4 text-sm text-center text-secondary-500 md:mb-0">
+    <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 xl:flex-row xl:justify-between">
+      <p className="block mb-4 text-sm text-center text-secondary-500 xl:mb-0">
         Copyright © 2025 
         Maria Concepts. All
         Rights Reserved.

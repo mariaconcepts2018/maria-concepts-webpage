@@ -1,19 +1,21 @@
 "use client"
 import { useState } from "react";
+import OtpForm from "./OtpForm";
 
 export default function ContactForm({ isOpenContact , setIsOpenContact}) {
-    
+  
   const [form, setForm] = useState({ name: "", email: "", message: "", phone: "", service:"" });
+  const [contactForm, setContactForm] = useState(true);
   const [errors, setErrors] = useState({});
+  const [otpForm, setOtpForm] = useState(false);
   const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
 
     function validate() {
     const e = {};
     if (!form.name.trim()) e.name = "Name is required.";
-    if (!form.email.trim()) e.email = "Email is required.";
+    // if (!form.email.trim()) e.email = "Email is required.";
     if (!form.phone.trim()) e.phone = "Phone Number is required.";
-    if (!form.service.trim()) e.service = "Project type is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+    else if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = "Enter a valid email.";
     return e;
   }
@@ -29,36 +31,47 @@ export default function ContactForm({ isOpenContact , setIsOpenContact}) {
 
     setStatus({ loading: true, ok: null, msg: "" });
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+    // try {
+    //   const res = await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(form),
+    //   });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Something went wrong");
+    //   const data = await res.json();
+    //   if (!res.ok) throw new Error(data?.error || "Something went wrong");
+
+    console.log("submitting form")
 
       setForm({ name: "", email: "", message: "" });
+      setOtpForm(true)
       setStatus({ loading: false, ok: true, msg: data?.message || "Message sent!" });
-    } catch (err) {
-      setStatus({ loading: false, ok: false, msg: err.message || "Failed to send" });
-    }
+    // } catch (err) {
+    //   setStatus({ loading: false, ok: false, msg: err.message || "Failed to send" });
+    // }
   }
 
   return (
     <>
-    <div className={`transition transition-duration-300 ${isOpenContact? 'block scale-100' : 'hidden scale-0'} fixed  top-0 h-screen w-screen md:w-screen bg-black/50 z-500 md:inset-x-auto`}>
+    <div className={`flex justify-center p-2 transition transition-duration-300 ${isOpenContact? 'scale-100' : ' scale-0'} fixed inset-0 overflow-y-scroll overflow-x-hidden w-screen z-500 xl:inset-x-auto`}>
 
-<div className="w-full  rounded shadow-lg md:w-1/4 bg-neutral-100 mx-auto my-auto mt-12 px-2 py-6">
+<div className="w-full rounded shadow-lg md:w-1/2 xl:w-1/3 bg-neutral-100 border border-neutral-300 mx-auto my-auto mb-auto py-3 px-4 md:py-6 md:px-8">
 
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto md:p-6">
-      <h2 className="text-2xl ml-2 my-2 text-secondary-500">Get In Touch</h2>
+{otpForm ?
 
-      <div className="flex flex-col flex-nowrap justify-around">
+  <OtpForm setOtpForm={setOtpForm} setContactForm={setContactForm} setIsOpenContact={setIsOpenContact}/>
+
+:
+<>
+{contactForm ?
+  
+  <form onSubmit={handleSubmit} className="mx-auto my-auto">
+      <h2 className="text-center md:text-left text-2xl ml-2 my-2 text-secondary-500">Get In Touch</h2>
+
+      <div className="">
 
 
-      <label className="block mb-1 w-full basis-full md:basis-1/2 p-2">
+      <label className="block mb-1 w-full basis-full xl:basis-1/2 p-2">
         <span className="text-sm">Name</span>
         <input
           type="text"
@@ -74,7 +87,7 @@ export default function ContactForm({ isOpenContact , setIsOpenContact}) {
         {errors.name && <p id="name-error" className="mt-1 text-xs text-red-600">{errors.name}</p>}
       </label>
 
-            <label className="block mb-1 w-full basis-full md:basis-1/2 p-2">
+            <label className="block mb-1 w-full basis-full xl:basis-1/2 p-2">
         <span className="text-sm">Phone Number</span>
         <input
           type="phone"
@@ -90,7 +103,7 @@ export default function ContactForm({ isOpenContact , setIsOpenContact}) {
         {errors.phone && <p id="phone-error" className="mt-1 text-xs text-red-600">{errors.phone}</p>}
       </label>
 
-      <label className="block mb-1 w-full basis-full md:basis-1/2 p-2">
+      <label className="block mb-1 w-full basis-full xl:basis-1/2 p-2">
         <span className="text-sm">Email</span>
         <input
           type="email"
@@ -109,7 +122,7 @@ export default function ContactForm({ isOpenContact , setIsOpenContact}) {
 
 
           </div>
-      <div className="flex items-center gap-3 p-2 mt-6">
+      <div className="flex flex-col md:flex-row items-center gap-y-6 p-2 mt-6">
         <button
           type="submit"
           disabled={status.loading}
@@ -126,13 +139,18 @@ export default function ContactForm({ isOpenContact , setIsOpenContact}) {
             Close
         </button>
 
-
         {status.ok === true && <p className="text-sm text-green-700">{status.msg}</p>}
         {status.ok === false && <p className="text-sm text-red-600">{status.msg}</p>}
       </div>
     </form>
-          </div>
-            </div>
+ :
+<>
+</>
+}
+</>
+}
+</div>
+</div>
     </>
   );
 }
