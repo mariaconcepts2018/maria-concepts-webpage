@@ -42,12 +42,12 @@ const services = [
     {
     title: "Constructions",
     description: "Our construction team delivers high-quality structures built with precision, combining strength, functionality, and modern design excellence.",
-    imgurl: "https://pixabay.com/get/g81d21ecc757f33b1bc41427f2aa23ee054ed365a70824654fab6a3866675dc7c48da7b88a231728a7e2b5c0db063cc4f4779bc2b8f48397fca3edc7594d1a150_1280.jpg?auto=format&fit=crop&q=80&w=1171"
+    imgurl: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
   },
     {
     title: "Renovations",
     description: "We provide expert renovation services, transforming homes, offices, and commercial spaces with modern designs and personalized interior solutions tailored to each client’s vision.",
-    imgurl: "https://pixabay.com/get/g9fce5a879e758e3aeca2b743434aab2aefff878604257537127146a45097389f11c174c7a2a1f973ebbd8cbed6ec048cbea503e2d59442a2016c1bcf04cec016_1280.jpg?auto=format&fit=crop&q=80&w=1170"
+    imgurl: "https://images.pexels.com/photos/34558043/pexels-photo-34558043.jpeg"
   }
 ]
 
@@ -89,6 +89,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero/>
+
 
           <section className="w-full py-12">
           <h2 className="text-2xl lg:text-3xl text-neutral-800 text-center">
@@ -136,10 +137,10 @@ export default function MyApp({ Component, pageProps }) {
             Our Services
           </h2>
 
-<div className="flex xl:justify-center xl:nowrap gap-4 flex-col md:flex-row overflow-x-auto xl:overflow-x-hidden px-2 md:px-6 mx-auto">
+<div className="flex xl:justify-center xl:nowrap gap-4 flex-col md:flex-row md:overflow-x-scroll xl:overflow-x-hidden px-2 md:px-6 mx-auto">
 {services.map((item, index) => 
 
-<div key={index} className="lg:max-w-sm md:max-w-xs flex flex-col shadow-lg rounded  pb-2 border border-neutral-200">
+<div key={index} className="flex flex-col shadow-lg rounded  pb-2 border border-neutral-200">
   <div className="h-full w-full relative overflow-hidden object-center text-white rounded-t border-b-2 border-primary-600">
     <img className="h-full w-full object-cover" src={item.imgurl} alt="card-image" loading="lazy" />
   </div>
@@ -147,7 +148,7 @@ export default function MyApp({ Component, pageProps }) {
     <h6 className="mb-2 text-neutral-700 text-xl xl:text-lg">
       {item.title}
     </h6>
-    <p className="text-secondary-600 leading-normal font-light text-xs pb-4 truncate">
+    <p className="text-secondary-600 leading-normal font-light text-sm pb-4 truncate">
       {item.description}
     </p>
   </div>
@@ -168,7 +169,7 @@ export default function MyApp({ Component, pageProps }) {
                 <Phone className="w-6 lg:w-7 text-neutral-700" />
               </div>
               <div className="ml-6">
-              <p className="text-left"><small className="bg-primary py-1 px-2 rounded-full text-neutral-900">Call Us Now</small><br/><span className="text-lg block mt-2">(toll free number)</span></p>
+              <p className="text-left"><small className="bg-primary py-1 px-2 rounded-full text-neutral-900">Call us now</small><br/><span className="text-lg block mt-2">(toll free number)</span></p>
               </div>
             </div>
               </Link>
@@ -199,7 +200,7 @@ export default function MyApp({ Component, pageProps }) {
 
             <Link
               href="/gallery"
-              className="block max-w-64 mx-auto mt-12 px-6 py-3 bg-primary-500 text-neutral-900 uppercase font-medium rounded hover:bg-primary-400 transition shadow-md"
+              className="block max-w-64 mx-auto mt-12 px-6 py-3 bg-primary-500 text-neutral-900 uppercase rounded hover:bg-primary-400 transition shadow-md"
               >
               View More
             </Link>

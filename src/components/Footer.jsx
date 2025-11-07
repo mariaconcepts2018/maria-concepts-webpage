@@ -8,20 +8,19 @@ export default function Footer() {
 
   return (
 <footer className="relative w-full pt-8 bg-neutral-100 pb-18 lg:pb-0">
-  <div className="w-full px-4 lg:px-8 mx-auto max-w-7xl">
-    <div className="grid justify-between grid-cols-1 gap-8 xl:gap-4 xl:grid-cols-2">
-        <div>
-          <Logo className="w-25 xl:w-30 h-auto drop-shadow-4xl mx-auto xl:mr-auto xl:ml-0 py-6" />
-
-<div className="flex flex-col lg:flex-row justify-around lg:w-5xl lg:my-12 gap-y-3">
-
+  <div className="px-4 lg:px-8 mx-auto ">
+    <div className="flex flex-col lg:flex-row justify-center mx-auto lg:w-3/4">
+<div className="flex flex-col justify-evenly  lg:my-12 gap-y-3">
+<div>
+  <h2 className="mb-8 text-xl">MARIA CONCEPTS</h2>
+</div>
         <div className="flex  gap-4 items-start">
-<Phone className="w-8 text-neutral"/>
+<Phone className="w-8 text-neutral-600 mt-1"/>
             <p>(Replace with Toll free number)</p>
         </div>
 <br/>
         <div className="flex gap-4 items-start">
-<Email className="w-8 text-neutral"/>
+<Email className="w-8 text-neutral-600 mt-1"/>
 
             <p>
             (replace with email ID)
@@ -30,7 +29,7 @@ export default function Footer() {
 <br/>
 
         <div className="flex gap-4 items-start">
-<Location className="w-8 text-neutral"/>
+<Location className="w-8 text-neutral-600 mt-1"/>
 
             <p>
 
@@ -39,11 +38,8 @@ export default function Footer() {
         </div>
 
 </div>
-
-
-      </div>
-    </div>
 <GoogleMap className="my-6" />
+    </div>
 
     <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 xl:flex-row xl:justify-between">
       <p className="block mb-4 text-sm text-center text-secondary-500 xl:mb-0">

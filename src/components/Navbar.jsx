@@ -4,15 +4,18 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { useEffect } from "react";
 import Logo from "./Logo";
-import ContactForm from "./ContactForm";
+import ContactModal from "./ContactModal";
 
 
 export default function Navbar() {
-  const [isOpenContact, setIsOpenContact] = useState(false);
-  const pathname = usePathname();
-
-    const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+      const [open, setOpen] = useState(false);      
+      const [hidden, setHidden] = useState(false);
+      const [lastScrollY, setLastScrollY] = useState(0);
+      
+      const pathname = usePathname();
+      const handleClick = () => {
+        setOpen(true)
+      }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,25 +43,25 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           {/* Logo */}
-          <Link href="/" className="p-2">
+          <Link href="/" className="px-2   ">
 
-          <Logo className="w-25 xl:w-30 h-auto drop-shadow-4xl" />
+          <Logo className="w-24 xl:w-30 h-auto drop-shadow-4xl" />
 
           </Link>
           <div className="w-full scroll-none xl:relative hidden lg:flex lg:justify-end space-x-8 items-center text-md ">
-            <Link href="/" className={` ${(pathname === '/') && 'border-b'} font-semibold hover:text-primary-200 hover:border-primary-200 uppercase transition`}>
+            <Link href="/" className={` ${(pathname === '/') && 'border-b'} font-semibold uppercase transition`}>
               Home
             </Link>
-            <Link href="/about" className={` ${(pathname === '/about') && 'border-b'} font-semibold hover:text-primary-200 hover:border-primary-200 uppercase transition`}>
+            <Link href="/about" className={` ${(pathname === '/about') && 'border-b'} font-semibold uppercase transition`}>
               About
             </Link>
-            <Link href="/services" className={` ${(pathname === '/services') && 'border-b'} font-semibold hover:text-primary-200 hover:border-primary-200 uppercase transition`}>
+            <Link href="/services" className={` ${(pathname === '/services') && 'border-b'} font-semibold uppercase transition`}>
               Services
             </Link>
-            <Link href="/gallery" className={` ${(pathname === '/gallery') && 'border-b'} font-semibold hover:text-primary-200 hover:border-primary-200 uppercase transition`}>
+            <Link href="/gallery" className={` ${(pathname === '/gallery') && 'border-b'} font-semibold uppercase transition`}>
               Gallery
             </Link>
-            <button onClick={() => setIsOpenContact(true) } className={`bg-primary text-neutral-700 py-2 px-4 shadow-lg rounded-full ${(pathname === '/contact') && 'border-b'} font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}>
+            <button onClick={handleClick} className={`bg-primary cursor-pointer text-neutral-700 py-2 px-4 shadow-lg rounded-full font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}>
               GET A FREE QUOTE
             </button>
           </div>
@@ -66,7 +69,7 @@ export default function Navbar() {
       </div>
     </nav>
 
-      <ContactForm isOpenContact={isOpenContact} setIsOpenContact={setIsOpenContact} />
+      <ContactModal open={open} setOpen={setOpen} />
 
    </>
   );

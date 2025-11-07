@@ -1,5 +1,5 @@
 "use client";
-
+import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -17,6 +17,10 @@ export default function Hero({title}) {
   }, []);
 
   return (
+    
+                  <AnimatePresence mode="wait">
+
+  
     <section className="relative overflow-hidden select-none">
       {/* Carousel container */}
       <div className="relative h-screen w-full overflow-hidden">
@@ -41,28 +45,42 @@ export default function Hero({title}) {
         {/* ))} */}
 
         {/* Hero content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
+                  <div
+          className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6"
+            >
+
             
-          {title?
-          <>
-          <h1 className="text-4xl text-white">
-            {title}
-          </h1>
-          
-          </>:
-          <>
-
-          <h1 className="text-4xl text-white text-shadow-lg text-shadow-black/30"> Best in <span className="text-primary"> Interiors.</span>
-          </h1>
-          <p className="mt-6 text-xl italic text-shadow-lg text-shadow-black/30 max-w-2xl mx-auto">
-            Design beyond boundaries.
-          </p>
-          
-          </>}
 
 
-        </div>
+          <motion.h1 className="text-4xl text-white text-shadow-lg text-shadow-black/30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, }}
+            transition={{ duration: 1 }}
+          >
+           { title?
+             title 
+             :
+             <>Best in <span className="text-primary"> Interiors.</span>
+              <motion.p 
+                className="mt-6 text-xl italic text-shadow-lg text-shadow-black/30 max-w-2xl mx-auto"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                >
+
+                Design beyond boundaries.
+                </motion.p>
+             </>
+           }
+
+          </motion.h1>
+
+
+    </div>   
       </div>
     </section>
+            </AnimatePresence>
   );
 }

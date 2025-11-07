@@ -1,43 +1,21 @@
-import { Geist, Geist_Mono, Quintessential, Sansation, Roboto, Fugaz_One } from "next/font/google";
+import { Amaranth, Nunito_Sans } from "next/font/google";
 import "../globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import BottomNavbar from "@/components/BottomNavbar";
 import PopupButtons from "@/components/PopupButtons";
-import ContactForm from "@/components/ContactForm";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const quintessential = Quintessential({
-  variable: "--font-quintessential-serif",
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito-sans",
   subsets: ["latin"],
   weight: ["400"]
 });
 
-const sansation = Sansation({
-  variable: "--font-sansation-sans",
+const amaranth = Amaranth({
+  variable: "--font-amaranth",
   subsets: ["latin"],
-  weight: ["400"]
-});
-
-const roboto = Roboto({
-  variable: "--font-roboto-sans",
-  subsets: ["latin"],
-  weight: ["400"]
-});
-
-const fugazOne = Fugaz_One({
-  variable: "--font-fugaz-one-sans",
-  subsets: ["latin"],
-  weight: ["400"]
+  weight: ["700"]
 });
 
 export const metadata = {
@@ -49,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`relative bg-white ${geistSans.variable} ${geistMono.variable} ${fugazOne.variable} ${quintessential.variable} ${roboto.variable} ${sansation.variable} antialiased`}
+        className={`relative bg-white ${nunitoSans.variable} ${amaranth.variable} antialiased`}
       >
       <PopupButtons />
       <Navbar />

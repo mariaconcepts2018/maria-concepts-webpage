@@ -1,4 +1,3 @@
-import GoogleMap from "@/components/GoogleMap";
 import Hero from "@/components/Hero";
 import { Building, Eye, Trophy } from "@/components/Icons";
 import Image from "next/image";
@@ -11,14 +10,14 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
           <Hero title={'Get to know us'}/>
-      <main className="bg-neutral-100 text-neutral-800 px-4 xl:px-8 py-12 mx-auto text-left text-neutral-800">
+      <main className="px-4 xl:px-8 mx-auto text-left text-neutral-800">
         <>
 
-                                <h2 className="text-3xl text-center mt-12 text-primary-500">
+                                <h2 className="text-3xl text-center my-6 text-neutral-800">
             About Us
           </h2>
 
-          <div className="flex flex-col xl:flex-row max-w-6xl mx-auto py-8 gap-8">
+          <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8">
 
             <div className="basis-1/2 py-4">
               <Image src="https://res.cloudinary.com/dylffjde8/image/upload/w_auto/v1761721468/team_nbrl8f.avif"
@@ -54,10 +53,10 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
 </div>
           
 
- <div className="flex flex-col xl:flex-row justify-center gap-8 mt-16 max-w-7xl mx-auto">
-    <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
+ <div className="flex flex-nowrap xl:flex-row justify-start gap-8 mt-16 max-w-7xl mx-auto overflow-x-scroll md:overflow-x-auto">
+    <div className="min-w-xs p-4 text-center border border-primary-600 rounded">
     <Eye className="w-12 text-secondary mx-auto my-4" />
-      <h3 className="text-primary-500">
+      <h3 className="text-primary-800">
         VISION
       </h3>
 
@@ -66,10 +65,10 @@ At Maria Concepts, we’re committed to excellence, client satisfaction, and lon
       </p>
     </div>
 
-    <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
+    <div className="min-w-xs p-4 text-center border border-primary-600 rounded">
     <Trophy className="w-12 text-secondary mx-auto my-4" />
 
-      <h3 className="text-primary-500">
+      <h3 className="text-primary-800">
 EXPERIENCE
       </h3>
       <p className="pt-2">
@@ -79,11 +78,11 @@ EXPERIENCE
       </p>
     </div>
 
-        <div className="p-4 text-center border border-primary-600 rounded basis-1/3">
+        <div className="min-w-xs p-4 text-center border border-primary-600 rounded">
     <Building className="w-12 text-secondary mx-auto my-4" />
 
 
-      <h3 className="text-primary-500">
+      <h3 className="text-primary-800">
         MISSION
       </h3>
       <p className="pt-2">

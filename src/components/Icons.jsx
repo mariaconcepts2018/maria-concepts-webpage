@@ -182,3 +182,9 @@ export const Chat = (props) => (
     </g>
 </svg>
     )
+
+    export const Close = (props) => (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" {...props}>
+    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="m7.5 7.5l6 6m0-6l-6 6"></path>
+</svg>
+    )

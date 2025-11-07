@@ -1,156 +1,191 @@
 "use client"
-import { useState } from "react";
-import OtpForm from "./OtpForm";
+import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Close } from "./Icons";
 
-export default function ContactForm({ isOpenContact , setIsOpenContact}) {
+export default function ContactForm({setOpen }) {
   
-  const [form, setForm] = useState({ name: "", email: "", message: "", phone: "", service:"" });
-  const [contactForm, setContactForm] = useState(true);
-  const [errors, setErrors] = useState({});
-  const [otpForm, setOtpForm] = useState(false);
-  const [status, setStatus] = useState({ loading: false, ok: null, msg: "" });
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    otp: "",
+  });
+  const [generatedOtp, setGeneratedOtp] = useState(null);
+    const [otp, setOtp] = useState(["", "", "", ""]);
+    const inputsRef = useRef([]);
 
-    function validate() {
-    const e = {};
-    if (!form.name.trim()) e.name = "Name is required.";
-    // if (!form.email.trim()) e.email = "Email is required.";
-    if (!form.phone.trim()) e.phone = "Phone Number is required.";
-    else if (form.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
-      e.email = "Enter a valid email.";
-    return e;
-  }
 
-    async function handleSubmit(ev) {
-    ev.preventDefault();
-    setErrors({});
-    const e = validate();
-    if (Object.keys(e).length) {
-      setErrors(e);
-      return;
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleNext = () => {
+    // Simulate OTP generation
+    const otp = Math.floor(1000 + Math.random() * 9000);
+    setGeneratedOtp(otp);
+    alert(`Your OTP is: ${otp} (simulate SMS/email)`);
+    setStep(2);
+  };
+
+  const handleOtpChange = (value, index) => {
+    if (!/^[0-9]?$/.test(value)) return; // Only numbers
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    // Auto-focus next input
+    if (value && index < 3) {
+      inputsRef.current[index + 1].focus();
     }
+  };
 
-    setStatus({ loading: true, ok: null, msg: "" });
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      inputsRef.current[index - 1].focus();
+    }
+  };
 
-    // try {
-    //   const res = await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(form),
-    //   });
+  const handleVerify = () => {
+    const enteredOtp = otp.join("");
+    if (parseInt(enteredOtp) === generatedOtp) {
+      alert("OTP Verified Successfully!");
+    setOpen(false)
+    } else {
+      alert("Invalid OTP. Please try again.");
+    }
+  };
 
-    //   const data = await res.json();
-    //   if (!res.ok) throw new Error(data?.error || "Something went wrong");
-
-    console.log("submitting form")
-
-      setForm({ name: "", email: "", message: "" });
-      setOtpForm(true)
-      setStatus({ loading: false, ok: true, msg: data?.message || "Message sent!" });
-    // } catch (err) {
-    //   setStatus({ loading: false, ok: false, msg: err.message || "Failed to send" });
-    // }
-  }
+  const progress = (step / 2) * 100;
 
   return (
     <>
-    <div className={`flex justify-center p-2 transition transition-duration-300 ${isOpenContact? 'scale-100' : ' scale-0'} fixed inset-0 overflow-y-scroll overflow-x-hidden w-screen z-500 xl:inset-x-auto`}>
-
-<div className="w-full rounded shadow-lg md:w-1/2 xl:w-1/3 bg-neutral-100 border border-neutral-300 mx-auto my-auto mb-auto py-3 px-4 md:py-6 md:px-8">
-
-{otpForm ?
-
-  <OtpForm setOtpForm={setOtpForm} setContactForm={setContactForm} setIsOpenContact={setIsOpenContact}/>
-
-:
-<>
-{contactForm ?
-  
-  <form onSubmit={handleSubmit} className="mx-auto my-auto">
-      <h2 className="text-center md:text-left text-2xl ml-2 my-2 text-secondary-500">Get In Touch</h2>
-
-      <div className="">
-
-
-      <label className="block mb-1 w-full basis-full xl:basis-1/2 p-2">
-        <span className="text-sm">Name</span>
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring focus:ring ${
-            errors.name ? "border-red-500 focus:ring-red-200" : "border-neutral-300 focus:ring-neutral-600"
-          }`}
-          aria-invalid={errors.name ? "true" : "false"}
-          aria-describedby={errors.name ? "name-error" : undefined}
+   <div className="flex flex-row flex-nowrap items-center justify-between mb-6"> 
+ <div className="w-full bg-neutral-300 rounded-full h-1">
+          <motion.div
+            className="bg-primary-600 h-1 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.4 }}
           />
-        {errors.name && <p id="name-error" className="mt-1 text-xs text-red-600">{errors.name}</p>}
-      </label>
+        </div>
 
-            <label className="block mb-1 w-full basis-full xl:basis-1/2 p-2">
-        <span className="text-sm">Phone Number</span>
-        <input
-          type="phone"
-          name="phone"
-          value={form.phone}
-          onChange={(e) => setForm({ ...form, phone: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring focus:ring ${
-            errors.phone ? "border-red-500 focus:ring-red-200" : "border-neutral-300 focus:ring-neutral-600"
-          }`}
-          aria-invalid={errors.phone ? "true" : "false"}
-          aria-describedby={errors.phone ? "phone-error" : undefined}
-          />
-        {errors.phone && <p id="phone-error" className="mt-1 text-xs text-red-600">{errors.phone}</p>}
-      </label>
-
-      <label className="block mb-1 w-full basis-full xl:basis-1/2 p-2">
-        <span className="text-sm">Email</span>
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className={`mt-1 block w-full rounded border px-3 py-2 focus:outline-none focus:ring focus:ring ${
-            errors.email ? "border-red-500 focus:ring-red-200" : "border-neutral-300 focus:ring-neutral-600"
-          }`}
-          aria-invalid={errors.email ? "true" : "false"}
-          aria-describedby={errors.email ? "email-error" : undefined}
-          />
-
-        {errors.email && <p id="email-error" className="mt-1 text-xs text-red-600">{errors.email}</p>}
-      </label>
-
+      <button onClick={() => setOpen(false)}>
+  <Close className="text-neutral-300 w-10 h-10 ml-4" />
+</button>
 
           </div>
-      <div className="flex flex-col md:flex-row items-center gap-y-6 p-2 mt-6">
-        <button
-          type="submit"
-          disabled={status.loading}
-          className="transition inline-flex items-center justify-center rounded px-4 py-2 bg-primary-500 text-secondary-800 uppercase font-medium shadow-md hover:bg-primary-400 disabled:opacity-60"
-          >
-          {status.loading ? "Submitting..." : "Get a free quote"}
-        </button>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={step}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.3 }}
+            >
+            {/* Step 1 - User Details */}
+            {step === 1 && (
+              <div className="space-y-4">
+                <h2 className="text-xl font-semibold text-gray-800 text-center">
+                  Enter Your Details
+                </h2>
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+                  />
+
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+                  />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+                  />
 
                 <button
-          type="button"
-          onClick={() => setIsOpenContact(false)}
-          className="cursor-pointer transition inline-flex items-center justify-center rounded px-4 py-2 border border-neutral-300 text-secondary-700 uppercase font-medium shadow-md hover:bg-secondary-100 hover:text-secondary-800 disabled:opacity-60"
-          >
-            Close
-        </button>
+                  onClick={handleNext}
+                  disabled={!formData.name || !formData.phone || !formData.email}
+                  className={`w-full py-2 rounded-lg transition ${
+                    formData.name && formData.phone && formData.email
+                      ? "bg-primary-600 text-neutral-800 hover:bg-primary-500  cursor-pointer"
+                      : "bg-gray-300 text-neutral-600 cursor-not-allowed"
+                  }`}
+                >
+                  Get OTP
+                </button>
+              </div>
+            )}
 
-        {status.ok === true && <p className="text-sm text-green-700">{status.msg}</p>}
-        {status.ok === false && <p className="text-sm text-red-600">{status.msg}</p>}
-      </div>
-    </form>
- :
-<>
-</>
-}
-</>
-}
-</div>
-</div>
+            {/* Step 2 - OTP Verification */}
+            {step === 2 && (
+              <div className="space-y-4 text-center">
+                <h2 className="text-xl font-semibold text-gray-800">
+                  Verify OTP
+                </h2>
+                <p className="text-gray-600 text-sm">
+                  Enter the 4-digit OTP sent to your phone.
+                </p>
+
+
+                <div className="flex justify-center gap-3">
+                  {otp.map((digit, i) => (
+                    <input
+                      key={i}
+                      type="number"
+                      maxLength="1"
+                      value={digit}
+                      onChange={(e) => handleOtpChange(e.target.value, i)}
+                      onKeyDown={(e) => handleKeyDown(e, i)}
+                      ref={(el) => (inputsRef.current[i] = el)}
+                      className="w-10 h-10 text-center text-xl border border-gray-300 rounded-lg focus:ring focus:ring-primary-500 outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={handleVerify}
+                  disabled={!otp.join("")}
+                  className={`w-full py-2 rounded-lg transition ${
+                    otp.join("").length === 4
+                      ? "bg-primary-600 text-neutral-800 hover:bg-primary-500 cursor-pointer"
+                      : "bg-gray-300 text-neutral-600 cursor-not-allowed"
+                  }`}
+                >
+                  Verify OTP
+                </button>
+
+                <button
+                  onClick={() => setStep(1)}
+                  className="text-sm text-gray-500 underline mt-2 cursor-pointer"
+                >
+                  ← Edit Details
+                </button>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Step Indicator */}
+        <p className="text-sm text-gray-500 mt-4 text-center">
+          Step {step} of 2
+        </p>
     </>
   );
 }
