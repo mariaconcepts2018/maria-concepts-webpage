@@ -140,7 +140,7 @@ export default function MyApp({ Component, pageProps }) {
 <div className="flex xl:justify-center xl:nowrap gap-4 flex-col md:flex-row md:overflow-x-scroll xl:overflow-x-hidden px-2 md:px-6 mx-auto">
 {services.map((item, index) => 
 
-<div key={index} className="flex flex-col shadow-lg rounded  pb-2 border border-neutral-200">
+<div key={index} className="md:w-1/3 md:mx-auto flex flex-col shadow-lg rounded  pb-2 border border-neutral-200">
   <div className="h-full w-full relative overflow-hidden object-center text-white rounded-t border-b-2 border-primary-600">
     <img className="h-full w-full object-cover" src={item.imgurl} alt="card-image" loading="lazy" />
   </div>

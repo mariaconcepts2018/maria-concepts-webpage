@@ -9,7 +9,7 @@ export default function Footer() {
   return (
 <footer className="relative w-full pt-8 bg-neutral-100 pb-18 lg:pb-0">
   <div className="px-4 lg:px-8 mx-auto ">
-    <div className="flex flex-col lg:flex-row justify-center mx-auto lg:w-3/4">
+    <div className="flex flex-col lg:flex-row justify-center mx-auto md:justify-evenly">
 <div className="flex flex-col justify-evenly  lg:my-12 gap-y-3">
 <div>
   <h2 className="mb-8 text-xl">MARIA CONCEPTS</h2>
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
 </div>
-<GoogleMap className="my-6" />
+<GoogleMap className="my-6 lg:my-12" />
     </div>
 
     <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 xl:flex-row xl:justify-between">

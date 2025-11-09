@@ -28,7 +28,7 @@ export default function MyApp({ Component, pageProps }) {
               />
             </div>
 
-            <div className="basis-1/2">
+            <div className="basis-1/2 md:px-4">
 
             <p className="py-2">
 

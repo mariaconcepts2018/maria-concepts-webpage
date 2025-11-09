@@ -39,16 +39,16 @@ export default function Navbar() {
       hidden ? " lg:bg-white lg:text-neutral-700 lg:shadow-lg" : "bg-none text-white"
     }`}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition`}>
-        <div className="flex justify-between h-24 items-center ">
+        <div className="flex justify-between md:h-20 items-center ">
 
           {/* Desktop Menu */}
           {/* Logo */}
           <Link href="/" className="px-2   ">
 
-          <Logo className="w-24 xl:w-30 h-auto drop-shadow-4xl" />
+          <Logo className="w-24 md:w-20 h-auto drop-shadow-4xl" />
 
           </Link>
-          <div className="w-full scroll-none xl:relative hidden lg:flex lg:justify-end space-x-8 items-center text-md ">
+          <div className="w-full scroll-none xl:relative hidden lg:flex lg:justify-end space-x-8 items-center">
             <Link href="/" className={` ${(pathname === '/') && 'border-b'} font-semibold uppercase transition`}>
               Home
             </Link>

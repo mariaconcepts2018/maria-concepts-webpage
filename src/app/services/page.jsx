@@ -60,10 +60,10 @@ export default function MyApp() {
           <Hero title={'Our Services'}/>
       <main className=" text-neutral-800 px-4 xl:px-8 py-12 mx-auto text-neutral-800">
 
-          <div className="flex flex-row flex-wrap xl:flex-wrap justify-center pt-4 pb-4 gap-8 mx-auto xl:max-w-7xl">
+          <div className="flex flex-row flex-wrap xl:flex-wrap justify-center pt-4 pb-4 gap-8 mx-auto xl:max-w-8xl">
 
             {data.map ((item, index) => (
-<div key={index} className="cursor-pointer group relative flex flex-col  justify-center bg-white shadow-sm border border-slate-200 rounded-lg w-84 md:w-96 hover:shadow-lg transition-shadow duration-300">
+<div key={index} className="cursor-pointer group relative flex flex-col  justify-center bg-white shadow-sm border border-slate-200 rounded-lg w-84 md:w-84 hover:shadow-lg transition-shadow duration-300">
   <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
     <img className="w-full h-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.25, 1, 0.5, 1)] transform group-hover:scale-110" 
          src={item.coverImage} alt={item.title} />
