@@ -52,7 +52,7 @@ export default function Hero({title}) {
             
 
 
-          <motion.h1 className="text-4xl text-white text-shadow-lg text-shadow-black/30"
+          <motion.h1 className="text-4xl lg:text-6xl text-white text-shadow-lg text-shadow-black/30"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, }}
@@ -63,7 +63,7 @@ export default function Hero({title}) {
              :
              <>Best in <span className="text-primary"> Interiors.</span>
               <motion.p 
-                className="mt-6 text-xl italic text-shadow-lg text-shadow-black/30 max-w-2xl mx-auto"
+                className="mt-6 text-2xl lg:text-3xl italic text-shadow-lg text-shadow-black/30 max-w-2xl mx-auto"
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}

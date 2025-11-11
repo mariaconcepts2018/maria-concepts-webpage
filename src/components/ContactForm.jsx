@@ -1,7 +1,13 @@
 "use client"
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Close } from "./Icons";
+import { Close, Success16 } from "./Icons";
+import ServiceForm from "./ServiceTypeForm";
+import HomeTypeForm from "./HomeTypeForm";
+import LayoutForm from "./LayoutForm";
+import ServiceTypeForm from "./ServiceTypeForm";
+import ServicesForm from "./ServicesForm";
+import FloorsForm from "./FloorsForm";
 
 export default function ContactForm({setOpen }) {
   
@@ -14,7 +20,10 @@ export default function ContactForm({setOpen }) {
     name: "",
     phone: "",
     email: "",
+    leadSource: "website",
     code: "",
+    location: "",
+    service: ""
   });
 
     const [otp, setOtp] = useState(["", "", "", ""]);
@@ -29,28 +38,29 @@ export default function ContactForm({setOpen }) {
   const handleSubmit = async (e) => {
     e.preventDefault() // Prevent default form submission
           //send OTP  
-          try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`, { // Replace with your API route
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              body: new URLSearchParams({phone : formData.phone}),
-            })
+          // try {
+          //   const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`, { // Replace with your API route
+          //     method: 'POST',
+          //     headers: {
+          //       'Content-Type': 'application/x-www-form-urlencoded',
+          //     },
+          //     body: new URLSearchParams({phone : formData.phone}),
+          //   })
             
-            if (!response.ok) {
-              throw new Error('Failed to send OTP.')
-            }
+          //   if (!response.ok) {
+          //     throw new Error('Failed to send OTP.')
+          //   }
             
-            const result = await response.json()
+          //   const result = await response.json()
+          // console.log('OTP sent successful:', result)
             localStorage.setItem('form-step', 2)
             setStep(2);
-          console.log('OTP sent successful:', result)
+
           setMessage("An OTP has been sent to your mobile number.")
-        } catch (error) {
-          console.error('Error sending OTP:', error)
-          // Handle error (e.g., show error message)
-        }
+  //       } catch (error) {
+  //         console.error('Error sending OTP:', error)
+  //         // Handle error (e.g., show error message)
+  //       }
   };
 
   const handleOtpChange = (value, index) => {
@@ -88,11 +98,13 @@ export default function ContactForm({setOpen }) {
             }
             
             const result = await response.json()
-    setFormData({ ...formData, isVerified: true });
             console.log('OTP verified successful:', result)
+       
             setMessage("Your number has been verified successfully")
 
-            setFormData({name: "",phone: "",email: ""})
+            localStorage.setItem('form-step', 3)
+            setStep(3);
+
             setOtp(["","","",""])
 
           } catch (error) {
@@ -102,11 +114,11 @@ export default function ContactForm({setOpen }) {
           }
         };
 
-  const progress = (step / 2) * 100;
+  const progress = (step / 8) * 100;
 
   return (
     <>
-   <div className="flex flex-row flex-nowrap items-center justify-between mb-6"> 
+   <div className="flex flex-row flex-nowrap items-center justify-between mb-6 gap-x-6 md:gap-x-12"> 
       <div className="w-full bg-neutral-300 rounded-full h-1">
           <motion.div
             className="bg-primary-600 h-1 rounded-full"
@@ -115,8 +127,8 @@ export default function ContactForm({setOpen }) {
             transition={{ duration: 0.4 }}
           />
       </div>
-      <button className="cursor-pointer" onClick={() => setOpen(false)}>
-        <Close className="text-neutral-300 w-10 h-10 ml-4" />
+      <button className="cursor-pointer rounded-full w-5 h-5 bg-neutral-200 " onClick={() => setOpen(false)}>
+        <Close className="text-neutral-500 w-5 h-5" />
       </button>
     </div>
     <AnimatePresence mode="wait">
@@ -157,6 +169,15 @@ export default function ContactForm({setOpen }) {
               name="email"
               placeholder="Email Address"
               value={formData.email}
+              onChange={handleChange}
+              className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
+              />
+
+            <input
+              type="text"
+              name="location"
+              placeholder="Home or Site Location"
+              value={formData.location}
               onChange={handleChange}
               className="w-full border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-yellow-500 outline-none"
               />
@@ -223,14 +244,48 @@ export default function ContactForm({setOpen }) {
             </button>
           </div>
         )}
+
         </ form>
+
+        {step === 3 && (
+            <ServiceTypeForm setStep={setStep} setMessage={setMessage} setError={setError} formData={formData} setFormData={setFormData} />
+        )}
+                {step === 4 && (
+            <HomeTypeForm setStep={setStep} setMessage={setMessage} setError={setError} formData={formData} setFormData={setFormData} />
+        )}
+                        {step === 5 && (
+            <FloorsForm setStep={setStep} setMessage={setMessage} setError={setError} formData={formData} setFormData={setFormData} />
+        )}
+
+                {step === 6 && (
+            <LayoutForm setStep={setStep} setMessage={setMessage} setError={setError} formData={formData} setFormData={setFormData} />
+        )}
+
+                        {step === 7 && (
+            <ServicesForm setStep={setStep} setMessage={setMessage} setError={setError} formData={formData} setFormData={setFormData} />
+        )}
+                        {step === 8 && (
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-gray-800 text-center">
+              Completed..!
+            </h2>
+            <div className="flex flex-col p-2 gap-4 rounded-3xl border border-green-300 bg-green-100/25 items-center mt-8">
+              <Success16 className="w-8 h-8 text-green-300"/>
+              <div>
+            <p className="p-2 text-center mb-4">Your details have been saved. We will contact you soon.</p>
+              </ div>
+            </div>
+          </div>
+        )}
       </motion.div>
     </AnimatePresence>
 
     {/* Step Indicator */}
+    {step !== 8 &&
     <p className="text-sm text-gray-500 mt-4 text-center">
-      Step {step} of 2
+      Step {step} of 7
     </p>
+    }
 
     
           <div
