@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Close, Success16 } from "./Icons";
 import ServiceForm from "./ServiceTypeForm";
@@ -16,9 +16,7 @@ export default function ContactForm({ setOpen }) {
   const formStatus =
     typeof window !== "undefined" ? localStorage.getItem("form") : undefined;
 
-  const [step, setStep] = useState(
-    formStatus === "completed" ? 8 : phone ? 3 : 1
-  );
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
     phone: phone ? phone : "",
@@ -33,6 +31,10 @@ export default function ContactForm({ setOpen }) {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const inputsRef = useRef([]);
+
+  useEffect(() => {
+    setStep(formStatus === "completed" ? 8 : phone ? 3 : 1);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

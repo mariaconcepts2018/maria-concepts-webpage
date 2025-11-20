@@ -15,41 +15,10 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery({ images }) {
   // If no images passed, provide beautiful Unsplash placeholders
-  const fallback = [
-    {
-      src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
-      alt: "Warm wooden interior living space",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
-      alt: "Modern kitchen with island lighting",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36",
-      alt: "Cozy living room with natural light",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1499955085172-a104c9463ece",
-      alt: "Minimal bedroom with white linens",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
-      alt: "Contemporary bathroom marble details",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-      alt: "Dining with industrial pendant lights",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-      alt: "Scandinavian staircase minimal style",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1501183638710-841dd1904471",
-      alt: "Modern home exterior at sunset",
-    },
-  ];
+
   const imgs = images && images.length ? images : fallback;
+
+  const thumbRefs = useRef({});
 
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -80,6 +49,10 @@ export default function Gallery({ images }) {
 
   function openAt(i) {
     setIndex(i);
+    const element = thumbRefs.current[i];
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" }); // 'start' aligns the top of the element with the top of the viewport
+    }
     setOpen(true);
   }
 
@@ -96,7 +69,7 @@ export default function Gallery({ images }) {
 
       {/* Masonry grid using CSS columns */}
       <div
-        className="masonry-grid gap-1 lg:w-1/2 lg:mx-auto"
+        className="masonry-grid gap-1 lg:w-3/4 lg:mx-auto"
         style={{ columnGap: "0.5rem" }}
       >
         {imgs.map((img, i) => (
@@ -150,14 +123,14 @@ export default function Gallery({ images }) {
                   <button
                     onClick={prev}
                     aria-label="Previous"
-                    className="p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur"
+                    className="p-2 rounded-full bg-primary-500 hover:bg-primary-400"
                   >
                     <ChevronLeft size={20} />
                   </button>
                   <button
                     onClick={next}
                     aria-label="Next"
-                    className="p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur"
+                    className="p-2 rounded-full bg-primary-500 hover:bg-primary-400"
                   >
                     <ChevronRight size={20} />
                   </button>
@@ -165,7 +138,7 @@ export default function Gallery({ images }) {
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close"
-                  className="p-2 rounded-full bg-white/10 hover:bg-white/20"
+                  className="p-2 rounded-full bg-primary-500 hover:bg-primary-400"
                 >
                   <X size={18} />
                 </button>
@@ -180,13 +153,13 @@ export default function Gallery({ images }) {
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.15 }}
                 >
                   <Image
                     src={imgs[index].src}
                     alt={imgs[index].alt || `Image ${index + 1}`}
                     fill
-                    className="object-contain p-2"
+                    className="object-contain"
                     sizes="(min-width:1024px) 900px, 100vw"
                     priority
                   />
@@ -215,15 +188,19 @@ export default function Gallery({ images }) {
                 </div>
 
                 {/* Thumbnails */}
-                <div className="bg-neutral-800/80 p-3">
-                  <div className="flex gap-3 overflow-x-auto py-1">
+                <div className="bg-neutral-800 p-3">
+                  <div className="flex gap-3 overflow-x-auto py-1 justify-start">
                     {imgs.map((t, ti) => (
                       <button
                         key={ti}
+                        id={ti}
                         onClick={() => setIndex(ti)}
+                        ref={(el) => (thumbRefs.current[ti] = el)}
                         className={`flex-shrink-0 rounded-lg overflow-hidden border-2 ${
-                          ti === index ? "border-white" : "border-transparent"
-                        } focus:outline-none`}
+                          ti === index
+                            ? "border-primary-500"
+                            : "border-transparent"
+                        } focus:outline-none outline-none`}
                         aria-label={`Open thumbnail ${ti + 1}`}
                       >
                         <div className="relative h-16 w-24">
@@ -248,7 +225,7 @@ export default function Gallery({ images }) {
         /* Masonry using CSS columns. Change column-count with media queries using Tailwind utility breakpoints is not possible directly,
            so we rely on a small set of responsive helpers here. */
         .masonry-grid {
-          column-count: 3;
+          column-count: 2;
         }
         @media (min-width: 640px) {
           .masonry-grid {
@@ -257,7 +234,7 @@ export default function Gallery({ images }) {
         }
         @media (min-width: 1024px) {
           .masonry-grid {
-            column-count: 3;
+            column-count: 4;
           }
         }
         /* Make images break inside columns cleanly */
