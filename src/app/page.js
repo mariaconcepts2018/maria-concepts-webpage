@@ -262,14 +262,17 @@ export default function MyApp({}) {
             {gridImages.map((item, index) => (
               <div key={index} className="grid gap-2">
                 {item.col.map((item, index) => (
-                  <div key={index}>
+                  <div className="relative" key={index}>
                     <Image
-                      className="h-full w-auto max-w-full rounded-lg"
+                      className="h-full w-full object-cover rounded-lg"
                       src={item.src}
                       alt="grid-images"
                       width={400}
                       height={300}
                     />
+                    <p className="absolute scale-75 bottom-2 p-1 text-xs  px-4 rounded-full font-light bg-black text-white opacity-50">
+                      &copy; mariaconcepts
+                    </p>
                   </div>
                 ))}
               </div>

@@ -42,8 +42,8 @@ export default function FullscreenModal({
   };
 
   return (
-    <div className="fixed inset-0 bg-white bg-opacity-90 z-[9999] flex flex-col animate-fadeIn">
-      <div className="flex justify-between items-center p-4 text-white">
+    <div className="fixed inset-0 bg-black/50 bg-opacity-90 z-[9999] flex flex-col animate-fadeIn">
+      <div className="flex justify-evenly items-center p-4 text-white">
         <div className="flex gap-2">
           <button
             onClick={closeFullscreen}
@@ -99,9 +99,9 @@ export default function FullscreenModal({
         <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
-          width={800}
-          height={600}
-          className="max-h-full max-w-full transition-transform duration-150 ease-in-out"
+          width={1920}
+          height={1080}
+          className="h-full w-auto transition-transform duration-150 ease-in-out"
           style={{
             transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})`,
           }}
