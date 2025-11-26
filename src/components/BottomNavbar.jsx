@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
-import ContactModal from "./ContactModal";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const ContactModal = dynamic(() => import("./ContactModal"), { ssr: false });
 
 const BottomNavbar = () => {
   const pathname = usePathname();
@@ -21,6 +23,7 @@ const BottomNavbar = () => {
           <div className="flex h-full max-w-lg grid-cols-5 mx-auto justify-evenly">
             <Link
               href={"/"}
+              title="home"
               className="inline-flex flex-col items-center justify-center px-5 group"
             >
               <svg
@@ -41,6 +44,7 @@ const BottomNavbar = () => {
 
             <Link
               href="/services"
+              title="services"
               className="inline-flex flex-col items-center justify-center px-5 group"
             >
               <svg
@@ -64,6 +68,7 @@ const BottomNavbar = () => {
               <button
                 onClick={handleClick}
                 type="button"
+                title="Get a free quote"
                 className="py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-500 shadow-md text-neutral-900 rounded-full group focus:ring focus:ring-neutral-500 focus:outline-none"
               >
                 GET A FREE <br /> QUOTE
@@ -74,6 +79,7 @@ const BottomNavbar = () => {
             <Link
               href="/gallery"
               className="inline-flex flex-col items-center justify-center px-5 rounded-e-full group"
+              title="gallery"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,6 +108,7 @@ const BottomNavbar = () => {
             <Link
               href="/about"
               className="inline-flex flex-col items-center justify-center px-5 rounded-e-full group"
+              title="about"
             >
               <svg
                 className={`w-6 h-6 mb-1 ${

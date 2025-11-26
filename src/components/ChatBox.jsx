@@ -79,10 +79,12 @@ export default function ChatBox({ openModal, handleModal }) {
         <div className="flex justify-between items-start bg-white text-neutral-700 w-full shadow-md p-4">
           <div className="block">
             <h1 className="text-lg">Maria Concepts</h1>
-            <div className="text-sm opacity-80 flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-              <span>Online</span>
-            </div>
+            {socket.connected && (
+              <div className="text-sm opacity-80 flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                <span>Online</span>
+              </div>
+            )}
           </div>
           <button
             className="hover:bg-neutral-200 rounded-full text-4xl text-center transition"

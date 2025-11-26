@@ -4,7 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import Logo from "./Logo";
-import ContactModal from "./ContactModal";
+import dynamic from "next/dynamic";
+
+const ContactModal = dynamic(() => import("./ContactModal"), { ssr: false });
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -45,12 +47,13 @@ export default function Navbar() {
           <div className="flex justify-between md:h-20 items-center ">
             {/* Desktop Menu */}
             {/* Logo */}
-            <Link href="/" className="px-2   ">
+            <Link href="/" className="px-2" title="home">
               <Logo className="w-18 md:w-20 h-auto drop-shadow-4xl" />
             </Link>
             <div className="w-full scroll-none xl:relative hidden lg:flex lg:justify-end space-x-8 items-center">
               <Link
                 href="/"
+                title="home"
                 className={` ${
                   pathname === "/" && "border-b"
                 } font-semibold uppercase transition`}
@@ -59,6 +62,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/about"
+                title="about"
                 className={` ${
                   pathname === "/about" && "border-b"
                 } font-semibold uppercase transition`}
@@ -67,6 +71,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/services"
+                title="services"
                 className={` ${
                   pathname === "/services" && "border-b"
                 } font-semibold uppercase transition`}
@@ -75,6 +80,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/gallery"
+                title="gallery"
                 className={` ${
                   pathname === "/gallery" && "border-b"
                 } font-semibold uppercase transition`}
@@ -83,6 +89,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={handleClick}
+                title="get a free quote"
                 className={`bg-primary cursor-pointer text-neutral-700 py-2 px-4 shadow-lg rounded-full font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}
               >
                 GET A FREE QUOTE

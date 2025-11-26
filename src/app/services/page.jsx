@@ -65,12 +65,13 @@ const data = [
     coverImage: getCloudinaryUrl("photo-1652792997653-7e5897fb309a_t4vkuo"),
   },
 ];
-const heroSrc = getCloudinaryUrl("hero_gqdsnr");
+const imgSmall = getCloudinaryUrl("hero_gqdsnr", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("hero_gqdsnr");
 
 export default function MyApp() {
   return (
     <>
-      <Hero title={"Our Services"} src={heroSrc} />
+      <Hero title={"Our Services"} imgLarge={imgLarge} imgSmall={imgSmall} />
       <main className=" text-neutral-800 px-4 xl:px-8 py-12 mx-auto text-neutral-800">
         <div className="flex flex-row flex-wrap xl:flex-wrap justify-center pt-4 pb-4 gap-8 mx-auto xl:max-w-8xl">
           {data.map((item, index) => (

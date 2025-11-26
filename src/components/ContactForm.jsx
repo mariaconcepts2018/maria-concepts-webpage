@@ -199,7 +199,10 @@ export default function ContactForm({ setOpen }) {
                     !formData.name || !formData.phone || !formData.email
                   }
                   className={`w-full py-2 rounded-lg transition ${
-                    formData.name && formData.phone && formData.email
+                    formData.name &&
+                    formData.phone &&
+                    /\S+@\S+\.\S+/.test(formData.email) &&
+                    formData.location
                       ? "bg-primary-600 text-neutral-800 hover:bg-primary-500  cursor-pointer"
                       : "bg-gray-300 text-neutral-600 cursor-not-allowed"
                   }`}

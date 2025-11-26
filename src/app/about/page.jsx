@@ -7,12 +7,13 @@ export const metadata = {
   title: "Get to know us",
 };
 
-const heroSrc = getCloudinaryUrl("hero_gqdsnr");
+const imgSmall = getCloudinaryUrl("hero_gqdsnr", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("hero_gqdsnr");
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({}) {
   return (
     <>
-      <Hero title={"Get to know us"} src={heroSrc} />
+      <Hero title={"Get to know us"} imgLarge={imgLarge} imgSmall={imgSmall} />
       <main className="px-4 xl:px-8 mx-auto text-left text-neutral-800">
         <>
           <h2 className="text-3xl text-center my-6 text-neutral-800">
@@ -22,7 +23,7 @@ export default function MyApp({ Component, pageProps }) {
           <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8">
             <div className="basis-1/2 py-4">
               <Image
-                src={getCloudinaryUrl("team_nbrl8f")}
+                src={getCloudinaryUrl("gallery_13_pnynem")}
                 width={800}
                 height={600}
                 alt="Our team"

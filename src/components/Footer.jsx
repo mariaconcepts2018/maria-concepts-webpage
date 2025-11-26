@@ -2,7 +2,8 @@
 import Link from "next/link";
 import { Email, Location, Phone } from "./Icons";
 import Logo from "./Logo";
-import GoogleMap from "./GoogleMap";
+import dynamic from "next/dynamic";
+const GoogleMap = dynamic(() => import("./GoogleMap"));
 
 export default function Footer() {
   return (
@@ -21,7 +22,7 @@ export default function Footer() {
             <div className="flex gap-4 items-start">
               <Email className="w-8 text-neutral-600 mt-1" />
 
-              <p>(replace with email ID)</p>
+              <p>contact@mariaconcepts.com</p>
             </div>
             <br />
 
@@ -44,8 +45,9 @@ export default function Footer() {
             Copyright © 2025 Maria Concepts. All Rights Reserved.
           </p>
           <div className="flex gap-4 text-secondary-600 sm:justify-center">
-            <a
-              href="#"
+            <Link
+              href="https://www.facebook.com/"
+              target="_blank"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
               <svg
@@ -60,10 +62,11 @@ export default function Footer() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </a>
-            <a
-              href="#"
-              className="block transition-opacity text-inherit hover:opacity-80"
+            </Link>
+            <Link
+              href="https://www.instagram.com/mariaconcepts6/"
+              target="_blank"
+              className="block transition-opacity cursor-pointer text-inherit hover:opacity-80"
             >
               <svg
                 className="w-5 h-5"
@@ -77,8 +80,8 @@ export default function Footer() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </a>
-            <a
+            </Link>
+            {/* <a
               href="#"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
@@ -94,8 +97,8 @@ export default function Footer() {
                   d="M928 736q-222 32-416 32q-86 0-190-8t-165-16l-61-8q-27-5-47.5-37.5t-30-78.5t-14-86T0 461V307Q0 52 96 32Q318 0 512 0q86 0 190 8t165 16l61 8q29 4 49.5 36.5T1007 148t13 86t4 73v154q0 36-3 73t-12 85t-30 80t-51 37zM693 359L431 199q-11-10-29-5.5T384 208v352q0 11 18 15t29-6l262-160q11-10 11-25t-11-25z"
                 />
               </svg>
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="#"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
@@ -112,7 +115,7 @@ export default function Footer() {
                   d="M10.015 0C4.484 0 0 4.473 0 9.99c0 4.232 2.638 7.847 6.364 9.3c-.088-.79-.166-2.002.034-2.865c.183-.78 1.175-4.964 1.175-4.964s-.3-.6-.3-1.484c0-1.386.808-2.426 1.811-2.426c.855 0 1.268.64 1.268 1.406c0 .858-.545 2.14-.829 3.327c-.238.994.502 1.804 1.483 1.804c1.778 0 3.148-1.87 3.148-4.572c0-2.384-1.723-4.058-4.184-4.058c-2.848 0-4.518 2.135-4.518 4.333c0 .86.329 1.786.742 2.284c.083.1.094.188.071.288c-.075.312-.244.999-.279 1.135c-.044.188-.143.226-.335.138c-1.249-.575-2.032-2.398-2.032-3.872c0-3.146 2.296-6.043 6.616-6.043c3.474 0 6.175 2.472 6.175 5.769c0 3.446-2.178 6.218-5.207 6.218c-1.014 0-1.966-.524-2.304-1.149l-.625 2.374c-.225.87-.84 1.96-1.252 2.621A10.07 10.07 0 0 0 9.988 20C15.508 20 20 15.53 20 10.01C20 4.493 15.507.023 9.988.023L10.015 0Z"
                 />
               </svg>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

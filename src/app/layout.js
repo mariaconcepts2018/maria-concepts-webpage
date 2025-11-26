@@ -5,17 +5,16 @@ import Navbar from "@/components/Navbar";
 import BottomNavbar from "@/components/BottomNavbar";
 import PopupButtons from "@/components/PopupButtons";
 
-
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin"],
-  weight: ["400"]
+  weight: ["400"],
 });
 
 const amaranth = Amaranth({
   variable: "--font-amaranth",
   subsets: ["latin"],
-  weight: ["700"]
+  weight: ["700"],
 });
 
 export const metadata = {
@@ -29,11 +28,11 @@ export default function RootLayout({ children }) {
       <body
         className={`relative bg-white ${nunitoSans.variable} ${amaranth.variable} antialiased`}
       >
-      <PopupButtons />
-      <Navbar />
+        <PopupButtons />
+        <Navbar />
         {children}
-      <Footer/>
-      <BottomNavbar />
+        <Footer />
+        <BottomNavbar />
       </body>
     </html>
   );

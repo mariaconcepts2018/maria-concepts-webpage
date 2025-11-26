@@ -68,10 +68,7 @@ export default function Gallery({ images }) {
       <h2 className="text-2xl font-semibold text-center">Portfolio</h2>
 
       {/* Masonry grid using CSS columns */}
-      <div
-        className="masonry-grid gap-1 lg:w-3/4 lg:mx-auto"
-        style={{ columnGap: "0.5rem" }}
-      >
+      <div className="flex flex-row gap-1 lg:w-1/4 lg:mx-auto">
         {imgs.map((img, i) => (
           <div
             key={i}

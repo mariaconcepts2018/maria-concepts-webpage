@@ -13,35 +13,72 @@ import Image from "next/image";
 import Link from "next/link";
 import getCloudinaryUrl from "@/lib/cloudinary";
 
-const heroSrc = getCloudinaryUrl("hero_gqdsnr");
+const imgSmall = getCloudinaryUrl("hero_gqdsnr", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("hero_gqdsnr");
 
 const gridImages = [
   {
     col: [
-      getCloudinaryUrl("premium_photo-1683140941523-f1fbbabe54d5_ohvz0j"),
-      getCloudinaryUrl("premium_photo-1675616563084-63d1f129623d_xtubve"),
-      getCloudinaryUrl("premium_photo-1670076515866-73822a3d610d_wa64aq"),
+      {
+        src: getCloudinaryUrl("IMG_0434_kwwia9"),
+        alt: "Warm and elegant vanity unit with storage",
+      },
+      {
+        src: getCloudinaryUrl("IMG_0428_jjccni"),
+        alt: "Modern bedroom",
+      },
     ],
   },
+
   {
     col: [
-      getCloudinaryUrl("premium_photo-1661779632194-6cf32a9b5325_dnx5mk"),
-      getCloudinaryUrl("premium_photo-1661914953201-854a4ba9dc46_y6kyss"),
-      getCloudinaryUrl("premium_photo-1683880731785-e5b632e0ea13_iva8nq"),
+      {
+        src: getCloudinaryUrl("IMG_0424_k2paog"),
+        alt: "Kids bedroom",
+      },
+      {
+        src: getCloudinaryUrl("IMG_0423_mp7ksr"),
+        alt: "False ceiling",
+      },
     ],
   },
+
   {
     col: [
-      getCloudinaryUrl("premium_photo-1683140941523-f1fbbabe54d5_ohvz0j"),
-      getCloudinaryUrl("premium_photo-1675616563084-63d1f129623d_xtubve"),
-      getCloudinaryUrl("premium_photo-1670076515866-73822a3d610d_wa64aq"),
+      {
+        src: getCloudinaryUrl("IMG_0425_mezitu"),
+        alt: "Comfy sitout",
+      },
+      {
+        src: getCloudinaryUrl("IMG_0421_dmevf1"),
+        alt: "Building Exteriors",
+      },
     ],
   },
+
+  // {
+  //   col: [
+  //     {
+  //       src: getCloudinaryUrl("IMG_0417_fny8fe"),
+  //       alt: "Glass panneling",
+  //     },
+  //     {
+  //       src: getCloudinaryUrl("IMG_0416_q30xqx"),
+  //       alt: "Balcony",
+  //     },
+  //   ],
+  // },
+
   {
     col: [
-      getCloudinaryUrl("premium_photo-1661779632194-6cf32a9b5325_dnx5mk"),
-      getCloudinaryUrl("premium_photo-1661914953201-854a4ba9dc46_y6kyss"),
-      getCloudinaryUrl("premium_photo-1683880731785-e5b632e0ea13_iva8nq"),
+      {
+        src: getCloudinaryUrl("gallery_14_fu2uqp"),
+        alt: "Grotto",
+      },
+      {
+        src: getCloudinaryUrl("photo-1600585154340-be6161a56a0c_tjam6z"),
+        alt: "3d Visualization",
+      },
     ],
   },
 ];
@@ -51,19 +88,22 @@ const services = [
     title: "Interior Designs",
     description:
       "Our interior design team in Bengaluru creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.",
-    imgurl: getCloudinaryUrl("photo-1560448204-e02f11c3d0e2_biynvk"),
+    imgurl:
+      "https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", //getCloudinaryUrl("photo-1560448204-e02f11c3d0e2_biynvk"),
   },
   {
     title: "Constructions",
     description:
       "Our construction team delivers high-quality structures built with precision, combining strength, functionality, and modern design excellence.",
-    imgurl: getCloudinaryUrl("pexels-photo-323780_uivb7z"),
+    imgurl:
+      "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1568&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", //getCloudinaryUrl("pexels-photo-323780_uivb7z"),
   },
   {
     title: "Renovations",
     description:
       "We provide expert renovation services, transforming homes, offices, and commercial spaces with modern designs and personalized interior solutions tailored to each client’s vision.",
-    imgurl: getCloudinaryUrl("home-2486092_1280_shsr2f"),
+    imgurl:
+      "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", //getCloudinaryUrl("home-2486092_1280_shsr2f"),
   },
 ];
 
@@ -111,10 +151,10 @@ export const metadata = {
   },
 };
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({}) {
   return (
     <>
-      <Hero src={heroSrc} />
+      <Hero imgLarge={imgLarge} imgSmall={imgSmall} />
 
       <section className="w-full py-12">
         <h2 className="text-2xl lg:text-3xl text-neutral-800 text-center">
@@ -166,7 +206,7 @@ export default function MyApp({ Component, pageProps }) {
             >
               <div className="h-full w-full relative overflow-hidden object-center text-white rounded-t border-b-2 border-primary-600">
                 <Image
-                  className="w-full object-cover"
+                  className="w-full h-full object-cover"
                   src={item.imgurl}
                   alt="card-image"
                   loading="lazy"
@@ -214,9 +254,9 @@ export default function MyApp({ Component, pageProps }) {
       </section>
       <section className="text-neutral-800  p-0 mx-auto text-left text-neutral-800 bg-white pt-6">
         <div className="w-full mx-auto text-neutral-800 text-center mt-6 py-8 max-w-5xl px-2">
-          <h2 className="text-2xl text-neutral-800 text-center pb-4">
+          <h4 className="text-2xl text-neutral-800 text-center pb-4">
             Our Portfolio
-          </h2>
+          </h4>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 ">
             {gridImages.map((item, index) => (
@@ -225,7 +265,7 @@ export default function MyApp({ Component, pageProps }) {
                   <div key={index}>
                     <Image
                       className="h-full w-auto max-w-full rounded-lg"
-                      src={item}
+                      src={item.src}
                       alt="grid-images"
                       width={400}
                       height={300}
@@ -245,7 +285,7 @@ export default function MyApp({ Component, pageProps }) {
         </div>
 
         <div className="max-w-4xl mx-auto p-4 xl:p-8">
-          <h2 className="text-2xl text-neutral-800 text-center">About Us</h2>
+          <h5 className="text-2xl text-neutral-800 text-center">About Us</h5>
 
           <p className="p-2 text-center">
             At Maria Concept, we envision redefining modern spaces through
@@ -256,7 +296,7 @@ export default function MyApp({ Component, pageProps }) {
           </p>
 
           <div className="max-w-4xl text-center mx-auto mt-6">
-            <h2 className=" text-2xl text-neutral-800">Mission</h2>
+            <h5 className=" text-2xl text-neutral-800">Mission</h5>
             <p className="p-2 text-center">
               Our mission is to deliver complete construction and interior
               solutions with integrity, innovation, and precision.
