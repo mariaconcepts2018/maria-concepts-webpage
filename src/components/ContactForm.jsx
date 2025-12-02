@@ -52,7 +52,10 @@ export default function ContactForm({ setOpen }) {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: new URLSearchParams({ phone: formData.phone }),
+          body: new URLSearchParams({
+            phone: formData.phone,
+            company: formData.company,
+          }),
         }
       );
 
