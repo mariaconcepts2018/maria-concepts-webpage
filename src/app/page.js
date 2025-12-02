@@ -46,32 +46,6 @@ const gridImages = [
   {
     col: [
       {
-        src: getCloudinaryUrl("IMG_0425_mezitu"),
-        alt: "Comfy sitout",
-      },
-      {
-        src: getCloudinaryUrl("IMG_0421_dmevf1"),
-        alt: "Building Exteriors",
-      },
-    ],
-  },
-
-  // {
-  //   col: [
-  //     {
-  //       src: getCloudinaryUrl("IMG_0417_fny8fe"),
-  //       alt: "Glass panneling",
-  //     },
-  //     {
-  //       src: getCloudinaryUrl("IMG_0416_q30xqx"),
-  //       alt: "Balcony",
-  //     },
-  //   ],
-  // },
-
-  {
-    col: [
-      {
         src: getCloudinaryUrl("gallery_14_fu2uqp"),
         alt: "Grotto",
       },
@@ -88,22 +62,19 @@ const services = [
     title: "Interior Designs",
     description:
       "Our interior design team in Bengaluru creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.",
-    imgurl:
-      "https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", //getCloudinaryUrl("photo-1560448204-e02f11c3d0e2_biynvk"),
+    imgurl: getCloudinaryUrl("interiors_xj6l3d"),
   },
   {
     title: "Constructions",
     description:
       "Our construction team delivers high-quality structures built with precision, combining strength, functionality, and modern design excellence.",
-    imgurl:
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1568&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", //getCloudinaryUrl("pexels-photo-323780_uivb7z"),
+    imgurl: getCloudinaryUrl("construction_fz5lh5"),
   },
   {
     title: "Renovations",
     description:
       "We provide expert renovation services, transforming homes, offices, and commercial spaces with modern designs and personalized interior solutions tailored to each client’s vision.",
-    imgurl:
-      "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", //getCloudinaryUrl("home-2486092_1280_shsr2f"),
+    imgurl: getCloudinaryUrl("renovation_ztvsnz"),
   },
 ];
 
@@ -207,7 +178,7 @@ export default function MyApp({}) {
               <div className="h-full w-full relative overflow-hidden object-center text-white rounded-t border-b-2 border-primary-600">
                 <Image
                   className="w-full h-full object-cover"
-                  src={item.imgurl}
+                  src={item.imgurl + "?"}
                   alt="card-image"
                   loading="lazy"
                   width={360}
@@ -258,7 +229,7 @@ export default function MyApp({}) {
             Our Portfolio
           </h4>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 ">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {gridImages.map((item, index) => (
               <div key={index} className="grid gap-2">
                 {item.col.map((item, index) => (

@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Close, Success16 } from "./Icons";
-import ServiceForm from "./ServiceTypeForm";
 import HomeTypeForm from "./HomeTypeForm";
 import LayoutForm from "./LayoutForm";
 import ServiceTypeForm from "./ServiceTypeForm";
@@ -22,6 +21,7 @@ export default function ContactForm({ setOpen }) {
     phone: phone ? phone : "",
     email: "",
     leadSource: "website",
+    company: "mariaconcepts",
     code: "",
     location: "",
     service: "",
@@ -43,29 +43,33 @@ export default function ContactForm({ setOpen }) {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
     //send OTP
-    // try {
-    //   const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`, { // Replace with your API route
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/x-www-form-urlencoded',
-    //     },
-    //     body: new URLSearchParams({phone : formData.phone}),
-    //   })
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/send-otp`,
+        {
+          // Replace with your API route
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({ phone: formData.phone }),
+        }
+      );
 
-    //   if (!response.ok) {
-    //     throw new Error('Failed to send OTP.')
-    //   }
+      if (!response.ok) {
+        throw new Error("Failed to send OTP.");
+      }
 
-    //   const result = await response.json()
-    // console.log('OTP sent successful:', result)
-    localStorage.setItem("form-step", 2);
-    setStep(2);
+      const result = await response.json();
+      console.log("OTP sent successful:", result);
+      localStorage.setItem("form-step", 2);
+      setStep(2);
 
-    setMessage("An OTP has been sent to your mobile number.");
-    //       } catch (error) {
-    //         console.error('Error sending OTP:', error)
-    //         // Handle error (e.g., show error message)
-    //       }
+      setMessage("An OTP has been sent to your mobile number.");
+    } catch (error) {
+      console.error("Error sending OTP:", error);
+      // Handle error (e.g., show error message)
+    }
   };
 
   const handleOtpChange = (value, index) => {
@@ -136,6 +140,7 @@ export default function ContactForm({ setOpen }) {
           />
         </div>
         <button
+          title="Close form"
           className="cursor-pointer rounded-full w-5 h-5 bg-neutral-200 "
           onClick={() => setOpen(false)}
         >
@@ -194,6 +199,7 @@ export default function ContactForm({ setOpen }) {
                 />
 
                 <button
+                  title="Submit"
                   type="submit"
                   disabled={
                     !formData.name || !formData.phone || !formData.email
@@ -241,6 +247,7 @@ export default function ContactForm({ setOpen }) {
 
                 <button
                   type="submit"
+                  title="verify otp"
                   disabled={!otp.join("")}
                   className={`w-full py-2 rounded-lg transition ${
                     otp.join("").length === 4
@@ -252,6 +259,7 @@ export default function ContactForm({ setOpen }) {
                 </button>
 
                 <button
+                  title="edit details"
                   onClick={() => setStep(1)}
                   className="text-sm text-gray-500 underline mt-2 cursor-pointer"
                 >
@@ -357,6 +365,7 @@ export default function ContactForm({ setOpen }) {
           {error}
         </div>
         <button
+          title="hide error"
           className=" transition-all cursor-pointer"
           type="button"
           onClick={() => setError(null)}
@@ -403,6 +412,7 @@ export default function ContactForm({ setOpen }) {
             {message}
           </div>
           <button
+            title="hide message"
             className=" transition-all cursor-pointer"
             type="button"
             onClick={() => setMessage(null)}

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export default function FullscreenModal({
   images,
@@ -8,103 +9,47 @@ export default function FullscreenModal({
   setCurrentIndex,
   currentIndex,
 }) {
-  const [scale, setScale] = useState(1);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStart = useRef({ x: 0, y: 0 });
-
   const closeFullscreen = () => {
     setFullscreen(false);
-    setScale(1);
-    setOffset({ x: 0, y: 0 });
-  };
-
-  const startDrag = (e) => {
-    setIsDragging(true);
-    dragStart.current = { x: e.clientX - offset.x, y: e.clientY - offset.y };
-  };
-
-  const onDrag = (e) => {
-    if (!isDragging) return;
-    setOffset({
-      x: e.clientX - dragStart.current.x,
-      y: e.clientY - dragStart.current.y,
-    });
-  };
-
-  const endDrag = () => setIsDragging(false);
-
-  const zoomIn = () => setScale((s) => Math.min(4, s + 0.25));
-  const zoomOut = () => setScale((s) => Math.max(1, s - 0.25));
-  const resetZoom = () => {
-    setScale(1);
-    setOffset({ x: 0, y: 0 });
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 bg-opacity-90 z-[9999] flex flex-col animate-fadeIn">
+    <div className="fixed inset-0 bg-black/80 bg-opacity-90 z-[9999] flex flex-col animate-fadeIn">
       <div className="flex justify-evenly items-center p-4 text-white">
         <div className="flex gap-2">
           <button
-            onClick={closeFullscreen}
-            className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
-          >
-            Close
-          </button>
-          <button
+            title="previous"
             onClick={() =>
               setCurrentIndex((i) => (i - 1 + images.length) % images.length)
             }
             className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
           >
-            Prev
+            <ArrowLeft />
           </button>
           <button
+            title="next"
             onClick={() => setCurrentIndex((i) => (i + 1) % images.length)}
             className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
           >
-            Next
-          </button>
-        </div>
-        <div className="flex gap-2">
-          <button
-            onClick={zoomIn}
-            className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
-          >
-            +
+            <ArrowRight />
           </button>
           <button
-            onClick={zoomOut}
+            title="close fullscreen"
+            onClick={closeFullscreen}
             className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
           >
-            -
-          </button>
-          <button
-            onClick={resetZoom}
-            className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
-          >
-            Reset
+            <X />
           </button>
         </div>
       </div>
 
-      <div
-        className="flex-1 flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing"
-        onMouseDown={startDrag}
-        onMouseMove={onDrag}
-        onMouseUp={endDrag}
-        onMouseLeave={endDrag}
-        onDoubleClick={resetZoom}
-      >
+      <div className="flex-1 flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing">
         <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
           width={1920}
           height={1080}
-          className="h-full w-auto transition-transform duration-150 ease-in-out"
-          style={{
-            transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})`,
-          }}
+          className="w-full md:h-full md:w-auto transition-transform duration-150 ease-in-out"
         />
       </div>
 

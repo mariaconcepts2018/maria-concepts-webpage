@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import Logo from "./Logo";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const ContactModal = dynamic(() => import("./ContactModal"), { ssr: false });
 

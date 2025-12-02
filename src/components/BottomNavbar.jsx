@@ -24,6 +24,7 @@ const BottomNavbar = () => {
             <Link
               href={"/"}
               title="home"
+              
               className="inline-flex flex-col items-center justify-center px-5 group"
             >
               <svg

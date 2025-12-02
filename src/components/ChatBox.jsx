@@ -78,7 +78,7 @@ export default function ChatBox({ openModal, handleModal }) {
       >
         <div className="flex justify-between items-start bg-white text-neutral-700 w-full shadow-md p-4">
           <div className="block">
-            <h1 className="text-lg">Maria Concepts</h1>
+            <p className="text-lg">Maria Concepts</p>
             {socket.connected && (
               <div className="text-sm opacity-80 flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-600 rounded-full"></div>
@@ -87,6 +87,7 @@ export default function ChatBox({ openModal, handleModal }) {
             )}
           </div>
           <button
+            title="close chatbox"
             className="hover:bg-neutral-200 rounded-full text-4xl text-center transition"
             onClick={handleModal}
           >
@@ -152,9 +153,13 @@ export default function ChatBox({ openModal, handleModal }) {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Type a message..."
+            autoComplete={"false"}
             className="flex-1 bg-neutral-200 rounded-full p-3 px-6 text-neutral-900 foxus:ring-1"
           />
-          <button className="bg-none text-neutral-600 hover:text-neutral:500 transition px-4 rounded-s-full rounded-se-full cursor-pointer">
+          <button
+            title="send message"
+            className="bg-none text-neutral-600 hover:text-neutral:500 transition px-4 rounded-s-full rounded-se-full cursor-pointer"
+          >
             <svg
               width="2.286em"
               height="2em"
