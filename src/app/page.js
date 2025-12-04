@@ -13,18 +13,18 @@ import Image from "next/image";
 import Link from "next/link";
 import getCloudinaryUrl from "@/lib/cloudinary";
 
-const imgSmall = getCloudinaryUrl("hero_gqdsnr", { aspect_ratio: "9:16" });
-const imgLarge = getCloudinaryUrl("hero_gqdsnr");
+const imgSmall = getCloudinaryUrl("RNRA9126_az04xd", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("RNRA9126_az04xd");
 
 const gridImages = [
   {
     col: [
       {
-        src: getCloudinaryUrl("IMG_0434_kwwia9"),
+        src: getCloudinaryUrl("IMG_4440_v1crnt"),
         alt: "Warm and elegant vanity unit with storage",
       },
       {
-        src: getCloudinaryUrl("IMG_0428_jjccni"),
+        src: getCloudinaryUrl("RNRA9126_az04xd"),
         alt: "Modern bedroom",
       },
     ],
@@ -33,11 +33,11 @@ const gridImages = [
   {
     col: [
       {
-        src: getCloudinaryUrl("IMG_0424_k2paog"),
+        src: getCloudinaryUrl("PGSQ2308_jucej1"),
         alt: "Kids bedroom",
       },
       {
-        src: getCloudinaryUrl("IMG_0423_mp7ksr"),
+        src: getCloudinaryUrl("OUMK7387_ztxsix"),
         alt: "False ceiling",
       },
     ],
@@ -46,11 +46,24 @@ const gridImages = [
   {
     col: [
       {
-        src: getCloudinaryUrl("gallery_14_fu2uqp"),
+        src: getCloudinaryUrl("QLGZ0787_bgtdvn"),
         alt: "Grotto",
       },
       {
-        src: getCloudinaryUrl("photo-1600585154340-be6161a56a0c_tjam6z"),
+        src: getCloudinaryUrl("AFPP3467_y5v92w"),
+        alt: "3d Visualization",
+      },
+    ],
+  },
+
+  {
+    col: [
+      {
+        src: getCloudinaryUrl("ASYE8945_fgiky2"),
+        alt: "Grotto",
+      },
+      {
+        src: getCloudinaryUrl("THMA9754_drvzux"),
         alt: "3d Visualization",
       },
     ],
@@ -62,19 +75,23 @@ const services = [
     title: "Interior Designs",
     description:
       "Our interior design team in Bengaluru creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.",
-    imgurl: getCloudinaryUrl("interiors_xj6l3d"),
+    imgurl: getCloudinaryUrl("island-kitchen-edited_ejcd3c", {
+      aspect_ratio: "1:1",
+    }),
   },
   {
     title: "Constructions",
     description:
       "Our construction team delivers high-quality structures built with precision, combining strength, functionality, and modern design excellence.",
-    imgurl: getCloudinaryUrl("construction_fz5lh5"),
+    imgurl: getCloudinaryUrl("photo-1600585154340-be6161a56a0c_tjam6z", {
+      aspect_ratio: "1:1",
+    }),
   },
   {
     title: "Renovations",
     description:
       "We provide expert renovation services, transforming homes, offices, and commercial spaces with modern designs and personalized interior solutions tailored to each client’s vision.",
-    imgurl: getCloudinaryUrl("renovation_ztvsnz"),
+    imgurl: getCloudinaryUrl("IMAGE-1_Scene_1_xiscdb", { aspect_ratio: "1:1" }),
   },
 ];
 
@@ -99,10 +116,10 @@ export const metadata = {
     siteName: "Maria Concepts",
     images: [
       {
-        url: "https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/hero_gqdsnr.webp",
+        url: "https://res.cloudinary.com/dylffjde8/image/upload/w_auto,q_50,c_limit/v1761220154/RNRA9126_az04xd.webp",
         width: 600,
         height: 315,
-        alt: "Your Brand - Construction Services",
+        alt: "Maria Concepts - Duplex Interiors",
       },
     ],
     locale: "en_US",
@@ -173,7 +190,7 @@ export default function MyApp({}) {
           {services.map((item, index) => (
             <div
               key={index}
-              className="md:w-1/3 md:mx-auto flex flex-col shadow-lg rounded  pb-2 border border-neutral-200"
+              className="w-3/4 md:w-1/3 mx-auto flex flex-col shadow-lg rounded  pb-2 border border-neutral-200"
             >
               <div className="h-full w-full relative overflow-hidden object-center text-white rounded-t border-b-2 border-primary-600">
                 <Image
@@ -187,12 +204,9 @@ export default function MyApp({}) {
                 />
               </div>
               <div className="p-4">
-                <h6 className="mb-2 text-neutral-700 text-xl xl:text-lg">
+                <h6 className="text-center text-neutral-700 text-xl xl:text-lg">
                   {item.title}
                 </h6>
-                <p className="text-secondary-600 leading-normal font-light text-sm pb-4 truncate">
-                  {item.description}
-                </p>
               </div>
             </div>
           ))}
@@ -229,7 +243,7 @@ export default function MyApp({}) {
             Our Portfolio
           </h4>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {gridImages.map((item, index) => (
               <div key={index} className="grid gap-2">
                 {item.col.map((item, index) => (
@@ -237,11 +251,11 @@ export default function MyApp({}) {
                     <Image
                       className="h-full w-full object-cover rounded-lg"
                       src={item.src}
-                      alt="grid-images"
+                      alt={item.alt}
                       width={400}
                       height={300}
                     />
-                    <p className="absolute scale-75 bottom-2 p-1 text-xs  px-4 rounded-full font-light bg-black text-white opacity-50">
+                    <p className="absolute bottom-0 p-1 text-xs  px-4 font-light bg-none text-black opacity-50">
                       &copy; mariaconcepts
                     </p>
                   </div>

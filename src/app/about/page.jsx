@@ -7,8 +7,8 @@ export const metadata = {
   title: "Get to know us",
 };
 
-const imgSmall = getCloudinaryUrl("hero_gqdsnr", { aspect_ratio: "9:16" });
-const imgLarge = getCloudinaryUrl("hero_gqdsnr");
+const imgSmall = getCloudinaryUrl("FBZF7418_ya2fkd", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("FBZF7418_ya2fkd");
 
 export default function MyApp({}) {
   return (
@@ -23,7 +23,7 @@ export default function MyApp({}) {
           <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8">
             <div className="basis-1/2 py-4">
               <Image
-                src={getCloudinaryUrl("gallery_13_pnynem")}
+                src={getCloudinaryUrl("5Z0A9359_cbbwul")}
                 width={800}
                 height={600}
                 alt="Our team"

@@ -4,15 +4,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-// MasonryImageGrid.jsx
-// Default-exported React component for Next.js + Tailwind.
-// Features:
-// - CSS column-based responsive masonry grid
-// - Full-screen lightbox with animated transitions (framer-motion)
-// - Thumbnails strip in lightbox + keyboard navigation (← → Esc)
-// - Accessibility: focus trap for modal, alt text, close button
-// - Tailwind-first styling, minimal dependencies
-
 export default function Gallery({ images }) {
   // If no images passed, provide beautiful Unsplash placeholders
 
@@ -68,7 +59,7 @@ export default function Gallery({ images }) {
       <h2 className="text-2xl font-semibold text-center">Portfolio</h2>
 
       {/* Masonry grid using CSS columns */}
-      <div className="flex flex-row gap-1 lg:w-1/4 lg:mx-auto">
+      <div className="flex flex-row gap-1 lg:mx-auto">
         {imgs.map((img, i) => (
           <div
             key={i}
@@ -157,8 +148,9 @@ export default function Gallery({ images }) {
                     alt={imgs[index].alt || `Image ${index + 1}`}
                     fill
                     className="object-contain"
-                    sizes="(min-width:1024px) 900px, 100vw"
+                    sizes="(min-width:1024px) 700px, 100vw"
                     priority
+                    fetchPriority="high"
                   />
                 </motion.div>
 

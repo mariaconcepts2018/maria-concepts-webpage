@@ -14,7 +14,8 @@ export default function ChatBox({ openModal, handleModal }) {
   useEffect(() => {
     let storedName = localStorage.getItem("chatUserName");
     if (!storedName) {
-      storedName = "user_" + Math.floor(Math.random() * 10 ** 8).toString(36);
+      storedName =
+        "maria_user_" + Math.floor(Math.random() * 10 ** 8).toString(36);
       localStorage.setItem("chatUserName", storedName);
     }
     setUserName(storedName);
@@ -58,6 +59,15 @@ export default function ChatBox({ openModal, handleModal }) {
     e.preventDefault();
     if (!text.trim()) return;
     socket.emit("chatMessage", { sessionId: userName, text: text });
+    setMessages((prev) => [
+      {
+        sessionId: userName,
+        text: text,
+        createdAt: new Date().toLocaleTimeString(),
+      },
+      ...prev,
+    ]);
+
     setText("");
   };
 
@@ -123,13 +133,13 @@ export default function ChatBox({ openModal, handleModal }) {
                     msg.isAdmin ? "text-left mr-auto" : "text-right ml-auto"
                   }`}
                 >
-                  <span className="text-xs font-normal text-neutral-400 mx-2">
+                  {/* <span className="text-xs font-normal text-neutral-400 mx-2">
                     {new Date(msg.createdAt).toLocaleTimeString("en-IN", {
                       hour: "numeric",
                       minute: "numeric",
                       hour12: true,
                     })}
-                  </span>
+                  </span> */}
                   <div
                     className={`shadow-lg xl:py-3 py-2 px-4 text-left ${
                       msg.isAdmin

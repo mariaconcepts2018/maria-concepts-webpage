@@ -124,6 +124,7 @@ export default function ContactForm({ setOpen }) {
       setOtp(["", "", "", ""]);
     } catch (error) {
       console.error("Error verifying OTP:", error);
+      setMessage("");
       setError("Error verifying phone number");
       // Handle error (e.g., show error message)
     }

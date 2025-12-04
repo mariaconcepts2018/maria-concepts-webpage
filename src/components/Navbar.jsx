@@ -49,7 +49,7 @@ export default function Navbar() {
             {/* Desktop Menu */}
             {/* Logo */}
             <Link href="/" className="px-2" title="home">
-              <Logo className="w-18 md:w-20 h-auto drop-shadow-4xl" />
+              <Logo className="w-20 md:w-24 h-auto drop-shadow-4xl" />
             </Link>
             <div className="w-full scroll-none xl:relative hidden lg:flex lg:justify-end space-x-8 items-center">
               <Link

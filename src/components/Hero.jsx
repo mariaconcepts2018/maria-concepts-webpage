@@ -32,7 +32,7 @@ export default function Hero({ title, imgSmall, imgLarge }) {
             <img {...rest} />
           </picture>
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
 
           {/* Hero content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">

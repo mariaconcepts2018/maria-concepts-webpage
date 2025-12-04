@@ -27,6 +27,9 @@ export default function FullscreenImageViewer({ images, image, index }) {
         <div className="absolute inset-0 h-full bg-black/50 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-sm transition">
           Click to view
         </div>
+        <p className="absolute bottom-0 p-1 text-xs  px-4 font-light bg-none text-black opacity-50">
+          &copy; mariaconcepts
+        </p>
       </div>
 
       {/* Fullscreen Modal */}

@@ -42,7 +42,8 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 xl:flex-row xl:justify-between">
           <p className="block mb-4 text-sm text-center text-secondary-500 xl:mb-0">
-            Copyright © 2025 Maria Concepts. All Rights Reserved.
+            Copyright © 2025 Maria Concepts. All Rights Reserved. Images are
+            subjected to copyright.
           </p>
           <div className="flex gap-4 text-secondary-600 sm:justify-center">
             <Link

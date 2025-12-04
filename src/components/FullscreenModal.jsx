@@ -9,6 +9,14 @@ export default function FullscreenModal({
   setCurrentIndex,
   currentIndex,
 }) {
+  const activeRef = useRef();
+
+  useEffect(() => {
+    const scrollToElement = () => {
+      activeRef.current?.scrollIntoView({ block: "center", inline: "center" });
+    };
+    scrollToElement();
+  }, [currentIndex]);
   const closeFullscreen = () => {
     setFullscreen(false);
   };
@@ -43,24 +51,28 @@ export default function FullscreenModal({
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing">
+      <div className="relative flex-1 flex items-center justify-center overflow-hidden">
         <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
-          width={1920}
-          height={1080}
+          width={900}
+          height={600}
           className="w-full md:h-full md:w-auto transition-transform duration-150 ease-in-out"
         />
+        <p className="absolute bottom-1/2 p-1  px-4 font-light bg-white rounded-full text-black opacity-20">
+          &copy; mariaconcepts
+        </p>
       </div>
 
-      <div className="flex justify-center gap-2 overflow-x-auto p-3 bg-black/60 border-t border-white/10">
+      <div className="flex justify-start gap-2 overflow-x-auto p-3 bg-black/60 border-t border-white/10">
         {images.map((img, i) => (
           <Image
             key={i}
             src={img.src}
             alt={img.alt || ""}
-            width={200}
-            height={300}
+            width={150}
+            height={100}
+            ref={i === currentIndex ? activeRef : null}
             onClick={() => setCurrentIndex(i)}
             className={`h-16 w-auto rounded-md cursor-pointer object-cover ${
               i === currentIndex ? "ring-2 ring-white" : ""
