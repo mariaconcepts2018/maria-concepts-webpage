@@ -83,7 +83,7 @@ const services = [
     title: "Constructions",
     description:
       "Our construction team delivers high-quality structures built with precision, combining strength, functionality, and modern design excellence.",
-    imgurl: getCloudinaryUrl("photo-1600585154340-be6161a56a0c_tjam6z", {
+    imgurl: getCloudinaryUrl("Building-1_yvshdh", {
       aspect_ratio: "1:1",
     }),
   },

@@ -21,7 +21,7 @@ export default function MyApp({}) {
           </h2>
 
           <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8">
-            <div className="basis-1/2 py-4">
+            {/* <div className="basis-1/2 py-4">
               <Image
                 src={getCloudinaryUrl("5Z0A9359_cbbwul")}
                 width={800}
@@ -29,9 +29,9 @@ export default function MyApp({}) {
                 alt="Our team"
                 className="w-full h-auto object-cover object-center border border-secondary"
               />
-            </div>
+            </div> */}
 
-            <div className="basis-1/2 md:px-4">
+            <div className="basis-1/2 md:px-4 mx-auto">
               <p className="py-2">
                 Maria Concepts is a leading construction and interior design
                 firm in Bengaluru, offering end-to-end solutions that blend
