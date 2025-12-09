@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Close, Success16 } from "./Icons";
+import { Back, Close, Success16 } from "./Icons";
 import HomeTypeForm from "./HomeTypeForm";
 import LayoutForm from "./LayoutForm";
 import ServiceTypeForm from "./ServiceTypeForm";
@@ -343,6 +343,15 @@ export default function ContactForm({ setOpen }) {
         <p className="text-sm text-gray-500 mt-4 text-center">
           Step {step} of 7
         </p>
+      )}
+
+      {step > 3 && (
+        <button
+          className="text-center p-2 border border-neutral-200 mt-6 mx-auto"
+          onClick={() => setStep(step - 1)}
+        >
+          <Back className="w-5 h-5" />
+        </button>
       )}
 
       <div

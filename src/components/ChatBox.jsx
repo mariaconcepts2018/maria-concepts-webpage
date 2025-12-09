@@ -84,7 +84,7 @@ export default function ChatBox({ openModal, handleModal }) {
       } tranasform transition fixed inset-0 flex flex-col justify-end p-2`}
     >
       <div
-        className={` mx-auto w-full xl:w-1/4 lg:w-1/2 lg:mr-0 h-screen md:h-1/2 max-h-screen shadow-sm z-300 flex flex-col justify-between  bg-white shadow-xl rounded-sm border-t border-neutral-200`}
+        className={` mx-auto w-full 2xl:w-1/4 xl:w-1/3 lg:w-1/2 lg:mr-0 h-screen md:h-1/2 max-h-screen shadow-sm z-300 flex flex-col justify-between  bg-white shadow-xl rounded-sm border-t border-neutral-200`}
       >
         <div className="flex justify-between items-start bg-white text-neutral-700 w-full shadow-md p-4">
           <div className="block">

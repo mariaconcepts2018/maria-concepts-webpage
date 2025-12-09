@@ -76,7 +76,7 @@ export default function ServicesForm({
     <>
       <div className="space-y-4">
         <h2 className="text-xl font-semibold text-gray-800 text-center">
-          Choose everything you'll need for your home.
+          Customize to meet your specific needs.
         </h2>
         <div className="flex flex-row flex-wrap justify-center gap-6 mt-8 h-[30vh] overflow-y-auto px-2 py-6">
           {sevices.map((item, index) => (
@@ -87,7 +87,7 @@ export default function ServicesForm({
               onClick={handleClick}
               className={`${
                 selected.includes(item)
-                  ? "border-primary-500 "
+                  ? "border-primary-500"
                   : "border-gray-300 "
               } border text-neutral-600 capitalize  px-2 py-1 rounded-lg transition cursor-pointer
         "

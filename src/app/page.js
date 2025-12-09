@@ -230,7 +230,7 @@ export default function MyApp({}) {
                     Call us now
                   </small>
                   <br />
-                  <span className="text-lg block mt-2">(toll free number)</span>
+                  <span className="text-lg block mt-2">70262 52255</span>
                 </p>
               </div>
             </div>

@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
             <div className="flex  gap-4 items-start">
               <Phone className="w-8 text-neutral-600 mt-1" />
-              <p>(Replace with Toll free number)</p>
+              <p>70262 52255</p>
             </div>
             <br />
             <div className="flex gap-4 items-start">

@@ -55,18 +55,6 @@ const images = [
     alt: "3d Visualization",
   },
   {
-    src: getCloudinaryUrl("DPVS7540_us0cnf"),
-    alt: "Grotto",
-  },
-  {
-    src: getCloudinaryUrl("EGDQ3065_rulzcw"),
-    alt: "3d Visualization",
-  },
-  {
-    src: getCloudinaryUrl("WSAV5469_hy4gtx"),
-    alt: "Grotto",
-  },
-  {
     src: getCloudinaryUrl("OUMK7387_ztxsix"),
     alt: "3d Visualization",
   },
