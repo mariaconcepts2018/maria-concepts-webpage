@@ -10,31 +10,39 @@ export default function Footer() {
     <footer className="relative w-full pt-8 bg-neutral-100 pb-18 lg:pb-0">
       <div className="px-4 lg:px-8 mx-auto ">
         <div className="flex flex-col lg:flex-row justify-center md:justify-evenly max-w-4xl mx-auto">
-          <div className="flex flex-col justify-evenly  lg:my-12 gap-y-3">
+          <div className="flex flex-col justify-evenly  lg:my-12 gap-y-1">
             <div>
               <h2 className="mb-8 text-xl">MARIA CONCEPTS</h2>
             </div>
             <div className="flex  gap-4 items-start">
               <Phone className="w-8 text-neutral-600 mt-1" />
-              <p>70262 52255</p>
+              <div>
+                <h6>Phone</h6>
+                <p>70262 52255</p>
+              </div>
             </div>
             <br />
             <div className="flex gap-4 items-start">
               <Email className="w-8 text-neutral-600 mt-1" />
+              <div>
+                <h6>Email</h6>
 
-              <p>contact@mariaconcepts.com</p>
+                <p>contact@mariaconcepts.com</p>
+              </div>
             </div>
             <br />
 
             <div className="flex gap-4 items-start">
               <Location className="w-8 text-neutral-600 mt-1" />
-
-              <p>
-                # 4, Opp. Podar International School, <br /> Basavanapura,
-                Gottigere Post, <br />
-                Off Bannerghatta Road, <br />
-                Bengaluru - 560 083.
-              </p>
+              <div>
+                <h6>Address</h6>
+                <p>
+                  # 4, Opp. Podar International School, <br /> Basavanapura,
+                  Gottigere Post, <br />
+                  Off Bannerghatta Road, <br />
+                  Bengaluru - 560 083.
+                </p>
+              </div>
             </div>
           </div>
           <GoogleMap className="my-6 lg:my-12" />
@@ -47,7 +55,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 text-secondary-600 sm:justify-center">
             <Link
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/mariaconceptsofficial/"
               target="_blank"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
@@ -65,7 +73,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              href="https://www.instagram.com/mariaconcepts6/"
+              href="https://www.instagram.com/maria_concepts/"
               target="_blank"
               className="block transition-opacity cursor-pointer text-inherit hover:opacity-80"
             >
@@ -99,8 +107,9 @@ export default function Footer() {
                 />
               </svg>
             </a> */}
-            {/* <a
-              href="#"
+            <Link
+              href="https://in.pinterest.com/maria_concepts/"
+              target="_blank"
               className="block transition-opacity text-inherit hover:opacity-80"
             >
               <svg
@@ -116,7 +125,7 @@ export default function Footer() {
                   d="M10.015 0C4.484 0 0 4.473 0 9.99c0 4.232 2.638 7.847 6.364 9.3c-.088-.79-.166-2.002.034-2.865c.183-.78 1.175-4.964 1.175-4.964s-.3-.6-.3-1.484c0-1.386.808-2.426 1.811-2.426c.855 0 1.268.64 1.268 1.406c0 .858-.545 2.14-.829 3.327c-.238.994.502 1.804 1.483 1.804c1.778 0 3.148-1.87 3.148-4.572c0-2.384-1.723-4.058-4.184-4.058c-2.848 0-4.518 2.135-4.518 4.333c0 .86.329 1.786.742 2.284c.083.1.094.188.071.288c-.075.312-.244.999-.279 1.135c-.044.188-.143.226-.335.138c-1.249-.575-2.032-2.398-2.032-3.872c0-3.146 2.296-6.043 6.616-6.043c3.474 0 6.175 2.472 6.175 5.769c0 3.446-2.178 6.218-5.207 6.218c-1.014 0-1.966-.524-2.304-1.149l-.625 2.374c-.225.87-.84 1.96-1.252 2.621A10.07 10.07 0 0 0 9.988 20C15.508 20 20 15.53 20 10.01C20 4.493 15.507.023 9.988.023L10.015 0Z"
                 />
               </svg>
-            </a> */}
+            </Link>
           </div>
         </div>
       </div>

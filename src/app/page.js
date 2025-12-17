@@ -96,7 +96,7 @@ const services = [
 ];
 
 export const metadata = {
-  title: "Best Interiors in Bengaluru | Maria Concepts",
+  title: "Maria Concepts - Design Beyond Boundries",
 
   description:
     "Maria Concepts at Bengaluru offers premium construction and renovation services tailored to your vision and lifestyle.",
