@@ -112,7 +112,7 @@ export const metadata = {
     title: "Maria Concepts – Best Interiors in Bengaluru",
     description:
       "We offer premium construction and renovation services tailored to your vision and lifestyle.",
-    url: "https://mariaconcepts.com",
+    url: "https://www.mariaconcepts.com",
     siteName: "Maria Concepts",
     images: [
       {
@@ -135,7 +135,7 @@ export const metadata = {
     ],
   },
   alternates: {
-    canonical: "https://mariaconcepts.com",
+    canonical: "https://www.mariaconcepts.com",
   },
 };
 

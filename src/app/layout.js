@@ -18,9 +18,9 @@ const amaranth = Amaranth({
 });
 
 export const metadata = {
-  title: "Maria Concepts - Design Beyond Boundries",
+  title: "Maria Concepts | Design Beyond Boundries | Interiors & Constructions",
   description:
-    "Maria Concepts at Bengaluru offers premium construction and renovation services tailored to your vision and lifestyle.",
+    "Maria Concepts at Bengaluru offers premium interiors, construction and renovation services tailored to your vision and lifestyle.",
 };
 
 export default function RootLayout({ children }) {
