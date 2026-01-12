@@ -59,15 +59,6 @@ export default function ChatBox({ openModal, handleModal }) {
     e.preventDefault();
     if (!text.trim()) return;
     socket.emit("chatMessage", { sessionId: userName, text: text });
-    setMessages((prev) => [
-      {
-        sessionId: userName,
-        text: text,
-        createdAt: new Date().toLocaleTimeString(),
-      },
-      ...prev,
-    ]);
-
     setText("");
   };
 
