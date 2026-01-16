@@ -13,8 +13,8 @@ import Image from "next/image";
 import Link from "next/link";
 import getCloudinaryUrl from "@/lib/cloudinary";
 
-const imgSmall = getCloudinaryUrl("RNRA9126_az04xd", { aspect_ratio: "9:16" });
-const imgLarge = getCloudinaryUrl("RNRA9126_az04xd");
+const imgSmall = getCloudinaryUrl("FBZF7418_ya2fkd", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("FBZF7418_ya2fkd");
 
 const gridImages = [
   {

@@ -1,14 +1,13 @@
 import Hero from "@/components/Hero";
 import { Building, Eye, Trophy } from "@/components/Icons";
 import getCloudinaryUrl from "@/lib/cloudinary";
-import Image from "next/image";
 
 export const metadata = {
   title: "Get to know us",
 };
 
-const imgSmall = getCloudinaryUrl("FBZF7418_ya2fkd", { aspect_ratio: "9:16" });
-const imgLarge = getCloudinaryUrl("FBZF7418_ya2fkd");
+const imgSmall = getCloudinaryUrl("RNRA9126_az04xd", { aspect_ratio: "9:16" });
+const imgLarge = getCloudinaryUrl("RNRA9126_az04xd");
 
 export default function MyApp({}) {
   return (
