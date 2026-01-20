@@ -2,71 +2,82 @@
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 
-const socket = io(process.env.NEXT_PUBLIC_BACKEND_URL); // backend URL
+const socket = io(process.env.NEXT_PUBLIC_BACKEND_URL, {
+  autoConnect: true,
+  transports: ["websocket"],
+}); // backend URL
 
 export default function ChatBox({ openModal, handleModal }) {
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
+  const [roomId, setRoomId] = useState(null);
   const [userName, setUserName] = useState("");
+  const [typing, setTyping] = useState(false);
+  const [online, setOnline] = useState(false);
+
   const messagesRef = useRef(null);
 
   // Assign username (localStorage)
   useEffect(() => {
-    let storedName = localStorage.getItem("chatUserName");
-    if (!storedName) {
-      storedName =
-        "maria_user_" + Math.floor(Math.random() * 10 ** 8).toString(36);
-      localStorage.setItem("chatUserName", storedName);
-    }
-    setUserName(storedName);
-  }, []);
+    let visitorId = localStorage.getItem("visitorId");
 
-  useEffect(() => {
-    socket.on("newMessageForAdmin", (msg) => {
-      if (msg.sessionId === userName) setMessages((prev) => [msg, ...prev]); //********temporary fix */
-      scrollToBottom();
+    if (!visitorId) {
+      visitorId =
+        "maria_user_" + Math.floor(Math.random() * 10 ** 8).toString(36);
+      localStorage.setItem("visitorId", visitorId);
+    }
+
+    setUserName(visitorId);
+    console.log(visitorId);
+    socket.on("admin:joined", ({ adminName }) => {
+      setOnline(true);
+      console.log("You are chating with ", adminName);
     });
+    socket.emit("visitor:join", { visitorId });
+    socket.on("room:joined", (id) => {
+      setRoomId(id);
+      loadHistory(id);
+    });
+    socket.on("message:new", (msg) => {
+      setMessages((prev) => [...prev, msg]);
+    });
+
+    socket.on("typing:start", ({ sender }) => {
+      if (sender === "admin") setTyping(true);
+    });
+
+    socket.on("typing:stop", () => setTyping(false));
+
     return () => {
-      socket.off("newMessageForAdmin");
+      socket.off("room:joined");
+      socket.off("message:new");
+      socket.off("typing:start");
+      socket.off("typing:stop");
     };
   }, []);
 
   // Connect to backend & load messages
-  useEffect(() => {
-    if (!userName) return;
-
-    socket.emit("register", userName);
-    socket.emit("loadUserMessages", userName);
-
-    socket.on("chatHistory", (msgs) => setMessages(msgs));
-
-    socket.on("chatMessage", (msg) => {
-      setMessages((prev) => [msg, ...prev]);
-    });
-
-    socket.on("messageFromAdmin", (msg) => {
-      setMessages((prev) => [msg, ...prev]);
-    });
-
-    return () => {
-      socket.off("chatHistory");
-      socket.off("chatMessage");
-      socket.off("messageFromAdmin");
-    };
-  }, [userName]);
 
   const sendMessage = (e) => {
     e.preventDefault();
-    if (!text.trim()) return;
-    socket.emit("chatMessage", { sessionId: userName, text: text });
+    if (!roomId || !text.trim()) return;
+
+    socket.emit("visitor:message", { roomId, message: text });
+    socket.emit("typing:stop", {
+      roomId,
+      sender: "visitor",
+    });
     setText("");
   };
 
-  const scrollToBottom = () => {
-    setTimeout(() => {
-      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
-    }, 100);
-  };
+  /* LOAD PREVIOUS MESSAGES */
+  async function loadHistory(id) {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat/${id}/messages`,
+    );
+    const data = await res.json();
+    setMessages(data);
+  }
 
   return (
     <div
@@ -80,7 +91,7 @@ export default function ChatBox({ openModal, handleModal }) {
         <div className="flex justify-between items-start bg-white text-neutral-700 w-full shadow-md p-4">
           <div className="block">
             <p className="text-lg">Maria Concepts</p>
-            {socket.connected && (
+            {online && (
               <div className="text-sm opacity-80 flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-600 rounded-full"></div>
                 <span>Online</span>
@@ -107,7 +118,7 @@ export default function ChatBox({ openModal, handleModal }) {
 
         <div
           ref={messagesRef}
-          className="flex flex-col-reverse w-full h-full overflow-y-auto pb-4  gap-y-6 p-4"
+          className="flex flex-col justify-end w-full h-full overflow-y-auto pb-4  gap-y-6 p-4"
         >
           {messages.length === 0 ? (
             <div className=" text-md text-left p-4 self-start">
@@ -121,7 +132,9 @@ export default function ChatBox({ openModal, handleModal }) {
                 <div
                   key={i}
                   className={`max-w-3/4 ${
-                    msg.isAdmin ? "text-left mr-auto" : "text-right ml-auto"
+                    msg.sender === "visitor"
+                      ? " text-right ml-auto"
+                      : "text-left mr-auto"
                   }`}
                 >
                   {/* <span className="text-xs font-normal text-neutral-400 mx-2">
@@ -133,15 +146,21 @@ export default function ChatBox({ openModal, handleModal }) {
                   </span> */}
                   <div
                     className={`shadow-lg xl:py-3 py-2 px-4 text-left ${
-                      msg.isAdmin
-                        ? "rounded-e-full rounded-es-full bg-amber-100 text-neutral-900"
-                        : "rounded-s-full rounded-se-full bg-amber-200 text-neutral-600"
+                      msg.sender === "visitor"
+                        ? "rounded-s-full rounded-se-full bg-amber-200 text-neutral-600"
+                        : "rounded-e-full rounded-es-full bg-amber-100 text-neutral-900"
                     }`}
                   >
-                    {msg.text}
+                    {msg.message}
                   </div>
                 </div>
               ))}
+
+              <div
+                className={`${typing ? "opacity-100" : "opacity-0"} transition text-left mr-auto text-neutral-400 text-xs text-gray-400 text-left`}
+              >
+                Typing…
+              </div>
             </>
           )}
         </div>

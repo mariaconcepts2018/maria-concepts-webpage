@@ -96,10 +96,10 @@ const services = [
 ];
 
 export const metadata = {
-  title: "Maria Concepts - Design Beyond Boundries",
+  title: "Maria Concepts - Constructions & Interiors in Bengaluru",
 
   description:
-    "Maria Concepts at Bengaluru offers premium construction and renovation services tailored to your vision and lifestyle.",
+    "Maria Concepts at Bengaluru offers premium interiors, construction and renovation services tailored to your vision and lifestyle.",
   keywords: [
     "construction",
     "renovation",
@@ -109,7 +109,7 @@ export const metadata = {
   ],
   authors: [{ name: "Maria Concepts" }],
   openGraph: {
-    title: "Maria Concepts – Best Interiors in Bengaluru",
+    title: "Maria Concepts – Constructions & Interiors in Bengaluru",
     description:
       "We offer premium construction and renovation services tailored to your vision and lifestyle.",
     url: "https://www.mariaconcepts.com",
@@ -122,12 +122,12 @@ export const metadata = {
         alt: "Maria Concepts - Duplex Interiors",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maria Concepts – Best Interiors and Constructions",
+    title: "Maria Concepts – Constructions & Interiors in Bengaluru",
     description:
       "We offer premium construction and renovation services tailored to your vision and lifestyle.",
     images: [
@@ -277,7 +277,7 @@ export default function MyApp({}) {
 
           <p className="p-2 text-center">
             At Maria Concept, we envision redefining modern spaces through
-            creative design, sustainable construction, and timeless
+            creative interior design, sustainable construction, and timeless
             craftsmanship. Our goal is to create inspiring environments that
             blend beauty, comfort, and functionality — enriching the way people
             live and work.
