@@ -17,10 +17,10 @@ export default function Hero({ title, imgSmall, imgLarge }) {
   // Pass common as an argument with src in getImageProps and destructure the output.
   const {
     props: { srcSet: srcLarge },
-  } = getImageProps({ ...common, src: imgSmall, width: 1920, height: 1080 });
+  } = getImageProps({ ...common, src: imgSmall, width: 640, height: 360 });
   const {
     props: { srcSet: srcSmall, ...rest },
-  } = getImageProps({ ...common, src: imgLarge, width: 2160, height: 3840 });
+  } = getImageProps({ ...common, src: imgLarge, width: 1920, height: 1080 });
 
   return (
     <AnimatePresence mode="wait">
@@ -28,7 +28,7 @@ export default function Hero({ title, imgSmall, imgLarge }) {
         <div className="relative md:h-screen h-screen w-full overflow-hidden">
           <picture>
             <source media="(min-width: 1280px)" srcSet={srcSmall} />
-            <source media="(min-width: 1536px)" srcSet={srcLarge} />
+            <source media="(min-width: 1920px)" srcSet={srcLarge} />
             <img {...rest} />
           </picture>
           {/* Dark overlay */}

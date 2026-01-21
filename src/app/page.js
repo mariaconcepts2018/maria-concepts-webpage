@@ -101,10 +101,10 @@ export const metadata = {
   description:
     "Maria Concepts at Bengaluru offers premium interiors, construction and renovation services tailored to your vision and lifestyle.",
   keywords: [
+    "interior design",
     "construction",
     "renovation",
     "architecture",
-    "interior design",
     "home building",
   ],
   authors: [{ name: "Maria Concepts" }],

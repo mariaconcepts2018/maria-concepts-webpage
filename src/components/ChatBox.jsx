@@ -7,13 +7,13 @@ const socket = io(process.env.NEXT_PUBLIC_BACKEND_URL, {
   transports: ["websocket"],
 }); // backend URL
 
-export default function ChatBox({ openModal, handleModal }) {
+export default function ChatBox({ openModal, handleModal, setNewMessage }) {
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [roomId, setRoomId] = useState(null);
-  const [userName, setUserName] = useState("");
   const [typing, setTyping] = useState(false);
   const [online, setOnline] = useState(false);
+  const typingTimeout = useRef(null);
 
   const messagesRef = useRef(null);
 
@@ -27,8 +27,6 @@ export default function ChatBox({ openModal, handleModal }) {
       localStorage.setItem("visitorId", visitorId);
     }
 
-    setUserName(visitorId);
-    console.log(visitorId);
     socket.on("admin:joined", ({ adminName }) => {
       setOnline(true);
       console.log("You are chating with ", adminName);
@@ -39,7 +37,13 @@ export default function ChatBox({ openModal, handleModal }) {
       loadHistory(id);
     });
     socket.on("message:new", (msg) => {
-      setMessages((prev) => [...prev, msg]);
+      setMessages((prev) => [msg, ...prev]);
+
+      if (msg.sender === "admin") {
+        setNewMessage(msg.message);
+      } else {
+        setNewMessage(null);
+      }
     });
 
     socket.on("typing:start", ({ sender }) => {
@@ -55,6 +59,23 @@ export default function ChatBox({ openModal, handleModal }) {
       socket.off("typing:stop");
     };
   }, []);
+
+  function handleTyping(e) {
+    setText(e.target.value);
+
+    socket.emit("typing:start", {
+      roomId,
+      sender: "visitor",
+    });
+
+    clearTimeout(typingTimeout.current);
+    typingTimeout.current = setTimeout(() => {
+      socket.emit("typing:stop", {
+        roomId,
+        sender: "visitor",
+      });
+    }, 800);
+  }
 
   // Connect to backend & load messages
 
@@ -83,12 +104,12 @@ export default function ChatBox({ openModal, handleModal }) {
     <div
       className={`z-200 transform ${
         openModal ? " scale-100" : " scale-0 translate-x-1/2 translate-y-1/2"
-      } tranasform transition fixed inset-0 flex flex-col justify-end p-2`}
+      } tranasform transition fixed inset-0 flex flex-col justify-end px-1 py-1`}
     >
       <div
-        className={` mx-auto w-full 2xl:w-1/4 xl:w-1/3 lg:w-1/2 lg:mr-0 h-screen md:h-1/2 max-h-screen shadow-sm z-300 flex flex-col justify-between  bg-white shadow-xl rounded-sm border-t border-neutral-200`}
+        className={` mx-auto w-full 2xl:w-1/4 xl:w-1/3 lg:w-1/2 lg:mr-0 h-screen md:h-1/2 max-h-9/10 shadow-sm z-300 flex flex-col justify-between  bg-white shadow-xl rounded-xl border-t border-neutral-200`}
       >
-        <div className="flex justify-between items-start bg-white text-neutral-700 w-full shadow-md p-4">
+        <div className="flex justify-between items-start text-neutral-700 w-full shadow-md p-4">
           <div className="block">
             <p className="text-lg">Maria Concepts</p>
             {online && (
@@ -118,7 +139,7 @@ export default function ChatBox({ openModal, handleModal }) {
 
         <div
           ref={messagesRef}
-          className="flex flex-col justify-end w-full h-full overflow-y-auto pb-4  gap-y-6 p-4"
+          className="flex flex-col-reverse overflow-y-scroll w-full h-full pb-4 gap-y-6 p-4 custom-scroll-bar"
         >
           {messages.length === 0 ? (
             <div className=" text-md text-left p-4 self-start">
@@ -128,10 +149,15 @@ export default function ChatBox({ openModal, handleModal }) {
             </div>
           ) : (
             <>
+              <div
+                className={`${typing ? "opacity-100" : "opacity-0"} transition text-left mr-auto text-neutral-400 text-xs text-gray-400 text-left`}
+              >
+                Typing…
+              </div>
               {messages.map((msg, i) => (
                 <div
                   key={i}
-                  className={`max-w-3/4 ${
+                  className={`max-w-3/4 mt-4 ${
                     msg.sender === "visitor"
                       ? " text-right ml-auto"
                       : "text-left mr-auto"
@@ -155,23 +181,17 @@ export default function ChatBox({ openModal, handleModal }) {
                   </div>
                 </div>
               ))}
-
-              <div
-                className={`${typing ? "opacity-100" : "opacity-0"} transition text-left mr-auto text-neutral-400 text-xs text-gray-400 text-left`}
-              >
-                Typing…
-              </div>
             </>
           )}
         </div>
 
         <form
           onSubmit={sendMessage}
-          className="block w-full flex justify-between p-4 bg-white"
+          className="block w-full flex justify-between p-4 "
         >
           <input
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={handleTyping}
             placeholder="Type a message..."
             autoComplete={"false"}
             className="flex-1 bg-neutral-200 rounded-full p-3 px-6 text-neutral-900 foxus:ring-1"
