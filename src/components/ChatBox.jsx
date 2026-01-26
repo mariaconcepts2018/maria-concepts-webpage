@@ -27,11 +27,15 @@ export default function ChatBox({ openModal, handleModal, setNewMessage }) {
       localStorage.setItem("visitorId", visitorId);
     }
 
+    if (openModal) {
+      socket.emit("visitor:join", { visitorId });
+    }
+
     socket.on("admin:joined", ({ adminName }) => {
       setOnline(true);
       console.log("You are chating with ", adminName);
     });
-    socket.emit("visitor:join", { visitorId });
+
     socket.on("room:joined", (id) => {
       setRoomId(id);
       loadHistory(id);
@@ -39,7 +43,7 @@ export default function ChatBox({ openModal, handleModal, setNewMessage }) {
     socket.on("message:new", (msg) => {
       setMessages((prev) => [msg, ...prev]);
 
-      if (msg.sender === "admin") {
+      if (msg.sender !== "visitor") {
         setNewMessage(msg.message);
       } else {
         setNewMessage(null);
@@ -47,7 +51,7 @@ export default function ChatBox({ openModal, handleModal, setNewMessage }) {
     });
 
     socket.on("typing:start", ({ sender }) => {
-      if (sender === "admin") setTyping(true);
+      if (sender !== "visitor") setTyping(true);
     });
 
     socket.on("typing:stop", () => setTyping(false));
@@ -58,7 +62,7 @@ export default function ChatBox({ openModal, handleModal, setNewMessage }) {
       socket.off("typing:start");
       socket.off("typing:stop");
     };
-  }, []);
+  }, [openModal]);
 
   function handleTyping(e) {
     setText(e.target.value);

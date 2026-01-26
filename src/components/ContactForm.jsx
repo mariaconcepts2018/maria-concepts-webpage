@@ -50,13 +50,13 @@ export default function ContactForm({ setOpen, isUrl }) {
           // Replace with your API route
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: new URLSearchParams({
+          body: JSON.stringify({
             phone: formData.phone,
             company: formData.company,
           }),
-        }
+        },
       );
 
       if (!response.ok) {
@@ -103,10 +103,10 @@ export default function ContactForm({ setOpen, isUrl }) {
           // Replace with your API route
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: new URLSearchParams({ ...formData, code: code }),
-        }
+          body: JSON.stringify({ ...formData, code: code }),
+        },
       );
 
       if (!response.ok) {

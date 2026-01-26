@@ -29,8 +29,6 @@ export default function ServicesForm({
         return [...prevItems, e.target.value];
       }
     });
-
-    setFormData({ ...formData, services: selected.join(",") });
   };
 
   const handleSubmit = async () => {
@@ -41,10 +39,10 @@ export default function ServicesForm({
           // Replace with your API route
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: new URLSearchParams(formData),
-        }
+          body: JSON.stringify({ ...formData, services: selected.join(",") }),
+        },
       );
 
       if (!response.ok) {
