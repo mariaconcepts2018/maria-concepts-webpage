@@ -1,8 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image, { getImageProps } from "next/image";
+import { getImageProps } from "next/image";
 
 export default function Hero({ title, imgSmall, imgLarge }) {
   // common option
@@ -17,18 +15,18 @@ export default function Hero({ title, imgSmall, imgLarge }) {
   // Pass common as an argument with src in getImageProps and destructure the output.
   const {
     props: { srcSet: srcLarge },
-  } = getImageProps({ ...common, src: imgSmall, width: 640, height: 360 });
+  } = getImageProps({ ...common, src: imgLarge, width: 1920, height: 1080 });
   const {
     props: { srcSet: srcSmall, ...rest },
-  } = getImageProps({ ...common, src: imgLarge, width: 1920, height: 1080 });
+  } = getImageProps({ ...common, src: imgSmall, width: 320, height: 90 });
 
   return (
     <AnimatePresence mode="wait">
       <section className="relative overflow-hidden select-none">
-        <div className="relative md:h-screen h-screen w-full overflow-hidden">
+        <div className="relative md:h-screen h-[50vh] w-full overflow-hidden">
           <picture>
-            <source media="(min-width: 1280px)" srcSet={srcSmall} />
-            <source media="(min-width: 1920px)" srcSet={srcLarge} />
+            <source media="(max-width: 767px)" srcSet={srcSmall} />
+            <source media="(min-width: 768px)" srcSet={srcLarge} />
             <img {...rest} />
           </picture>
           {/* Dark overlay */}
@@ -37,7 +35,7 @@ export default function Hero({ title, imgSmall, imgLarge }) {
           {/* Hero content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
             <motion.h1
-              className="text-4xl lg:text-6xl text-white text-shadow-lg text-shadow-black/30"
+              className="text-3xl lg:text-6xl text-white text-shadow-lg text-shadow-black/30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -49,7 +47,7 @@ export default function Hero({ title, imgSmall, imgLarge }) {
                 <>
                   Best in <span className="text-primary"> Interiors.</span>
                   <motion.p
-                    className="mt-6 text-2xl lg:text-3xl italic text-shadow-lg text-shadow-black/30 max-w-2xl mx-auto"
+                    className="mt-6 text-lg lg:text-3xl italic text-shadow-lg text-shadow-black/30 max-w-2xl mx-auto"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}

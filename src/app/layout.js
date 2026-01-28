@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import BottomNavbar from "@/components/BottomNavbar";
 import PopupButtons from "@/components/PopupButtons";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -26,6 +27,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="AW-17897988835" />
+
       <body
         className={`relative bg-white ${nunitoSans.variable} ${amaranth.variable} antialiased`}
       >

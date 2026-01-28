@@ -166,7 +166,7 @@ export default function ContactForm({ setOpen, isUrl }) {
             {step === 1 && (
               <div className="space-y-4">
                 <h2 className="text-xl font-semibold text-gray-800 text-center">
-                  Enter Your Details
+                  Get a free quote!!
                 </h2>
                 <input
                   type="text"

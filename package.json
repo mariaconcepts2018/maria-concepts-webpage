@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.5",
     "cloudinary": "^2.8.0",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.553.0",

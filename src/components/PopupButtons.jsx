@@ -41,7 +41,7 @@ export default function PopupButtons() {
           <Chat className="w-12 h-12 p-2 text-black" />
 
           {newMessage && (
-            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500  border-2 border-buffer border-white-200 rounded-full -top-2 -end-2"></div>
+            <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500  border-2 border-buffer border-white-200 rounded-full -top-1 -end-1"></div>
           )}
         </button>
       </div>

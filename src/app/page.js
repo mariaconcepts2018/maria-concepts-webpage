@@ -21,11 +21,11 @@ const gridImages = [
     col: [
       {
         src: getCloudinaryUrl("IMG_4440_v1crnt"),
-        alt: "Warm and elegant vanity unit with storage",
+        alt: "Warm and elegant vanity unit with storage and partition",
       },
       {
         src: getCloudinaryUrl("RNRA9126_az04xd"),
-        alt: "Modern bedroom",
+        alt: "Living hal with granite flooring and veneer false cieling, ss staircase railings with glasses",
       },
     ],
   },
@@ -34,11 +34,11 @@ const gridImages = [
     col: [
       {
         src: getCloudinaryUrl("PGSQ2308_jucej1"),
-        alt: "Kids bedroom",
+        alt: "Kids bedroom with wardrobe, study table and false cieling",
       },
       {
         src: getCloudinaryUrl("OUMK7387_ztxsix"),
-        alt: "False ceiling",
+        alt: "Veneer False ceiling, chandelier with led lights",
       },
     ],
   },
@@ -47,11 +47,11 @@ const gridImages = [
     col: [
       {
         src: getCloudinaryUrl("QLGZ0787_bgtdvn"),
-        alt: "Grotto",
+        alt: "Elegant and Luxury Modular Kitchens with profile glasses and quartz counter-top",
       },
       {
         src: getCloudinaryUrl("AFPP3467_y5v92w"),
-        alt: "3d Visualization",
+        alt: "Master Bedroom, wardrobe with premium digital glass shutter",
       },
     ],
   },
@@ -60,11 +60,11 @@ const gridImages = [
     col: [
       {
         src: getCloudinaryUrl("ASYE8945_fgiky2"),
-        alt: "Grotto",
+        alt: "Study table, storage unit with profile glasses",
       },
       {
         src: getCloudinaryUrl("THMA9754_drvzux"),
-        alt: "3d Visualization",
+        alt: "Pooja unit / Alter with high quality laminates, co-lights and spotlights",
       },
     ],
   },
@@ -72,7 +72,7 @@ const gridImages = [
 
 const services = [
   {
-    title: "Interior Designs",
+    title: "Interiors",
     description:
       "Our interior design team in Bengaluru creates elegant and functional spaces with precision, ensuring durability, safety, and exceptional aesthetic appeal.",
     imgurl: getCloudinaryUrl("island-kitchen-edited_ejcd3c", {
@@ -186,11 +186,11 @@ export default function MyApp({}) {
           Our Services
         </h2>
 
-        <div className="flex xl:justify-center xl:nowrap gap-4 flex-col md:flex-row md:overflow-x-scroll xl:overflow-x-hidden px-2 md:px-6 mx-auto max-w-4xl">
+        <div className="flex xl:justify-center xl:nowrap gap-2 flex-row md:flex-row md:overflow-x-scroll xl:overflow-x-hidden px-2 md:px-6 mx-auto max-w-4xl">
           {services.map((item, index) => (
             <div
               key={index}
-              className="w-3/4 md:w-1/3 mx-auto flex flex-col shadow-lg rounded  pb-2 border border-neutral-200"
+              className="w-1/3 md:w-1/3 mx-auto flex flex-col shadow-lg rounded  pb-2 border border-neutral-200"
             >
               <div className="h-full w-full relative overflow-hidden object-center text-white rounded-t border-b-2 border-primary-600">
                 <Image
@@ -203,8 +203,8 @@ export default function MyApp({}) {
                   sizes="(max-width: 768px) 100vw, 50vw" // For responsive sizing
                 />
               </div>
-              <div className="p-4">
-                <h6 className="text-center text-neutral-700 text-xl xl:text-lg">
+              <div className="px-4 py-2">
+                <h6 className="text-neutral-700 text-sm xl:text-lg">
                   {item.title}
                 </h6>
               </div>
@@ -217,7 +217,7 @@ export default function MyApp({}) {
 
           <Link
             className="d-block"
-            href={"tel:+91(toll free number)"}
+            href={"tel:+91 70262 52255"}
             target="_blank"
           >
             <div className="flex flex-row items-center w-full min-w-xs">

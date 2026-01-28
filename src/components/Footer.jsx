@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { Email, Location, Phone } from "./Icons";
-import Logo from "./Logo";
 import dynamic from "next/dynamic";
 const GoogleMap = dynamic(() => import("./GoogleMap"));
 
@@ -26,12 +25,10 @@ export default function Footer() {
               <Email className="w-8 text-neutral-600 mt-1" />
               <div>
                 <h6>Email</h6>
-
                 <p>contact@mariaconcepts.com</p>
               </div>
             </div>
             <br />
-
             <div className="flex gap-4 items-start">
               <Location className="w-8 text-neutral-600 mt-1" />
               <div>
@@ -47,7 +44,6 @@ export default function Footer() {
           </div>
           <GoogleMap className="my-6 lg:my-12" />
         </div>
-
         <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-secondary-200 xl:flex-row xl:justify-between">
           <p className="block mb-4 text-sm text-center text-secondary-500 xl:mb-0">
             Copyright © 2025 Maria Concepts. All Rights Reserved. Images are
@@ -90,23 +86,6 @@ export default function Footer() {
                 ></path>
               </svg>
             </Link>
-            {/* <a
-              href="#"
-              className="block transition-opacity text-inherit hover:opacity-80"
-            >
-              <svg
-                className="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="200"
-                height="200"
-                viewBox="0 0 1024 768"
-              >
-                <path
-                  fill="currentColor"
-                  d="M928 736q-222 32-416 32q-86 0-190-8t-165-16l-61-8q-27-5-47.5-37.5t-30-78.5t-14-86T0 461V307Q0 52 96 32Q318 0 512 0q86 0 190 8t165 16l61 8q29 4 49.5 36.5T1007 148t13 86t4 73v154q0 36-3 73t-12 85t-30 80t-51 37zM693 359L431 199q-11-10-29-5.5T384 208v352q0 11 18 15t29-6l262-160q11-10 11-25t-11-25z"
-                />
-              </svg>
-            </a> */}
             <Link
               href="https://in.pinterest.com/maria_concepts/"
               target="_blank"
