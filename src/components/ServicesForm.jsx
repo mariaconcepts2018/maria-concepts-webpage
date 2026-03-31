@@ -17,6 +17,7 @@ export default function ServicesForm({
   setMessage,
 }) {
   const [selected, setSelected] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleClick = (e) => {
     setSelected((prevItems) => {
@@ -33,6 +34,7 @@ export default function ServicesForm({
 
   const handleSubmit = async () => {
     try {
+      setLoading(true);
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/update-user`,
         {
@@ -67,6 +69,8 @@ export default function ServicesForm({
       console.error("Error submitting data:", error);
       setError("Error submitting your details");
       // Handle error (e.g., show error message)
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -99,8 +103,8 @@ export default function ServicesForm({
         <button
           type="submit"
           onClick={handleSubmit}
-          className={`capitalize w-full mx-auto px-4 py-2 rounded-lg transition bg-primary-500 text-neutral-800  cursor-pointer
-        
+          disabled={loading}
+          className={`capitalize w-full mx-auto px-4 py-2 rounded-lg transition bg-primary-500 disabled:bg-neutral-500 text-neutral-800  cursor-pointer
         }`}
         >
           Complete

@@ -2,19 +2,19 @@
 
 :root {
   --foreground: #171717;
-  --primary: #f2c078;
+  --primary: #dfc76a;
   --secondary: #333337;
   --green: #00ca1b;
 
   /* Primary shades */
-  --primary-100: hsl(35, 82%, 90%);
-  --primary-200: hsl(35, 82%, 85%);
-  --primary-300: hsl(35, 82%, 80%);
-  --primary-400: hsl(35, 82%, 75%);
-  --primary-500: hsl(35, 82%, 70%); /* base */
-  --primary-600: hsl(35, 82%, 65%);
-  --primary-700: hsl(35, 82%, 60%);
-  --primary-800: hsl(35, 82%, 55%);
+  --primary-100: hsl(47, 66%, 90%);
+  --primary-200: hsl(47, 66%, 85%);
+  --primary-300: hsl(47, 66%, 80%);
+  --primary-400: hsl(47, 66%, 75%);
+  --primary-500: hsl(48, 65%, 65%); /* base */
+  --primary-600: hsl(48, 65%, 65%);
+  --primary-700: hsl(47, 66%, 60%);
+  --primary-800: hsl(47, 66%, 55%);
 
   --green-600: hsl(133, 100%, 25%);
 

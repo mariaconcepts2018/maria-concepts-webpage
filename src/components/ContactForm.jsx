@@ -30,6 +30,7 @@ export default function ContactForm({ setOpen, isUrl }) {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const inputsRef = useRef([]);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function ContactForm({ setOpen, isUrl }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
+    setLoading(true);
     //send OTP
     try {
       const response = await fetch(
@@ -72,6 +74,8 @@ export default function ContactForm({ setOpen, isUrl }) {
     } catch (error) {
       console.error("Error sending OTP:", error);
       // Handle error (e.g., show error message)
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -208,18 +212,22 @@ export default function ContactForm({ setOpen, isUrl }) {
                   title="Submit"
                   type="submit"
                   disabled={
-                    !formData.name || !formData.phone || !formData.email
+                    !formData.name ||
+                    !formData.phone ||
+                    !formData.email ||
+                    loading
                   }
-                  className={`w-full py-2 rounded-lg transition ${
+                  className={`w-full py-2 rounded-lg transition  ${
                     formData.name &&
                     formData.phone &&
                     /\S+@\S+\.\S+/.test(formData.email) &&
-                    formData.location
-                      ? "bg-primary-600 text-neutral-800 hover:bg-primary-500  cursor-pointer"
+                    formData.location &&
+                    !loading
+                      ? "bg-primary-600 text-neutral-800 active:bg-primary-400 hover:bg-primary-500  cursor-pointer"
                       : "bg-gray-300 text-neutral-600 cursor-not-allowed"
                   }`}
                 >
-                  Get OTP
+                  {loading ? "Loading..." : "Get OTP"}
                 </button>
               </div>
             )}

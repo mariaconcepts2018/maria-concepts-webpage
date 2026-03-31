@@ -24,7 +24,6 @@ const BottomNavbar = () => {
             <Link
               href={"/"}
               title="home"
-              
               className="inline-flex flex-col items-center justify-center px-5 group"
             >
               <svg
@@ -70,7 +69,7 @@ const BottomNavbar = () => {
                 onClick={handleClick}
                 type="button"
                 title="Get a free quote"
-                className="py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-500 shadow-md text-neutral-900 rounded-full group focus:ring focus:ring-neutral-500 focus:outline-none"
+                className="py-3 px-4 shadow-lg inline-flex items-center justify-center text-xs font-medium bg-primary-500 active:bg-primary-300 transition shadow-md text-neutral-900 rounded-full group focus:ring focus:ring-neutral-500 focus:outline-none"
               >
                 GET A FREE <br /> QUOTE
                 <span className="sr-only">Get a free Quote</span>

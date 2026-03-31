@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import { Building, Eye, Trophy } from "@/components/Icons";
 import getCloudinaryUrl from "@/lib/cloudinary";
+import Image from "next/image";
 
 export const metadata = {
   title: "Get to know us",
@@ -20,16 +21,6 @@ export default function MyApp({}) {
           </h2>
 
           <div className="flex flex-col xl:flex-row max-w-6xl mx-auto gap-8">
-            {/* <div className="basis-1/2 py-4">
-              <Image
-                src={getCloudinaryUrl("5Z0A9359_cbbwul")}
-                width={800}
-                height={600}
-                alt="Our team"
-                className="w-full h-auto object-cover object-center border border-secondary"
-              />
-            </div> */}
-
             <div className="basis-1/2 md:px-4 mx-auto">
               <p className="py-2">
                 Maria Concepts is a leading construction and interior design
@@ -56,8 +47,40 @@ export default function MyApp({}) {
               </p>
             </div>
           </div>
-
-          <div className="flex flex-nowrap xl:flex-row justify-start gap-8 mt-16 max-w-7xl mx-auto overflow-x-scroll md:overflow-x-auto">
+          <h2 className="my-4 text-center">
+            Appreciations for Construction & Interior Projects
+          </h2>
+          <div className="w-full md:w-1/4 mx-auto flex flex-wrap gap-2 justify-center w-full">
+            <Image
+              src={getCloudinaryUrl("SLN_7962_pqcf5c")}
+              width={800}
+              height={600}
+              alt="Our team"
+              className="w-2/5 h-auto object-cover object-center border border-secondary"
+            />
+            <Image
+              src={getCloudinaryUrl("SLN_9545_gljbiy")}
+              width={800}
+              height={600}
+              alt="Our team"
+              className="w-2/5 h-auto object-cover object-center border border-secondary"
+            />
+            <Image
+              src={getCloudinaryUrl("FB_IMG_1740116084948_hnbfs2")}
+              width={800}
+              height={600}
+              alt="Our team"
+              className="w-2/5 h-auto object-cover object-center border border-secondary"
+            />
+            <Image
+              src={getCloudinaryUrl("FB_IMG_1740115990053_wy0rbs")}
+              width={800}
+              height={600}
+              alt="Our team"
+              className="w-2/5 h-auto object-cover object-center border border-secondary"
+            />
+          </div>
+          <div className="flex flex-nowrap xl:flex-row justify-start gap-8 mt-8 max-w-7xl mx-auto overflow-x-scroll md:overflow-x-auto">
             <div className="min-w-xs p-4 text-center border border-primary-600 rounded">
               <Eye className="w-12 text-secondary mx-auto my-4" />
               <h3 className="text-primary-800">VISION</h3>

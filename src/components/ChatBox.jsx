@@ -197,7 +197,6 @@ export default function ChatBox({ openModal, handleModal, setNewMessage }) {
           <input
             value={text}
             onChange={handleTyping}
-            minLength={8}
             placeholder="Type a message..."
             autoComplete={"false"}
             className="flex-1 bg-neutral-200 rounded-full p-3 px-6 text-neutral-900 foxus:ring-1"

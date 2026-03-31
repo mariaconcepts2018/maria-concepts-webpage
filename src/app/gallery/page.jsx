@@ -143,6 +143,35 @@ const images = [
     src: getCloudinaryUrl("BPII9215_ped48s"),
     alt: "Kids bedroom",
   },
+
+  {
+    src: getCloudinaryUrl("IMG-20191028-WA0040_gaadwq"),
+    alt: "Kids bedroom",
+  },
+  {
+    src: getCloudinaryUrl("IMG-20191028-WA0077_f4cqrx"),
+    alt: "Kids bedroom",
+  },
+  {
+    src: getCloudinaryUrl("auditorium-2_v3rd7h"),
+    alt: "Kids bedroom",
+  },
+  {
+    src: getCloudinaryUrl("auditorium_ff8mas"),
+    alt: "Kids bedroom",
+  },
+  {
+    src: getCloudinaryUrl("Church-3_soeqnm"),
+    alt: "Kids bedroom",
+  },
+  {
+    src: getCloudinaryUrl("Church-2_gt5w6g"),
+    alt: "Kids bedroom",
+  },
+  {
+    src: getCloudinaryUrl("Church-1_chzpjx"),
+    alt: "Kids bedroom",
+  },
 ];
 
 export const metadata = {

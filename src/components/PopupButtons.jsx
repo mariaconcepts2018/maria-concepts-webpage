@@ -34,7 +34,7 @@ export default function PopupButtons() {
         </Link>
 
         <button
-          className="block  cursor-pointer w-12 h-12 bg-primary-600  rounded-full mb-12 drop-shadow-md"
+          className="block  cursor-pointer w-12 h-12 bg-primary-600 active:bg-primary-300 transition rounded-full mb-12 drop-shadow-md"
           onClick={handleModal}
           title="chat online"
         >
