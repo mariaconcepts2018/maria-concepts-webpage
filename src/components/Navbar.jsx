@@ -91,7 +91,7 @@ export default function Navbar() {
               <button
                 onClick={handleClick}
                 title="get a free quote"
-                className={`bg-primary cursor-pointer text-neutral-700 py-2 px-4 shadow-lg rounded-full font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}
+                className={`bg-primary-500 cursor-pointer text-neutral-100 py-2 px-4 shadow-lg rounded-full font-semibold hover:shadow-md hover:text-neutral-700 hover:border-primary-200 uppercase transition`}
               >
                 GET A FREE QUOTE
               </button>

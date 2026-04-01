@@ -151,31 +151,31 @@ export default function MyApp({}) {
 
         <div className="flex flex-wrap flex-col lg:flex-row xl:flex-row justify-center max-w-6xl py-4 mx-auto mt-6 text-lg lg:text-xl">
           <div className="pl-6 lg:basis-1/2 flex justify-start items-center w-full rounded xl:basis-1/2">
-            <Star className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <Star className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary-500 text-neutral-900 shadow-md" />
             <p className="p-4">10+ years of experience in industry</p>
           </div>
 
           <div className="pl-6 lg:basis-1/2 flex justify-start items-center w-full rounded xl:basis-1/2">
-            <WarrantyBadgeHighlight className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <WarrantyBadgeHighlight className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary-500 text-neutral-190 shadow-md" />
             <p className="p-4">Structural Warranty*</p>
           </div>
 
           <div className="pl-6 lg:basis-1/2 flex justify-start items-center w-full rounded xl:basis-1/2">
-            <Calendar className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <Calendar className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary-500 text-neutral-900 shadow-md" />
             <p className="p-4">EMI Options </p>
           </div>
           <div className="pl-6 lg:basis-1/2 flex justify-start items-center w-full rounded xl:basis-1/2">
-            <TeamFill className="w-11 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <TeamFill className="w-11 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary-500 text-neutral-900 shadow-md" />
 
             <p className="p-4">In-House Design & Engineering Team</p>
           </div>
           <div className="pl-6 lg:basis-1/2 flex justify-start items-center w-full rounded xl:basis-1/2">
-            <Trophy className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <Trophy className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary-500 text-neutral-900 shadow-md" />
             <p className="p-4">Trusted Quality</p>
           </div>
 
           <div className="pl-6 lg:basis-1/2 flex justify-start items-center w-full rounded xl:basis-1/2">
-            <Time className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary text-neutral shadow-md" />
+            <Time className="w-10 h-10 lg:w-13 lg:h-13 m-2 p-2 rounded-full bg-primary-500 text-neutral-900 shadow-md" />
             <p className="p-4">On time delivery </p>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function MyApp({}) {
               </div>
               <div className="ml-6">
                 <p className="text-left">
-                  <small className="bg-primary py-1 px-2 rounded-full text-neutral-900">
+                  <small className="bg-primary-500 py-1 px-2 rounded-full text-neutral-900">
                     Call us now
                   </small>
                   <br />

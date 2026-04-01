@@ -30,21 +30,21 @@ export default function FullscreenModal({
             onClick={() =>
               setCurrentIndex((i) => (i - 1 + images.length) % images.length)
             }
-            className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
+            className="bg-primary-500 hover:bg-primary-400 text-neutral-800 px-3 py-1 rounded"
           >
             <ArrowLeft />
           </button>
           <button
             title="next"
             onClick={() => setCurrentIndex((i) => (i + 1) % images.length)}
-            className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
+            className="bg-primary-500 hover:bg-primary-400 text-neutral-800 px-3 py-1 rounded"
           >
             <ArrowRight />
           </button>
           <button
             title="close fullscreen"
             onClick={closeFullscreen}
-            className="bg-primary-600 hover:bg-primary-500 text-neutral-800 px-3 py-1 rounded"
+            className="bg-primary-500 hover:bg-primary-400 text-neutral-800 px-3 py-1 rounded"
           >
             <X />
           </button>

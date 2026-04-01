@@ -141,7 +141,7 @@ export default function ContactForm({ setOpen, isUrl }) {
       <div className="flex flex-row flex-nowrap items-center justify-between mb-6 gap-x-6 md:gap-x-12">
         <div className="w-full bg-neutral-300 rounded-full h-1">
           <motion.div
-            className="bg-primary-600 h-1 rounded-full"
+            className="bg-primary-500 h-1 rounded-full"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.4 }}
@@ -223,7 +223,7 @@ export default function ContactForm({ setOpen, isUrl }) {
                     /\S+@\S+\.\S+/.test(formData.email) &&
                     formData.location &&
                     !loading
-                      ? "bg-primary-600 text-neutral-800 active:bg-primary-400 hover:bg-primary-500  cursor-pointer"
+                      ? "bg-primary-500 text-neutral-900 active:bg-primary-400 hover:bg-primary-500  cursor-pointer"
                       : "bg-gray-300 text-neutral-600 cursor-not-allowed"
                   }`}
                 >
@@ -265,7 +265,7 @@ export default function ContactForm({ setOpen, isUrl }) {
                   disabled={!otp.join("")}
                   className={`w-full py-2 rounded-lg transition ${
                     otp.join("").length === 4
-                      ? "bg-primary-600 text-neutral-800 hover:bg-primary-500 cursor-pointer"
+                      ? "bg-primary-500 text-neutral-900 hover:bg-primary-500 cursor-pointer"
                       : "bg-gray-300 text-neutral-600 cursor-not-allowed"
                   }`}
                 >
